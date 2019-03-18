@@ -8,7 +8,7 @@ nCine can be built with preset options to make a developer distribution. This ty
 
 For this to work there are some additional requirements:
 
-- [Git](https://git-scm.com/): to set the package version from the `HEAD` commit
+- [Git](https://git-scm.com/): to retrieve the package version using the `HEAD` commit
 - [Doxygen](http://www.doxygen.org/): to build the documentation
 - [NSIS](http://nsis.sourceforge.net/): to create the installer on Windows
 
@@ -31,7 +31,7 @@ To build the nCine project in *DevDist* mode you need to set the `NCINE_OPTIONS_
 
 You can do that in the CMake-GUI on Windows or with the terminal on OS X:
 
-    cmake -HnCine -BnCine-DevDist -DNCINE_OPTIONS_PRESETS=DevDist
+    <path/to/cmake> -S nCine -B nCine-DevDist-build -D NCINE_OPTIONS_PRESETS=DevDist
 
 Now either open the `nCine.sln` file for Visual Studio or use `cmake --build <dir>` on OS X to compile as usual.
 
@@ -40,10 +40,13 @@ This time Doxygen will be invoked in order to build the documentation.
 ### Build the installer
 To create the installer build the `PACKAGE` target on Visual Studio and have NSIS create the installer while on OS X invoke `cmake --build <dir> --target PACKAGE` to create a compressed DMG image.
 
-The `PACKAGE` target is also going to create a Zip archive that can be used for a portable installation. This kind of installation relies on the `NCINE_HOME` environment variable to be set according to the directory with the uncompressed archive contents.
+The `PACKAGE` target is also going to create a Zip archive that can be used for a portable installation.
+This kind of installation relies on the `nCine_DIR` CMake variable to be set according to the directory containing the `nCineConfig.cmake` file.
+The same variable can also be set to a CMake binary build directory so that a project can be linked against libraries built straight from nCine sources.
 
 ## Build a Binary Distribution
 There is a second valid value for the `NCINE_OPTIONS_PRESETS` CMake variable which is `BinDist`.
 
-With that you can create an installer containing only the libraries and the tests. There will be no documentation, no include files and no Android support. It comes in handy when you want to show someone the engine features or just test how it works on a particular computer.
+With that you can create an installer containing only the run-time libraries and the tests. There will be no documentation, no include files and no Android support.
+It comes in handy when you want to show someone the engine features or just test how it works on a particular computer.
 

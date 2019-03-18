@@ -8,7 +8,8 @@ You can tweak the generation of nCine project files with the following CMake opt
 
 - `NCINE_OPTIONS_PRESETS`
 
-  If this variable is set all the following options and variables will be set accordingly in order to produce a binary only or a developer distribution of the nCine. The two allowed values are "*BinDist*" and "*DevDist*" respectively.
+  If this variable is set all the following options and variables will be set accordingly in order to produce a binary only or a developer distribution of the nCine.
+  The only two allowed values are "*BinDist*" and "*DevDist*" respectively.
 
 - `NCINE_BUILD_TESTS`
 
@@ -20,13 +21,18 @@ You can tweak the generation of nCine project files with the following CMake opt
   You can set this option to enable or disable the compilation of unit tests.
   When enabled CMake will first download and compile [Google Test](https://github.com/google/googletest), then the unit tests.
 
+- `NCINE_BUILD_BENCHMARKS`
+
+  You can set this option to enable or disable the compilation of the micro benchmarks.
+  When enabled CMake will first download and compile [Google Benchmark](https://github.com/google/benchmark), then the micro benchmarks.
+
 - `NCINE_INSTALL_DEV_SUPPORT`
 
   By enabling this option the nCine installation package will include all the files that support development.
 
-- `NCINE_EXTRA_OPTIMIZATION`
+- `NCINE_LINKTIME_OPTIMIZATION`
 
-  This option will enable the use of extra optimization compiler flags when in Release mode (mostly autovectorization).
+  This option will enable the use of whole program and link time optimizations when in Release mode.
 
 - `NCINE_AUTOVECTORIZATION_REPORT`
 
@@ -35,9 +41,9 @@ You can tweak the generation of nCine project files with the following CMake opt
 - `NCINE_DYNAMIC_LIBRARY`
 
   By enabling this option the engine will be compiled as a dynamic library. Otherwise it will be compiled as a static library.
-  The latter will allow the compilation of additional tests but needs more work from the developer.
+  The latter will allow the compilation of additional tests but needs more work from the user.
 
-  When the engine is compiled as a static library any project using it needs to add the `NCINE_STATIC` preprocessor definition and link to all the dynamic libraries on which the engine normally depends.
+  When the engine is compiled as a static library any project using it needs to link to all the dynamic libraries on which the engine normally depends.
 
 - `NCINE_BUILD_DOCUMENTATION`
 
@@ -49,36 +55,52 @@ You can tweak the generation of nCine project files with the following CMake opt
 
 - `NCINE_EMBED_SHADERS`
 
-  By enabling this option CMake will export all shader files in a single file of C strings to be included in engine sources.
+  By enabling this option CMake will export all shader files in a single file of C strings to be included in the engine sources.
 
 - `NCINE_BUILD_ANDROID`
 
   This option will build the Android version of the engine.
 
+- `NCINE_WITH_IMGUI`
+
+  When this option is enabled the engine will feature an integration with the [Dear ImGui](https://github.com/ocornut/imgui) user interface toolkit.
+
+- `NCINE_WITH_TRACY`
+
+  When this option is enabled the engine will feature an integration with the [Tracy](https://bitbucket.org/wolfpld/tracy) frame profiler.
+
+- `NCINE_PREFERRED_BACKEND`
+
+  This option specifies the preferred backend on desktop in case both the supported ones are available. The only valid value are `GLFW` and `SDL2`.
+
 - `NCINE_ASSEMBLE_APK`
 
   This option is only available when `NCINE_BUILD_ANDROID` is on. It will automatically assemble the Android APK invoking the Gradle executable, if it could be found.
 
+- `NCINE_NDK_ARCHITECTURES`
+
+  This is a CMake list of the target architectures when compiling for Android. Supported ones are `armeabi-v7a`, `arm64-v8a` and `x86_64`.
+
 - `NDK_DIR`
 
   This string should be set to the path of the directory containing the Android NDK.
-  If this string is empty then the `ANDROID_NDK_HOME`, `ANDROID_NDK_ROOT` and `ANDROID_NDK` environment variables will be queried in this order.
+  If this string is not set to a valid directory then the `ANDROID_NDK_HOME`, `ANDROID_NDK_ROOT` and `ANDROID_NDK` environment variables will be queried in this order.
 
 - `NCINE_TESTS_DATA_DIR`
 
-  This string sets the path to the data directory to be embedded in example tests.
+  This string sets the path to the data directory that will be embedded in example tests.
 
 - `NCINE_CODE_COVERAGE`
 
-  This option enables the gcov coverage of GCC and Clang compilers. It is especially useful in combination with `NCINE_BUILD_UNIT_TESTS`.
+  This option enables the *gcov* coverage of GCC and Clang compilers. It is especially useful in combination with `NCINE_BUILD_UNIT_TESTS`.
 
 - `NCINE_ADDRESS_SANITIZER`
 
-  This option enables the AddressSanitizer memory error detector of GCC and Clang compilers.
+  This option enables the *AddressSanitizer* memory error detector of GCC and Clang compilers.
 
 - `NCINE_GCC_HARDENING`
 
-  This option enable the memory corruption mitigation methods of the GCC compiler.
+  This option enables the memory corruption mitigation methods of the GCC compiler.
 
 - `NCINE_DATA_DIR`
 
@@ -91,3 +113,7 @@ You can tweak the generation of nCine project files with the following CMake opt
 - `EXTERNAL_MSVC_DIR`
 
   This string should be set to the path of the directory containing the MSVC dependency libraries.
+
+- `NCINE_STARTUP_TEST`
+
+  This should be set to a valid target name of a test program. It will then become the startup project in Visual Studio.
