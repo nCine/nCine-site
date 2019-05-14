@@ -13,14 +13,13 @@ permalink: /features/
 - Basic math lbrary for vectors, 4x4 matrices and quaternions
 - Logging system with multiple levels and console or file output
 - [GLFW 3](http://www.glfw.org/) or [SDL 2](https://www.libsdl.org/) for window and input on PC
-- Joystick support with hot swap
+- Joystick support with hot swap and [gamepad mappings](https://wiki.libsdl.org/CategoryGameController)
 - Android assets support
-- Clean separation between implementation and interface classes
 - [Google Test](https://github.com/google/googletest) based unit tests with coverage checked with [Gcovr](http://gcovr.com/)
 - Microbenchmarked with the [Google Benchmark](https://github.com/google/benchmark) support library
 - [Doxygen](http://www.stack.nl/~dimitri/doxygen/) based documentation with [Graphviz](http://www.graphviz.org/) class diagrams
 - Periodically checked with [Cppcheck](http://cppcheck.sourceforge.net/) and [Valgrind](http://valgrind.org/)
-- Periodically linted with [Artistic Style](http://astyle.sourceforge.net/) and [Uncrustify](http://uncrustify.sourceforge.net/)
+- Periodically linted with [clang-format](https://clang.llvm.org/docs/ClangFormat.html) (previously with [Artistic Style](http://astyle.sourceforge.net/) and [Uncrustify](http://uncrustify.sourceforge.net/))
 - Instrumentation for the [Tracy](https://bitbucket.org/wolfpld/tracy) frame profiler
 
 ---

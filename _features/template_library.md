@@ -9,7 +9,7 @@ _image: template_library.png
 
 ![{{page.title}}](/img/features/{{page._image}})
 
-- Template based containers (heap and stack arrays, lists, hashmaps)
+- Template based containers (heap and stack arrays, lists, hashmaps, hashsets, sparse sets)
 - Forward and reverse iterators (for template containers and strings)
 - Unique and shared pointers
 - Template based algorithms

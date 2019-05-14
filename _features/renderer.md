@@ -10,7 +10,8 @@ _image: render_batcher.png
 ![{{page.title}}](/img/features/{{page._image}})
 
 - Support for [VAO](https://www.khronos.org/opengl/wiki/Vertex_Specification#Vertex_Array_Object) and [immutable textures](https://www.khronos.org/opengl/wiki/Texture_Storage#Immutable_storage)
+- Support OpenGL buffer updating both with or without [mapping](https://www.khronos.org/opengl/wiki/Buffer_Object#Mapping)
 - Support for indexed and instanced drawing
 - Automatic batching for sprites and text nodes
 - Custom meshes for sprites
-- [RenderDoc](https://renderdoc.org) compatible
+- [In-application](https://renderdoc.org/docs/in_application_api.html) integration with [RenderDoc](https://renderdoc.org/)

@@ -9,6 +9,6 @@ _image: lua_scripting.png
 
 ![{{page.title}}](/img/features/{{page._image}})
 
-- Extensive [Lua](http://lua.org/) API bindings
-- The user can write the whole game with Lua scripts...
-- or just use it for game object behaviours or data loading and saving
+- Extensive [Lua](http://lua.org/) API [bindings](/lua_api.html)
+- You can write the whole game with only Lua scripts...
+- or use them just for game object behaviours or data loading and saving

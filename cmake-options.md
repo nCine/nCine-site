@@ -61,6 +61,10 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   This option will build the Android version of the engine.
 
+- `NCINE_STRIP_BINARIES`
+
+  When this option is enabled all Linux and Android libraries and executables will be stripped with the `strip` command.
+
 - `NCINE_WITH_IMGUI`
 
   When this option is enabled the engine will feature an integration with the [Dear ImGui](https://github.com/ocornut/imgui) user interface toolkit.
@@ -68,6 +72,11 @@ You can tweak the generation of nCine project files with the following CMake opt
 - `NCINE_WITH_TRACY`
 
   When this option is enabled the engine will feature an integration with the [Tracy](https://bitbucket.org/wolfpld/tracy) frame profiler.
+
+- `NCINE_WITH_RENDERDOC`
+
+  When this option is enabled the engine will feature the [in-application](https://renderdoc.org/docs/in_application_api.html) integration with the [RenderDoc](https://renderdoc.org/) graphics debugger.
+  If the RenderDoc directory cannot be found automatically you can set its path with the `RENDERDOC_DIR` variable.
 
 - `NCINE_PREFERRED_BACKEND`
 
