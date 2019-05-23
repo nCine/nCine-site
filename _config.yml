@@ -23,6 +23,7 @@ description: A multi-platform 2D game engine
 
 # List of links in the navigation bar
 navbar-links:
+  Why: "why"
   Features: "features"
   Learn:
     - Samples: "samples"

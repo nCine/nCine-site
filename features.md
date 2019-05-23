@@ -27,6 +27,7 @@ permalink: /features/
 ## Long-term roadmap
 
 - Add an ECS system and BVH based scene culling
+- Abstract the rendering API and add a Vulkan implementation
 - Add a collision detection and response system
 - Separate game, input and audio update in different threads
 - Refine the thread-pool system and expose it to the user API

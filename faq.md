@@ -20,6 +20,8 @@ permalink: /faq/
 
    The main purpose of this project is learning new things. Reimplementing template based containers, iterators and algorithms gave me enough confidence to handle templates in C++.
 
+   Having used [Google Test](https://github.com/google/googletest) and [Google Benchmark](https://github.com/google/benchmark) also gave me enough confidence to know that it somehow works and sometimes performs well. :wink:
+
 5. **Are you going to support feature "X"?**
 
    The project is a constant work in progress but my spare time is limited and many basic functionalities are not there yet. You can help immensely by trying to develop something with the features that are available now and by giving me feedback about how to improve things.
