@@ -4,7 +4,7 @@ title: Multi-platform
 caption: Works on multiple platforms
 permalink: /features/multi-platform/
 _order: 11
-_image: android_wear.jpg
+_image: android.png
 ---
 
 ![{{page.title}}](/img/features/{{page._image}})
