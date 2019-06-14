@@ -24,7 +24,7 @@ description: A multi-platform 2D game engine
 # List of links in the navigation bar
 navbar-links:
   Info:
-    - Why: "why"
+    - Why nCine: "why"
     - Features: "features"
     - Gallery: "gallery"
     - Dev Updates: "https://encelo.github.io/tags/#nCine"

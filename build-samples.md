@@ -26,7 +26,7 @@ If you have [Ninja](https://ninja-build.org/) installed you can tell CMake to us
     cmake -G Ninja -S /usr/share/ncine/src -B $HOME/nCine-tests-build -D CMAKE_BUILD_TYPE=Debug
 
 ## Windows (Visual Studio)
-In order to build the samples using the *Developer Distribution* of the nCine you need to install [CMake](https://cmake.org/download/) and [Visual Studio 2017](https://www.visualstudio.com/) (the free Community version will work just fine).
+In order to build the samples using the *Developer Distribution* of the nCine you need to install [CMake](https://cmake.org/download/) and [Visual Studio](https://www.visualstudio.com/) (the free Community version will work just fine).
 
 After having installed the nCine *DevDist* package you should end up with a subdirectory named `src`.
 It contains the source code of all sample applications together with a `CMakeLists.txt` script that you can use to build them.
@@ -36,7 +36,7 @@ Open the CMake GUI and set the source code directory to the `src` subdirectory o
 You will also have to setup a different directory in which to build the binaries. Be sure to choose a directory in which you have write permissions.
 
 The next step is to press the **Configure** button and choose a generator which is compatible with the distributed library.
-At the time of writing the only supported generator is `Visual Studio 15 2017` on the `x64` architecture.
+At the time of writing the only tested generators are `Visual Studio 15 2017` and `Visual Studio 16 2019` on the `x64` architecture.
 
 If everything goes well you will see a bunch of CMake related files in the build directory but no Visual Studio solution yet.
 In order to create it you have to press the **Generate** button.

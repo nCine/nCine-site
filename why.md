@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Why?
+title: Why nCine?
 permalink: /why/
 ---
 
