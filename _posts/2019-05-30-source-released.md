@@ -2,6 +2,7 @@
 layout: post
 title: Source code released
 subtitle: Hosted on GitHub under the MIT license
+tags: [News]
 ---
 
 The time has come, the source code has been released!

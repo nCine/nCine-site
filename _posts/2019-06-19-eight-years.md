@@ -2,6 +2,7 @@
 layout: post
 title: Eight years in the works
 subtitle: Have a look at the first commit
+tags: [News]
 ---
 
 This is not the first anniversary post on the site, but there is an interesting difference this year.

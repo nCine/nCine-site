@@ -2,6 +2,7 @@
 layout: post
 title: Article on GameFromScratch
 subtitle: Check the video on YouTube
+tags: [News]
 ---
 
 Today [GameFromScratch](https://www.gamefromscratch.com/) has talked about the nCine!
