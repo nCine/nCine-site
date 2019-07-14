@@ -82,6 +82,11 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   This option specifies the preferred backend on desktop in case both the supported ones are available. The only valid value are `GLFW` and `SDL2`.
 
+- `NCINE_EMSCRIPTEN_THREADS`
+
+  This options enables the Emscripten Pthreads support by setting both `USE_PTHREADS` and `WASM_MEM_MAX` compiler and linker options.
+  It might slow down code execution if WebAssembly is disabled in the compilation scripts.
+
 - `NCINE_ASSEMBLE_APK`
 
   This option is only available when `NCINE_BUILD_ANDROID` is on. It will automatically assemble the Android APK invoking the Gradle executable, if it could be found.
@@ -122,6 +127,10 @@ You can tweak the generation of nCine project files with the following CMake opt
 - `EXTERNAL_MSVC_DIR`
 
   This string should be set to the path of the directory containing the MSVC dependency libraries.
+
+- `EXTERNAL_EMSCRIPTEN_DIR`
+
+  This string should be set to the path of the directory containing the Emscripten dependency libraries.
 
 - `NCINE_STARTUP_TEST`
 

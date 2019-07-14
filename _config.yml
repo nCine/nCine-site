@@ -23,6 +23,7 @@ navbar-links:
     - Features: "features"
     - Gallery: "gallery"
     - F.A.Q.: "faq"
+    - Web Tests: "web-tests"
   Learn:
     - Samples: "samples"
     - Documentation: "docs/index.html"
@@ -33,6 +34,7 @@ navbar-links:
     - Windows: "build-windows"
     - OSX: "build-osx"
     - Android: "build-android"
+    - Emscripten: "build-emscripten"
     - CMake options: "cmake-options"
     - Dev Dist: "dev-dist"
   C.I.: "ci"

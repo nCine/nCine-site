@@ -35,7 +35,7 @@ Then invoke CMake to compile them:
     cmake --build nCine-libraries-build
 
 ### Build the nCine library
-Building the nCine library is not much different from building its dependencies:
+Building the nCine library is not much different than building its dependencies:
 
     cmake -S nCine -B nCine-build
 

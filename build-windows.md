@@ -29,7 +29,7 @@ Build the solution to have all the dependency libraries generated in the `nCine-
 In this case you need to install a `patch` command and either specify it modifying the scripts in question or make it available through the system path variable.
 
 ### Build the nCine library
-Building the nCine library is not much different from building its dependencies: the first step is opening the CMake GUI.
+Building the nCine library is not much different than building its dependencies: the first step is opening the CMake GUI.
 
 Configure the generation step just as you made before but this time you will have more [CMake options](/cmake-options) in the table that you can tweak if needed.
 
