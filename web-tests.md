@@ -7,6 +7,7 @@ permalink: /web-tests/
 Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
 - [ncParticleEditor](/ncparticleeditor)
 - [ncPong](/ncpong)
+- [ncInvaders](/ncinvaders)
 - [apptest_animsprites](/apptests/apptest_animsprites.html)
 - [apptest_audio](/apptests/apptest_audio.html)
 - [apptest_camera](/apptests/apptest_camera.html)

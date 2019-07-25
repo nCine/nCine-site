@@ -38,6 +38,11 @@ A [Tracy](https://bitbucket.org/wolfpld/tracy/) capture of `apptest_camera` comp
 ![ncPong Lua](/img/gallery/ncPong_Lua.png "ncPong Lua")
 Part of the source code of the Lua version of `ncPong`
 
+## ncInvaders
+
+![ncInvaders](/img/gallery/ncInvaders.png "ncInvaders")
+`ncInvaders`, a simplified version of Space Invaders distributed with the nCine
+
 ## Videos
 
 <div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/PQRnxeBpo-c" frameborder="0" allowfullscreen></iframe></div>
