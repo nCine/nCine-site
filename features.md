@@ -20,7 +20,6 @@ permalink: /features/
 - [Doxygen](http://www.stack.nl/~dimitri/doxygen/) based documentation with [Graphviz](http://www.graphviz.org/) class diagrams
 - Periodically checked with [Cppcheck](http://cppcheck.sourceforge.net/) and [Valgrind](http://valgrind.org/)
 - Periodically linted with [clang-format](https://clang.llvm.org/docs/ClangFormat.html) (previously with [Artistic Style](http://astyle.sourceforge.net/) and [Uncrustify](http://uncrustify.sourceforge.net/))
-- Instrumentation for the [Tracy](https://bitbucket.org/wolfpld/tracy) frame profiler
 
 ---
 

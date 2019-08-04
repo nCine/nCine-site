@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ImGui integration
+title: ImGui Integration
 caption: ImGui debug overlay and profilers
 permalink: /features/imgui/
 _order: 1

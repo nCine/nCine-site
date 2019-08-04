@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lua scripting
+title: Lua Scripting
 caption: Lua integration for scripting
 permalink: /features/lua/
 _order: 2
