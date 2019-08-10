@@ -52,7 +52,7 @@ If you have the dependency libraries installed in the system but you want to use
 ### Build the ncPong example
 The same steps can be applied to the ncPong example game:
 
-    cmake -S nCPong -B nCPong-build
+    cmake -S ncPong -B ncPong-build
     cmake --build ncPong-build
 
 If you want to run the example game using the dependency libraries you have built yourself:

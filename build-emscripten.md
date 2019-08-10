@@ -44,7 +44,7 @@ The same is true for the compilation phase:
 ### Build the ncPong example
 The same steps can be applied to the ncPong example game:
 
-    emcmake cmake -S nCPong -B nCPong-build
+    emcmake cmake -S ncPong -B ncPong-build
     cmake --build ncPong-build
 
 *Note*: Remember to first execute the correct `emsdk_env.*` script for your host system.
