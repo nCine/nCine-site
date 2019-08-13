@@ -1,0 +1,55 @@
+---
+layout: page
+title: Download Information
+permalink: /download/
+---
+
+There are different ways to download the nCine and its accompanying projects.
+
+### Sources
+
+Being an open source project you will always have access to all source code on [GitHub](https://github.com/nCine).
+
+You start by cloning and build [nCine-libraries](https://github.com/nCine/nCine-libraries) and [nCine-android-libraries](https://github.com/nCine/nCine-android-libraries) and move to [nCine](https://github.com/nCine/nCine) and [nCine-data](https://github.com/nCine/nCine-data).
+
+You can then clone and build additional projects if you want:
+- [ncPong](https://github.com/nCine/ncPong) (and [ncPong-data](https://github.com/nCine/ncPong-data))
+- [ncInvaders](https://github.com/nCine/ncInvaders) (and [ncInvaders-data](https://github.com/nCine/ncInvaders-data))
+- [ncParticleEditor](https://github.com/nCine/ncParticleEditor) (and [ncParticleEditor-data](https://github.com/nCine/ncParticleEditor-data))
+- [ncTemplate](https://github.com/nCine/ncTemplate) (and [ncTemplate-data](https://github.com/nCine/ncTemplate-data))
+
+#### Develop Branch
+
+If you want to stay on the very bleeding edge of nCine development you can checkout the [develop](/download-develop) branch instead of `master`.
+
+Please note that if you build the `develop` branch of the nCine you should then checkout the same branch for additional projects too (if it exists), or you might incur in compilation errors.
+
+### Binaries
+
+If you prefer to skip the building phase and just download binaries you can follow two different ways.
+
+#### Releases
+
+The first one is through GitHub [releases](https://github.com/nCine/nCine/releases).
+
+The project follows a [calendar versioning](https://calver.org/) scheme (`YYYY.0M.MICRO`):
+
+- [2019.05](/download-201905), the first and currently only release (May 2019)
+
+#### Artifacts
+
+The second way of obtaining nCine binaries is through [continuous integration](/ci/) artifacts.
+Every project has a specific repository where the C.I. deposits its artifacts and they are all accessible on GitHub.
+
+You can, for example, go to the [nCine-artifacts](https://github.com/nCine/nCine-artifacts/) repository and then to the [all branches](https://github.com/nCine/nCine-artifacts/branches/all) page to have a list of all the supported combinations of OSes, compilers and branches.
+
+As an example you can select the [nCine-master-windows-vs2019](https://github.com/nCine/nCine-artifacts/tree/nCine-master-windows-vs2019) branch and download the installer or the portable archive of the nCine `master` branch compiled for Windows with Visual Studio 2019.
+
+The same thing is true for the [dependency libraries](https://github.com/nCine/nCine-libraries-artifacts/branches/all) (Android ones are included) and for the other projects, like [ncPong](https://github.com/nCine/ncPong-artifacts/branches/all), [ncInvaders](https://github.com/nCine/ncInvaders-artifacts/branches/all), [ncParticleEditor](https://github.com/nCine/ncParticleEditor-artifacts/branches/all) or [ncTemplate](https://github.com/nCine/ncTemplate-artifacts/branches/all).
+
+#### nCine-artifacts
+
+|Branch|Linux|macOS|Windows|MinGW|Emscripten|
+|-----:|-----|-----|-------|-----|----------|
+|`master`|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-master-linux-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-master-linux-clang)|[AppleClang](https://github.com/nCine/nCine-artifacts/tree/nCine-master-darwin-appleclang)|[VS2019](https://github.com/nCine/nCine-artifacts/tree/nCine-master-windows-vs2019) [VS2017](https://github.com/nCine/nCine-artifacts/tree/nCine-master-windows-vs2017)|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-master-mingw64-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-master-mingw64-clang)||
+|`develop`|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-linux-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-linux-clang)|[AppleClang](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-darwin-appleclang)|[VS2019](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-windows-vs2019) [VS2017](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-windows-vs2017)|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-mingw64-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-mingw64-clang)|[emcc](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-emscripten-emcc)|

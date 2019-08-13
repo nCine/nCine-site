@@ -26,8 +26,10 @@ navbar-links:
     - Web Tests: "web-tests"
   Learn:
     - Samples: "samples"
-    - Documentation: "docs/index.html"
-    - Lua API: "lua_api.html"
+    - Documentation (release): "docs/index.html"
+    - Lua API (release): "lua_api.html"
+    - Documentation (develop): "docs_dev/index.html"
+    - Lua API (develop): "lua_api_dev.html"
   Build:
     - Samples: "build-samples"
     - Linux: "build-linux"
@@ -37,6 +39,10 @@ navbar-links:
     - Emscripten: "build-emscripten"
     - CMake options: "cmake-options"
     - Dev Dist: "dev-dist"
+  Download:
+    - General Info: "download"
+    - Develop Branch: "download-develop"
+    - Release 2019.05: "download-201905"
   C.I.: "ci"
 
 # Image to show in the navigation bar - image must be a square (width = height)
