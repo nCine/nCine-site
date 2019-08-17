@@ -51,5 +51,11 @@ Watch the ImGui debug overlay in action
 <div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/RLNI5NMCJ1E" frameborder="0" allowfullscreen></iframe></div>
 A video showing some features of `ncParticleEditor`
 
+<div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/31k4adykiNA" frameborder="0" allowfullscreen></iframe></div>
+Gameplay video of `ncInvaders`
+
+<div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/5lSYZtRQhgQ" frameborder="0" allowfullscreen></iframe></div>
+Gameplay video of `ncPong`
+
 <div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/fUNGf3C8SOM" frameborder="0" allowfullscreen></iframe></div>
 A collage video of some of the example tests distributed with the nCine

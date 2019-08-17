@@ -5,15 +5,15 @@ permalink: /build-android/
 ---
 
 Before starting download and install [CMake](https://cmake.org/download/).
-In order to build the nCine library for Android you need to clone some git repositories:
+In order to build the nCine library for Android you need to clone or download some git repositories:
 
-- **nCine**, this is the main project
-- **nCine-android-libraries**, this project contains CMake scripts to build dependency libraries
-- **nCine-data**, the data files for the nCine tests (optional but recommended)
-- **ncPong**, a Pong game built with the nCine that is useful as an example project (optional)
-- **ncPong-data**, the data files for the Pong game (optional)
+- **[nCine](https://github.com/nCine/nCine)**, this is the main project
+- **[nCine-android-libraries](https://github.com/nCine/nCine-android-libraries)**, this project contains CMake scripts to build dependency libraries
+- **[nCine-data](https://github.com/nCine/nCine-data)**, the data files for the nCine tests (optional but recommended)
+- **[ncPong](https://github.com/nCine/ncPong)**, a Pong game built with the nCine that is useful as an example project (optional)
+- **[ncPong-data](https://github.com/nCine/ncPong-data)**, the data files for the Pong game (optional)
 
-For the nCine project to automatically find the dependencies and the data it is important to clone all the repositories in the same directory.
+For the nCine project to automatically find the dependencies and the data it is important that all repositories are in the same directory.
 
 ### Build the dependency libraries
 As for the other projects, the Android dependencies are built using CMake.
@@ -68,3 +68,10 @@ In order to build the Android version of ncPong you need to switch on the `NCPON
     cmake -S ncPong -B ncPong-build -D PACKAGE_BUILD_ANDROID=ON
     cd ncPong-build/android
     gradle build -PcmakeCommand=<path/to/cmake> -PndkDir=<path/to/NDK>
+
+### C.I. Scripts
+
+For reference you can have a look at the continuous integration scripts:
+- [nCine-android-libraries](https://github.com/nCine/nCine-android-libraries/blob/master/azure-pipelines.yml)
+- [nCine](https://github.com/nCine/nCine/blob/master/azure-pipelines.yml) (`Linux_macOS` job)
+- [ncPong](https://github.com/nCine/ncPong/blob/master/azure-pipelines.yml) (`Android` job)

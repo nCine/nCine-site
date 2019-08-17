@@ -5,7 +5,7 @@ permalink: /build-samples/
 ---
 
 ## Arch Linux
-Install the package that you have built from [AUR](https://aur.archlinux.org/) with *Pacman* (replace `<version>` with the specific version that you have built):
+Install the [package](https://aur.archlinux.org/packages/ncine-git/) that you have built from [AUR](https://aur.archlinux.org/) with *Pacman* (replace `<version>` with the specific version that you have built):
 
     sudo pacman -U  ncine-git-<version>-x86_64.pkg.tar.xz
 
@@ -36,7 +36,7 @@ Open the CMake GUI and set the source code directory to the `src` subdirectory o
 You will also have to setup a different directory in which to build the binaries. Be sure to choose a directory in which you have write permissions.
 
 The next step is to press the **Configure** button and choose a generator which is compatible with the distributed library.
-At the time of writing the only tested generators are `Visual Studio 15 2017` and `Visual Studio 16 2019` on the `x64` architecture.
+At the time of writing the only tested generators are `Visual Studio 16 2019` and `Visual Studio 15 2017` on the `x64` architecture.
 
 If everything goes well you will see a bunch of CMake related files in the build directory but no Visual Studio solution yet.
 In order to create it you have to press the **Generate** button.
@@ -53,7 +53,7 @@ If you want to step into the source code of a test project by setting breakpoint
 
 You can also use the command line in order to build with Visual Studio:
 
-    cmake.exe -G "Visual Studio 15 2017" -A x64 -S <path/to/nCine>/src -B nCine-tests-build
+    cmake.exe -G "Visual Studio 16 2019" -A x64 -S <path/to/nCine>/src -B nCine-tests-build
 
 And then invoke CMake again to start building:
 

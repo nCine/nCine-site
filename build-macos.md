@@ -1,10 +1,11 @@
 ---
 layout: page
-title: Build for Linux
-permalink: /build-linux/
+title: Build for macOS
+permalink: /build-macos/
 ---
 
-In order to build the nCine library using GCC or Clang on Linux you need to have CMake installed and clone or download the following repositories:
+Before starting download and install [CMake](https://cmake.org/download/).
+In order to build the nCine library using AppleClang on macOS you need to clone or download the following repositories:
 
 - **[nCine](https://github.com/nCine/nCine)**, this is the main project
 - **[nCine-libraries](https://github.com/nCine/nCine-libraries)**, this project contains CMake scripts to build dependency libraries (optional)
@@ -14,30 +15,21 @@ In order to build the nCine library using GCC or Clang on Linux you need to have
 
 For the nCine project to automatically find the dependencies and the data it is important that all repositories are in the same directory.
 
-### Install the dependency libraries
-In order to build the nCine library the following libraries need to be installed in the system:
+*Note*: If you install the CMake application bundle from the official site then your `cmake` executable will be `/Applications/CMake.app/Contents/bin/cmake`.
 
-- `glfw` or `sdl2`
-- `libogg`
-- `libpng`
-- `libvorbis`
-- `libwebp`
-- `openal`
-- `lua`
+### Build the dependency frameworks
+Open a terminal window and type the following in order to generate a Unix Makefile:
 
-### Build the dependency libraries
-In case you don't want the libraries installed system-wide or if you need a debug version, you can use the CMake scripts as per the other platforms:
+    cmake -G "Unix Makefiles" -S nCine-libraries -B nCine-libraries-build
 
-    cmake -S nCine-libraries -B nCine-libraries-build
-
-Then invoke CMake to compile them:
+Then invoke CMake again in order to compile the frameworks:
 
     cmake --build nCine-libraries-build
 
 ### Build the nCine library
 Building the nCine library is not much different than building its dependencies:
 
-    cmake -S nCine -B nCine-build
+    cmake -G "Unix Makefiles" -S nCine -B nCine-build
 
 This time you will have more [CMake options](/cmake-options) that you can tweak if needed.
 
@@ -45,19 +37,11 @@ The same is true for the compilation phase:
 
     cmake --build nCine-build
 
-If you have the dependency libraries installed in the system but you want to use the ones you have built yourself in the previous step, invoke CMake like this:
-
-    cmake -S nCine -B nCine-build -D CMAKE_PREFIX_PATH=$(pwd)/nCine-external
-
 ### Build the ncPong example
 The same steps can be applied to the ncPong example game:
 
-    cmake -S ncPong -B ncPong-build
+    cmake -G "Unix Makefiles" -S ncPong -B ncPong-build
     cmake --build ncPong-build
-
-If you want to run the example game using the dependency libraries you have built yourself:
-
-    LD_LIBRARY_PATH=$(pwd)/nCine-external/lib ./ncPong-build/ncpong
 
 ### CMake notes
 You need at least CMake 3.13 in order to use `-S <dir>` and `-B <dir>` in place of the old and undocumented `-H<dir>` and `-B<dir>` options.

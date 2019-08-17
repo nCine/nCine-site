@@ -34,7 +34,7 @@ navbar-links:
     - Samples: "build-samples"
     - Linux: "build-linux"
     - Windows: "build-windows"
-    - OSX: "build-osx"
+    - macOS: "build-macos"
     - Android: "build-android"
     - Emscripten: "build-emscripten"
     - CMake options: "cmake-options"
@@ -97,7 +97,7 @@ social-network-links:
 #  stackoverflow: "1234567/yourname"
 #  snapchat: yourname
 #  instagram: yourname
-#  youtube: user/yourname
+  youtube: channel/UCpSq3HhW55r8pCY7vqXEsoA
 #  spotify: yourname
 #  telephone: +12345678901
 #  steam: yourname

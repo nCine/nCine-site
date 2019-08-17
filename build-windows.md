@@ -6,15 +6,15 @@ permalink: /build-windows/
 
 ## Visual Studio and MSVC
 Before starting download and install [CMake](https://cmake.org/download/).
-In order to build the nCine library using Visual Studio you need to clone some git repositories:
+In order to build the nCine library using Visual Studio you need to clone or download some git repositories:
 
-- **nCine**, this is the main project
-- **nCine-libraries**, this project contains CMake scripts to build dependency libraries
-- **nCine-data**, the data files for the nCine tests (optional but recommended)
-- **ncPong**, a Pong game built with the nCine that is useful as an example project (optional)
-- **ncPong-data**, the data files for the Pong game (optional)
+- **[nCine](https://github.com/nCine/nCine)**, this is the main project
+- **[nCine-libraries](https://github.com/nCine/nCine-libraries)**, this project contains CMake scripts to build dependency libraries (optional)
+- **[nCine-data](https://github.com/nCine/nCine-data)**, the data files for the nCine tests (optional but recommended)
+- **[ncPong](https://github.com/nCine/ncPong)**, a Pong game built with the nCine that is useful as an example project (optional)
+- **[ncPong-data](https://github.com/nCine/ncPong-data)**, the data files for the Pong game (optional)
 
-For the nCine project to automatically find the dependencies and the data it is important to clone all the repositories in the same directory.
+For the nCine project to automatically find the dependencies and the data it is important that all repositories are in the same directory.
 
 ### Build the dependency libraries
 Open the CMake GUI and set the path to the source code (the `nCine-libraries` directory) and a different path to build the binaries.
@@ -45,7 +45,7 @@ You can use the command line to invoke CMake and build on Windows with Visual St
 
 Just be careful to pass the correct generator and toolset when you configure a build:
 
-    cmake -G "Visual Studio 15 2017" -A x64 -S <dir> -B <dir>
+    cmake -G "Visual Studio 16 2019" -A x64 -S <dir> -B <dir>
 
 And specify the build configuration type when you start the building process:
 
@@ -53,14 +53,14 @@ And specify the build configuration type when you start the building process:
 
 ## MSYS2 and MinGW-w64
 Before starting be sure that the CMake package `mingw-w64-x86_64-cmake` is installed in the system.
-Also clone the following git repositories:
+Also clone or download the following git repositories:
 
-- **nCine**, this is the main project
-- **nCine-data**, the data files for the nCine tests (optional but recommended)
-- **ncPong**, a Pong game built with the nCine that is useful as an example project (optional)
-- **ncPong-data**, the data files for the Pong game (optional)
+- **[nCine](https://github.com/nCine/nCine)**, this is the main project
+- **[nCine-data](https://github.com/nCine/nCine-data)**, the data files for the nCine tests (optional but recommended)
+- **[ncPong](https://github.com/nCine/ncPong)**, a Pong game built with the nCine that is useful as an example project (optional)
+- **[ncPong-data](https://github.com/nCine/ncPong-data)**, the data files for the Pong game (optional)
 
-For the nCine project to automatically find the dependencies and the data it is important to clone all the repositories in the same directory.
+For the nCine project to automatically find the dependencies and the data it is important that all repositories are in the same directory.
 
 ## Install the dependency libraries
 In order to build the nCine library the following libraries need to be installed in the system:
@@ -98,3 +98,10 @@ You need at least CMake 3.13 also to specify the generator platform via the `-A`
 You can use `-G Ninja` to use the Ninja generator and speed up the compilation phase accordingly.
 
 If you are not using the `Ninja` generator then you can, since CMake 3.12, pass `-j <num_jobs>` to your `cmake --build` command in order to parallelize the compilation.
+
+## C.I. Scripts
+
+For reference you can have a look at the continuous integration scripts:
+- [nCine-libraries](https://github.com/nCine/nCine-libraries/blob/master/azure-pipelines.yml) (`Windows` job)
+- [nCine](https://github.com/nCine/nCine/blob/master/azure-pipelines.yml) (`Windows_MinGW` job)
+- [ncPong](https://github.com/nCine/ncPong/blob/master/azure-pipelines.yml) (`Windows_MinGW` job)
