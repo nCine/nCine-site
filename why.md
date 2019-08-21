@@ -9,7 +9,7 @@ There are so many game engines out there that yet another one is just a complete
 I know it wasn't a waste for me, I learned plenty of stuff and had lot of fun programming it.
 It might have ceased being a waste for others too: the project grew a lot during those years and could come in handy sometimes.
 
-It will likely be less fascinating to users of big engines like [Unreal](https://www.unrealengine.com), [Unity](https://unity.com/) or [Godot](https://godotengine.org/), but be interesting for users of smaller ones like [LibGDX](https://libgdx.badlogicgames.com/) and [Cocos2d-x](https://cocos2d-x.org/), or frameworks like [LÖVE](https://love2d.org/), [SFML](https://www.sfml-dev.org/) and [LWJGL](https://www.lwjgl.org/).
+It will likely be less fascinating to users of big engines like [Unreal](https://www.unrealengine.com), [Unity](https://unity.com/) or [Godot](https://godotengine.org/), but be interesting for users of frameworks like [Cocos2d-x](https://cocos2d-x.org/), [MonoGame](http://www.monogame.net/), [LibGDX](https://libgdx.badlogicgames.com/), [LÖVE](https://love2d.org/), [SFML](https://www.sfml-dev.org/) or [LWJGL](https://www.lwjgl.org/).
 
 Some of the use cases for it are:
 

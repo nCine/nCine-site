@@ -15,6 +15,7 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
   - The `setResolution()` helper method has been removed as it is now possible to call `resolution.set()`
   - In Lua `x_res` and `y_res` have been replaced by the `resolution` 2D vector
 - The old non ImGui debug overlay has been deleted. If you need the debug overlay you also need to enable the ImGui integration
+  - As part of this change the `fontTexFilename` and `fontFntFilename` strings in the `AppConfiguration` class have been deleted
 - The `withProfilerGraphs` and `withInfoText` flags in the `AppConfiguration` class has been unified into a single `withDebugOverlay` flag
   - You have to explicitely set the new flag to `true` to enable the debug overlay even when your application is compiled in debug mode
 - Many `nctl::String::copy()` methods have been turned into `assign()` methods in order to be more consistent with STL
@@ -41,6 +42,12 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 
 ### Improvements
 
+- The version of the integrated Tracy has gone from [v0.4.1](https://bitbucket.org/wolfpld/tracy/src/v0.4.1/) to [v0.5](https://bitbucket.org/wolfpld/tracy/src/v0.5/)
+  - It is now easier to use Tracy in custom nCine projects, including on Android
+  - Threads can be named so that they can be tracked in the Tracy profiler
+  - You can now also retrieve current thread priority or set a new one
+  - All log entries are written out as coloured Tracy messages
+  - Threads id are invalidated on join and cancel so that they can be reused
 - The version of the integrated ImGui has gone from [v1.70](https://github.com/ocornut/imgui/releases/tag/v1.70) to [v1.72b](https://github.com/ocornut/imgui/releases/tag/v1.72b)
 - The GameController mapping database has been updated from the one included in SDL 2.0.9 to the one in SDL 2.0.10
 - The `SceneNode` classes has seen the addition of long awaited helper methods in the shape of `setParent()`, `alpha()` and `absAlpha()`
