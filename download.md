@@ -6,6 +6,12 @@ permalink: /download/
 
 There are different ways to download the nCine and its accompanying projects.
 
+### ncline
+
+If you want an all-in-one solution to download, configure and build the libraries, the engine and the additional projects then check [ncline](https://github.com/nCine/ncline): the nCine command line tool.
+
+You can download a binary archive from one of those [branches](https://github.com/nCine/ncline-artifacts/branches/all), depending on the platform and compiler you use.
+
 ### Sources
 
 Being an open source project you will always have access to all source code on [GitHub](https://github.com/nCine).
