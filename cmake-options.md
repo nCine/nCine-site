@@ -65,6 +65,36 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   When this option is enabled all Linux and Android libraries and executables will be stripped with the `strip` command.
 
+- `NCINE_WITH_THREADS`
+
+  This option enables the support for the system agnostic threads API.
+  On Emscripten the Pthreads support is disabled by default as it is in a prototyping stage.
+
+- `NCINE_WITH_GLEW`
+
+  This option enables the integration with the GLEW library and cannot be turned off on Windows.
+
+- `NCINE_WITH_PNG`
+
+  This option enables the integration with the zlib and libpng libraries to allow PNG images loading.
+
+- `NCINE_WITH_WEBP`
+
+  This option enables the integration with the libwebp library to allow WebP images loading.
+
+- `NCINE_WITH_AUDIO`
+
+  This option enables the audio and the integration with the OpenAL library.
+
+- `NCINE_WITH_VORBIS`
+
+  This option enables the integration with the libogg and libvorbis libraries to allow Ogg Vorbis sound loading.
+  It is automatically disabled when `NCINE_WITH_AUDIO` is not enabled.
+
+- `NCINE_WITH_LUA`
+
+  This option enables the scripting API and the integration with the Lua library.
+
 - `NCINE_WITH_IMGUI`
 
   When this option is enabled the engine will feature an integration with the [Dear ImGui](https://github.com/ocornut/imgui) user interface toolkit.

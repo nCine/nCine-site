@@ -39,6 +39,8 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
   - More checks are now performed to ensure the text can be properly rendered
   - More glyph channel configurations are now supported and rendered correctly
   - The `Font` class can be constructed with a single parameter: the FNT file. The texture will be loaded according to the file specified in the first `page` tag.
+- When you compile the engine you can now choose to disable the support for various dependency libraries and features
+  - You can disable threads support, Lua bindings, Png or WebP image loading, Ogg Vorbis sound loading or audio altogether
 
 ### Improvements
 
@@ -61,8 +63,8 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - You can now enable the ImGui debug overlay even when the scenegraph is disabled
   - In this case be sure to track OpenGL states using `GLBlending`, `GLDepthTest` and the new `GLCullFace` class
 - The `Font` class has a new query method, `numKernings()`, to retrieve the number of kerning pairs in a font (it is called `num_kernings()` in Lua)
-- The Android Gradle plugin version has been updated from 3.4.0 to 3.4.1
-  - The change has been reflected in the template project as well
+- The Android Gradle plugin version has been updated from 3.4.0 to 3.4.1 and Android build tools from 28.0.3 to 29.0.2
+  - The changes have been reflected in the template project as well
 
 ### Fixes
 
