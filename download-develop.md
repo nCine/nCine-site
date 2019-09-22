@@ -50,7 +50,7 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
   - You can now also retrieve current thread priority or set a new one
   - All log entries are written out as coloured Tracy messages
   - Threads id are invalidated on join and cancel so that they can be reused
-- The version of the integrated ImGui has gone from [v1.70](https://github.com/ocornut/imgui/releases/tag/v1.70) to [v1.72b](https://github.com/ocornut/imgui/releases/tag/v1.72b)
+- The version of the integrated ImGui has gone from [v1.70](https://github.com/ocornut/imgui/releases/tag/v1.70) to [v1.73](https://github.com/ocornut/imgui/releases/tag/v1.73)
 - The GameController mapping database has been updated from the one included in SDL 2.0.9 to the one in SDL 2.0.10
 - The `SceneNode` classes has seen the addition of long awaited helper methods in the shape of `setParent()`, `alpha()` and `absAlpha()`
   - The first one makes it easy and intuitive to set a node parent without going the opposite way by calling `parent->addChildNode(this)`
@@ -63,6 +63,9 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - You can now enable the ImGui debug overlay even when the scenegraph is disabled
   - In this case be sure to track OpenGL states using `GLBlending`, `GLDepthTest` and the new `GLCullFace` class
 - The `Font` class has a new query method, `numKernings()`, to retrieve the number of kerning pairs in a font (it is called `num_kernings()` in Lua)
+- It is now possible to access the array of animations in an `AnimatedSprite` and the array of rectangles in a `RectAnimation`
+- On Windows the executables use the Windows subsystem instead of the console one
+  - They will also expose version properties thanks to the [VERSIONINFO](https://docs.microsoft.com/en-us/windows/win32/menurc/versioninfo-resource) file
 - The Android Gradle plugin version has been updated from 3.4.0 to 3.4.1 and Android build tools from 28.0.3 to 29.0.2
   - The changes have been reflected in the template project as well
 
@@ -73,3 +76,4 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - Some changes dictated by the layout of the new `ncTemplate` project
   - The CMake scripts now expect a `nCine-data/icons/icon.ico` file instead of the old `nCine.ico`
   - Installers are now built with the `CPACK_PACKAGE_VENDOR` and `CPACK_PACKAGE_HOMEPAGE_URL` variables correctly set
+- The returned value for `GL_MAX_UNIFORM_BLOCK_SIZE` is now clamped to 64kB because some OpenGL drivers might return very big numbers
