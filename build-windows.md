@@ -73,6 +73,15 @@ In order to build the nCine library the following libraries need to be installed
 - `mingw-w64-x86_64-libwebp`
 - `mingw-w64-x86_64-openal`
 
+### Build the dependency libraries
+In case you don't want the libraries installed system-wide or if you need a debug version, you can use the CMake scripts as per the other platforms:
+
+    cmake -G "MSYS Makefiles" -S nCine-libraries -B nCine-libraries-build
+
+Then invoke CMake to compile them:
+
+    cmake --build nCine-libraries-build
+
 ### Build the nCine library
 To generate the Makefile for the nCine library open a MSYS2 shell and type:
 
@@ -83,6 +92,10 @@ This time you will have more [CMake options](/cmake-options) that you can tweak 
 To compile it invoke the CMake command again:
 
     cmake --build nCine-build
+
+If you have the dependency libraries installed in the system but you want to use the ones you have built yourself in the previous step, invoke CMake like this:
+
+    cmake -G "MSYS Makefiles" -S nCine -B nCine-build -D CMAKE_PREFIX_PATH=$(pwd)/nCine-external
 
 ### Build the ncPong example
 The same steps can be applied to the ncPong example game:
