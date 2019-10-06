@@ -4,6 +4,8 @@ title: Build for Android
 permalink: /build-android/
 ---
 
+|**Note**: You can also [download](/download) binaries or automate the compilation with [ncline](https://github.com/nCine/ncline).|
+
 Before starting download and install [CMake](https://cmake.org/download/).
 In order to build the nCine library for Android you need to clone or download some git repositories:
 

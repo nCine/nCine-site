@@ -37,8 +37,8 @@ navbar-links:
     - macOS: "build-macos"
     - Android: "build-android"
     - Emscripten: "build-emscripten"
+    - Dev Dist: "build-dev-dist"
     - CMake options: "cmake-options"
-    - Dev Dist: "dev-dist"
   Download:
     - General Info: "download"
     - Develop Branch: "download-develop"

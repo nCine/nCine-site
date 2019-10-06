@@ -4,6 +4,8 @@ title: Build for Emscripten
 permalink: /build-emscripten/
 ---
 
+|**Note**: You can also [download](/download) binaries or automate the compilation with [ncline](https://github.com/nCine/ncline).|
+
 Building for Emscripten is not much different than building for any other platform.
 Just be sure to follow the [instructions](https://emscripten.org/docs/getting_started/downloads.html) on the Emscripten website to download and install the SDK.
 

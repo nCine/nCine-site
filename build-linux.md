@@ -4,6 +4,8 @@ title: Build for Linux
 permalink: /build-linux/
 ---
 
+|**Note**: You can also [download](/download) binaries or automate the compilation with [ncline](https://github.com/nCine/ncline).|
+
 In order to build the nCine library using GCC or Clang on Linux you need to have CMake installed and clone or download the following repositories:
 
 - **[nCine](https://github.com/nCine/nCine)**, this is the main project

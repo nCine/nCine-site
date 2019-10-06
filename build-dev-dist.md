@@ -1,8 +1,10 @@
 ---
 layout: page
 title: Build a Developer Distribution
-permalink: /dev-dist/
+permalink: /build-dev-dist/
 ---
+
+|**Note**: You can also [download](/download) binaries or automate the compilation with [ncline](https://github.com/nCine/ncline).|
 
 nCine can be built with preset options to make a developer distribution. This type of build is very useful on Windows and OS X, where an installer can be created for the user to develop with the nCine.
 

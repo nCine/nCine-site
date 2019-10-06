@@ -4,6 +4,8 @@ title: Build the samples
 permalink: /build-samples/
 ---
 
+|**Note**: You can also [download](/download) binaries or automate the compilation with [ncline](https://github.com/nCine/ncline).|
+
 ## Arch Linux
 Install the [package](https://aur.archlinux.org/packages/ncine-git/) that you have built from [AUR](https://aur.archlinux.org/) with *Pacman* (replace `<version>` with the specific version that you have built):
 
