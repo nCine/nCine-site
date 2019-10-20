@@ -25,6 +25,7 @@ navbar-links:
     - F.A.Q.: "faq"
     - Web Tests: "web-tests"
   Learn:
+    - Video Tutorials: "video-tutorials"
     - Samples: "samples"
     - Documentation (release): "docs/index.html"
     - Lua API (release): "lua_api.html"
