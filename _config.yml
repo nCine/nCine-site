@@ -43,6 +43,7 @@ navbar-links:
   Download:
     - General Info: "download"
     - Develop Branch: "download-develop"
+    - Release 2019.10: "download-201910"
     - Release 2019.05: "download-201905"
   C.I.: "ci"
 

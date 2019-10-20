@@ -40,7 +40,8 @@ The first one is through GitHub [releases](https://github.com/nCine/nCine/releas
 
 The project follows a [calendar versioning](https://calver.org/) scheme (`YYYY.0M.MICRO`):
 
-- [2019.05](/download-201905), the first and currently only release (May 2019)
+- [2019.10](/download-201910), from October 2019
+- [2019.05](/download-201905), from May 2019
 
 #### Artifacts
 
