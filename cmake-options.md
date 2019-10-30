@@ -99,6 +99,10 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   When this option is enabled the engine will feature an integration with the [Dear ImGui](https://github.com/ocornut/imgui) user interface toolkit.
 
+- `NCINE_WITH_NUKLEAR`
+
+  When this option is enabled the engine will feature an integration with the [Nuklear](https://github.com/vurtun/nuklear) user interface toolkit.
+
 - `NCINE_WITH_TRACY`
 
   When this option is enabled the engine will feature an integration with the [Tracy](https://bitbucket.org/wolfpld/tracy) frame profiler.

@@ -12,6 +12,8 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 
 ### New Features
 
+- [Nuklear](https://github.com/vurtun/nuklear) integration for fully skinnable user interfaces
+
 ### Improvements
 
 - The logging system is initialized earlier and you can now use it inside `onPreInit()`
