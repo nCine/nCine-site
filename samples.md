@@ -12,6 +12,8 @@ The samples are all prefixed with `apptest_`, they open a window, use input and 
 
 ## List of samples
 
+- `apptest_anchor`:
+  A test showing different kind of sprites and let you change their properties with a Dear ImGui UI
 - `apptest_animsprites`:
   A test showing an animated sprite walking around the screen that you can control with different input devices
 - `apptest_audio`:
