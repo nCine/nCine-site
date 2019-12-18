@@ -5,6 +5,7 @@ permalink: /web-tests/
 ---
 
 Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
+- [ncJugiMapAPIDemo](/ncjugimapapidemo)
 - [ncParticleEditor](/ncparticleeditor)
 - [ncPong](/ncpong)
 - [ncInvaders](/ncinvaders)

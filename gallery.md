@@ -1,9 +1,32 @@
 ---
 layout: page
 title: Gallery
-subtitle: Some screenshots to show nCine features, tests and projects
+subtitle: Some screenshots to show nCine projects, tests and features
 permalink: /gallery/
 ---
+
+## ncJugiMapAPIDemo
+
+![ncJugiMapAPIDemo](/img/gallery/ncJugiMapAPIDemo.png "ncJugiMapAPIDemo")
+`ncJugiMapAPIDemo`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
+
+## ncParticleEditor
+
+![ncParticleEditor](/img/gallery/ncParticleEditor.png "ncParticleEditor")
+`ncParticleEditor`, an ImGui and Lua based tool made with the nCine
+
+## ncPong
+
+![ncPong](/img/gallery/ncPong.png "ncPong")
+`ncPong`, the example game project distributed with the nCine
+
+![ncPong Lua](/img/gallery/ncPong_Lua.png "ncPong Lua")
+Part of the source code of the Lua version of `ncPong`
+
+## ncInvaders
+
+![ncInvaders](/img/gallery/ncInvaders.png "ncInvaders")
+`ncInvaders`, a simplified version of Space Invaders distributed with the nCine
 
 ## nCine
 
@@ -25,25 +48,10 @@ A [Tracy](https://bitbucket.org/wolfpld/tracy/) capture of `apptest_camera` comp
 ![apptest_sinescroller](/img/gallery/apptest_sinescroller.png "apptest_sinescroller")
 `apptest_sinescroller`, a small homage to old-skool demoscene sine scrollers
 
-## ncParticleEditor
-
-![ncParticleEditor](/img/gallery/ncParticleEditor.png "ncParticleEditor")
-`ncParticleEditor`, an ImGui and Lua based tool made with the nCine
-
-## ncPong
-
-![ncPong](/img/gallery/ncPong.png "ncPong")
-`ncPong`, the example game project distributed with the nCine
-
-![ncPong Lua](/img/gallery/ncPong_Lua.png "ncPong Lua")
-Part of the source code of the Lua version of `ncPong`
-
-## ncInvaders
-
-![ncInvaders](/img/gallery/ncInvaders.png "ncInvaders")
-`ncInvaders`, a simplified version of Space Invaders distributed with the nCine
-
 ## Videos
+
+<div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/JJI9yW46H1A" frameborder="0" allowfullscreen></iframe></div>
+A video showing the ncJugiMapAPIDemo
 
 <div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/PQRnxeBpo-c" frameborder="0" allowfullscreen></iframe></div>
 Watch the ImGui debug overlay in action
