@@ -15,3 +15,4 @@ _image: render_batcher.png
 - Automatic batching for sprites and text nodes
 - Custom meshes for sprites
 - [In-application](https://renderdoc.org/docs/in_application_api.html) integration with [RenderDoc](https://renderdoc.org/)
+- Support for Google [ANGLE](http://angleproject.org) libraries on Windows

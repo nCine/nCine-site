@@ -74,6 +74,11 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   This option enables the integration with the GLEW library and cannot be turned off on Windows.
 
+- `NCINE_WITH_ANGLE`
+
+  This option enables the support for Google [ANGLE](http://angleproject.org) libraries on Windows.
+  It will work only when compiling with MSVC and when libraries are found inside the `EXTERNAL_MSVC_DIR` directory.
+
 - `NCINE_WITH_PNG`
 
   This option enables the integration with the zlib and libpng libraries to allow PNG images loading.

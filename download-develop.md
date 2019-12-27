@@ -39,6 +39,7 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - The `Matrix4x4<T>` can now translate, rotate and scale in place, avoiding a full matrix multiplication
 - Automatic sprite batching is now available on Emscripten
   - You can choose the fixed batch size with a variable in the `AppConfiguration` class
+- Added support for [Google ANGLE](http://angleproject.org) libraries on Windows
 - Sorting of render commands is now stable
   - If two commands have the same material sorting key then a secondary key based on node creation time is used
 
