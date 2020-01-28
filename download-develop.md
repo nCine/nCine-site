@@ -29,14 +29,16 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 ### Improvements
 
 - The logging system is initialized earlier and can be used inside `onPreInit()`
+- The Android asset manager is initialized earlier and can be used inside `onPreInit()`
 - Handling of windows resizing events has been fixed
 - Emscripten applications react to window resizing and fullscreen events
 - Emscripten applications can now load and save local files
 - Sprite flipping methods now take a status flag
-- The version of the integrated Tracy has gone from [v0.5](https://bitbucket.org/wolfpld/tracy/src/v0.5/) to [v0.6.1](https://bitbucket.org/wolfpld/tracy/src/v0.6.1/)
+- The version of the integrated Tracy has gone from [v0.5](https://bitbucket.org/wolfpld/tracy/src/v0.5/) to [v0.6.2](https://bitbucket.org/wolfpld/tracy/src/v0.6.2/)
 - The version of the integrated ImGui has gone from [v1.73](https://github.com/ocornut/imgui/releases/tag/v1.73) to [v1.74](https://github.com/ocornut/imgui/releases/tag/v1.74)
 - Deletion of children scene nodes upon parent destruction has been made optional
 - The `Matrix4x4<T>` can now translate, rotate and scale in place, avoiding a full matrix multiplication
+  - It can now also be multiplied on the right side of a vector
 - Automatic sprite batching is now available on Emscripten
   - You can choose the fixed batch size with a variable in the `AppConfiguration` class
 - Added support for [Google ANGLE](http://angleproject.org) libraries on Windows
@@ -53,3 +55,4 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - The Lua stack is now cleaned after a failure in calling a function
   - Previously the stack would easily overflow if some callbacks were not defined
 - String lenght is now updated if a string is truncated when using a formatting method
+- Fixed OpenGL FBO wrapper class when dealing with reading and drawing buffers
