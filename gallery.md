@@ -5,6 +5,11 @@ subtitle: Some screenshots to show nCine projects, tests and features
 permalink: /gallery/
 ---
 
+## SpookyGhost
+
+![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost")
+[`SpookyGhost`](https://encelo.itch.io/spookyghost), a procedural sprite animation tool made with the nCine
+
 ## ncJugiMapAPIDemo
 
 ![ncJugiMapAPIDemo](/img/gallery/ncJugiMapAPIDemo.png "ncJugiMapAPIDemo")
@@ -49,6 +54,9 @@ A [Tracy](https://bitbucket.org/wolfpld/tracy/) capture of `apptest_camera` comp
 `apptest_sinescroller`, a small homage to old-skool demoscene sine scrollers
 
 ## Videos
+
+<div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/iqxX3VTt39o" frameborder="0" allowfullscreen></iframe></div>
+Creating an animated tree in the wind with SpookyGhost
 
 <div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/JJI9yW46H1A" frameborder="0" allowfullscreen></iframe></div>
 A video showing the ncJugiMapAPIDemo
