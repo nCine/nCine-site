@@ -119,7 +119,10 @@ You can tweak the generation of nCine project files with the following CMake opt
 
 - `NCINE_PREFERRED_BACKEND`
 
-  This option specifies the preferred backend on desktop in case both the supported ones are available. The only valid value are `GLFW` and `SDL2`.
+  This option specifies the preferred backend to use on desktop for input and window handling.
+  Possible values include `GLFW`, `SDL2` and `QT5`.
+
+  If you choose `QT5` don't forget to define `Qt5_DIR` and optionally `Qt5Gamepad_DIR` for CMake to find the required libraries.
 
 - `NCINE_EMSCRIPTEN_THREADS`
 

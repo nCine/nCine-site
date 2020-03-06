@@ -2,14 +2,14 @@
 title: nCine
 
 # Short description of your site
-description: A multi-platform 2D game engine
+description: An open source cross-platform 2D game engine written in C++ with an emphasis on performance. Suitable for games, prototypes, tools and technical demos.
 
 # --- Local development options ---
 # If your website is hosted locally rather than on GitHub, then you need to uncomment the next two parameters to set the url and baseurl
 # *** If you're not sure what this mean, then leave this section as it is. Only modify the url and baseurl if you know what you're doing!***
 
 # url is the the website domain URL without a trailing slash
-#url: "https://example.com"
+url: "https://ncine.github.io"
 
 # baseurl should be an empty string
 #baseurl: ""

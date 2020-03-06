@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Multi-platform
+title: Cross-platform
 caption: Works on multiple platforms
-permalink: /features/multi-platform/
+permalink: /features/cross-platform/
 _order: 11
 _image: android.png
 ---

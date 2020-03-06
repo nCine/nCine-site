@@ -22,6 +22,10 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
   - There is a new `apptest_anchor` application that shows all new node features
 - Drawable nodes support custom alpha blending factors
 - [Nuklear](https://github.com/Immediate-Mode-UI/Nuklear) integration for fully skinnable user interfaces
+- You can now embed the whole engine inside a Qt5 widget by choosing the Qt5 desktop backend
+  - If the [Qt Gamepad](https://doc.qt.io/qt-5/qtgamepad-module.html) library is available it will be used for gamepad input events
+- Touch events are supported on desktop through the SDL2 and Qt5 backends
+  - They now also provide information about the touch pressure
 - ImGui and Nuklear integrations support custom fonts loading
 - Added a new unclamped three channels `ColorHdr` class
 - The `IAppEventHandler` class now receives `onSuspend()` and `onResume()` events
@@ -34,8 +38,8 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - Emscripten applications react to window resizing and fullscreen events
 - Emscripten applications can now load and save local files
 - Sprite flipping methods now take a status flag
-- The version of the integrated Tracy has gone from [v0.5](https://bitbucket.org/wolfpld/tracy/src/v0.5/) to [v0.6.2](https://bitbucket.org/wolfpld/tracy/src/v0.6.2/)
-- The version of the integrated ImGui has gone from [v1.73](https://github.com/ocornut/imgui/releases/tag/v1.73) to [v1.74](https://github.com/ocornut/imgui/releases/tag/v1.74)
+- The version of the integrated Tracy has gone from [v0.5](https://bitbucket.org/wolfpld/tracy/src/v0.5/) to [v0.6.3](https://bitbucket.org/wolfpld/tracy/src/v0.6.3/)
+- The version of the integrated ImGui has gone from [v1.73](https://github.com/ocornut/imgui/releases/tag/v1.73) to [v1.75](https://github.com/ocornut/imgui/releases/tag/v1.75)
 - Deletion of children scene nodes upon parent destruction has been made optional
 - The `Matrix4x4<T>` can now translate, rotate and scale in place, avoiding a full matrix multiplication
   - It can now also be multiplied on the right side of a vector
@@ -44,6 +48,7 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - Added support for [Google ANGLE](http://angleproject.org) libraries on Windows
 - Sorting of render commands is now stable
   - If two commands have the same material sorting key then a secondary key based on node creation time is used
+- All kind of hashmap and hashset containers can now correctly use `const char *` as key type
 
 ### Fixes
 
