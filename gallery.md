@@ -10,7 +10,10 @@ permalink: /gallery/
 ![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost")
 [`SpookyGhost`](https://encelo.itch.io/spookyghost), a procedural sprite animation tool made with the nCine
 
-## ncJugiMapAPIDemo
+## JugiMap API Demos
+
+![ncJugiMapParallaxScrolling](/img/gallery/ncJugiMapParallaxScrolling.png "ncJugiMapParallaxScrolling")
+`ncJugiMapParallaxScrolling`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
 
 ![ncJugiMapAPIDemo](/img/gallery/ncJugiMapAPIDemo.png "ncJugiMapAPIDemo")
 `ncJugiMapAPIDemo`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
@@ -64,6 +67,11 @@ nCine as a custom Qt5 widget
   <iframe width="750" height="422" src="https://www.youtube.com/embed/iqxX3VTt39o" frameborder="0" allowfullscreen></iframe>
 </div>
 Creating an animated tree in the wind with SpookyGhost
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/0gfgShTNvSw" frameborder="0" allowfullscreen></iframe>
+</div>
+A video showing the ncJugiMapParallaxScrolling demo
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe width="750" height="422" src="https://www.youtube.com/embed/JJI9yW46H1A" frameborder="0" allowfullscreen></iframe>

@@ -15,6 +15,9 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - Removed `setOpaqueTexture()` sprite method
   - You can achieve the same result with the general `setBlendingEnabled(false)`
 - The `Matrix4x4<T>::scale()` static method has been renamed to `Matrix4x4<T>::scaling()`
+- The `dataPath()` and `savePath()` methods of `IFile` have been moved to the new `FileSystem` class
+  - The `access()` method of `IFile` have been superseded by the more powerful query methods of the `FileSystem` class
+  - The `nc.application.datapath()` Lua function is now `nc.fs.get_datapath()`
 
 ### New Features
 
@@ -26,6 +29,8 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
   - If the [Qt Gamepad](https://doc.qt.io/qt-5/qtgamepad-module.html) library is available it will be used for gamepad input events
 - Touch events are supported on desktop through the SDL2 and Qt5 backends
   - They now also provide information about the touch pressure
+- There is now a `FileSystem` class to help you query and manipulate paths, files, and directories
+  - It comes with a new `apptest_filebrowser` application that shows an ImGui based file browser
 - ImGui and Nuklear integrations support custom fonts loading
 - Added a new unclamped three channels `ColorHdr` class
 - The `IAppEventHandler` class now receives `onSuspend()` and `onResume()` events
@@ -49,6 +54,7 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - Sorting of render commands is now stable
   - If two commands have the same material sorting key then a secondary key based on node creation time is used
 - All kind of hashmap and hashset containers can now correctly use `const char *` as key type
+- It is now possible to set the swap interval on all desktop backends with `IGfxDevice::setSwapInterval()`
 
 ### Fixes
 

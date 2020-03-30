@@ -14,6 +14,7 @@ permalink: /features/
 - Logging system with multiple levels and console or file output
 - [GLFW 3](http://www.glfw.org/) or [SDL 2](https://www.libsdl.org/) for window and input on PC
 - [Nuklear](https://github.com/vurtun/nuklear) integration for fully skinnable user interfaces
+- FileSystem API to query or manipulate paths, files, and directories
 - Joystick support with hot swap and [gamepad mappings](https://wiki.libsdl.org/CategoryGameController)
 - Android assets support
 - [Google Test](https://github.com/google/googletest) based unit tests with coverage checked with [Gcovr](http://gcovr.com/)

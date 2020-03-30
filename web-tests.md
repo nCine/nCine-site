@@ -5,6 +5,7 @@ permalink: /web-tests/
 ---
 
 Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
+- [ncJugiMapParallaxScrolling](/ncjugimapparallaxscrolling)
 - [ncJugiMapAPIDemo](/ncjugimapapidemo)
 - [ncParticleEditor](/ncparticleeditor)
 - [ncPong](/ncpong)
@@ -13,6 +14,7 @@ Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
 - [apptest_animsprites](/apptests/apptest_animsprites.html)
 - [apptest_audio](/apptests/apptest_audio.html)
 - [apptest_camera](/apptests/apptest_camera.html)
+- [apptest_filebrowser](/apptests/apptest_filebrowser.html)
 - [apptest_font](/apptests/apptest_font.html)
 - [apptest_joystick](/apptests/apptest_joystick.html)
 - [apptest_lua](/apptests/apptest_lua.html)
