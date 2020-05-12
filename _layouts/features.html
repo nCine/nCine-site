@@ -11,9 +11,9 @@ layout: base
 #caption { font-size: 75% }
 </style>
 
-<div class="container" role="main">
+<div class="container-md" role="main">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
       <div id="container">
         {% assign sorted_features = site.features | sort: '_order' %}
         {% for feature in sorted_features %}
@@ -34,11 +34,7 @@ layout: base
       <br />
 
       {{ content }}
-      {% if page.comments %}
-        <div class="disqus-comments">
-          {% include disqus.html %}
-        </div>
-      {% endif %}
+      {% include comments.html %}
     </div>
   </div>
 </div>
