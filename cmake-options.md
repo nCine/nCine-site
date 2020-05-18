@@ -49,9 +49,9 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   By enabling this option Doxygen will be invoked to create the HTML based API documentation and an install target will be set up by CMake.
 
-- `NCINE_IMPLEMENTATION_DOCUMENTATION`
+  - `NCINE_IMPLEMENTATION_DOCUMENTATION`
 
-  When this option is enabled, the generated documentation will include implementation classes.
+    When this option is enabled, the generated documentation will include implementation classes.
 
 - `NCINE_EMBED_SHADERS`
 
@@ -60,6 +60,19 @@ You can tweak the generation of nCine project files with the following CMake opt
 - `NCINE_BUILD_ANDROID`
 
   This option will build the Android version of the engine.
+
+  - `NCINE_ASSEMBLE_APK`
+
+    This option is only available when `NCINE_BUILD_ANDROID` is on. It will automatically assemble the Android APK invoking the Gradle executable, if it could be found.
+
+  - `NCINE_NDK_ARCHITECTURES`
+
+    This is a CMake list of the target architectures when compiling for Android. Supported ones are `armeabi-v7a`, `arm64-v8a` and `x86_64`.
+
+  - `NDK_DIR`
+
+    This string should be set to the path of the directory containing the Android NDK.
+    If this string is not set to a valid directory then the `ANDROID_NDK_HOME`, `ANDROID_NDK_ROOT` and `ANDROID_NDK` environment variables will be queried in this order.
 
 - `NCINE_STRIP_BINARIES`
 
@@ -100,6 +113,27 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   This option enables the scripting API and the integration with the Lua library.
 
+- `NCINE_WITH_ALLOCATORS`
+
+  This option enables the custom memory allocators and the allocation manager.
+
+  - `NCINE_RECORD_ALLOCATIONS`
+
+    When this option is enabled every allocation or deallocation request will be recorded alongside a timestamp.
+
+  - `NCINE_OVERRIDE_NEW`
+
+    With this option the global `operator new` and `operator delete` will be overriden to use the custom memory allocator.
+
+  - `NCINE_USE_FREELIST`
+
+    When this option is enabled the FreeList allocator will be used instead of the `malloc()`/`free()` based one.
+
+  - `NCINE_FREELIST_BUFFER`
+
+    This variable will hold the size in bytes of the buffer used by the FreeList allocator.
+    The default size is 32 MiB.
+
 - `NCINE_WITH_IMGUI`
 
   When this option is enabled the engine will feature an integration with the [Dear ImGui](https://github.com/ocornut/imgui) user interface toolkit.
@@ -115,7 +149,10 @@ You can tweak the generation of nCine project files with the following CMake opt
 - `NCINE_WITH_RENDERDOC`
 
   When this option is enabled the engine will feature the [in-application](https://renderdoc.org/docs/in_application_api.html) integration with the [RenderDoc](https://renderdoc.org/) graphics debugger.
-  If the RenderDoc directory cannot be found automatically you can set its path with the `RENDERDOC_DIR` variable.
+
+  - `RENDERDOC_DIR`
+
+    If the RenderDoc directory cannot be found automatically you can set its path with this variable.
 
 - `NCINE_PREFERRED_BACKEND`
 
@@ -128,19 +165,6 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   This options enables the Emscripten Pthreads support by setting both `USE_PTHREADS` and `WASM_MEM_MAX` compiler and linker options.
   It might slow down code execution if WebAssembly is disabled in the compilation scripts.
-
-- `NCINE_ASSEMBLE_APK`
-
-  This option is only available when `NCINE_BUILD_ANDROID` is on. It will automatically assemble the Android APK invoking the Gradle executable, if it could be found.
-
-- `NCINE_NDK_ARCHITECTURES`
-
-  This is a CMake list of the target architectures when compiling for Android. Supported ones are `armeabi-v7a`, `arm64-v8a` and `x86_64`.
-
-- `NDK_DIR`
-
-  This string should be set to the path of the directory containing the Android NDK.
-  If this string is not set to a valid directory then the `ANDROID_NDK_HOME`, `ANDROID_NDK_ROOT` and `ANDROID_NDK` environment variables will be queried in this order.
 
 - `NCINE_TESTS_DATA_DIR`
 

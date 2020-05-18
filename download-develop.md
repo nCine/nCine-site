@@ -9,61 +9,18 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 ## Changelog
 
 ### Breaking Changes
-
-- Removed `flipX()` and `flipY()` sprite methods
-  - They have been superseded by `setFlippedX()` and `setFlippedY()`
-- Removed `setOpaqueTexture()` sprite method
-  - You can achieve the same result with the general `setBlendingEnabled(false)`
-- The `Matrix4x4<T>::scale()` static method has been renamed to `Matrix4x4<T>::scaling()`
-- The `dataPath()` and `savePath()` methods of `IFile` have been moved to the new `FileSystem` class
-  - The `access()` method of `IFile` have been superseded by the more powerful query methods of the `FileSystem` class
-  - The `nc.application.datapath()` Lua function is now `nc.fs.get_datapath()`
+- The `nctl::Array` and `nctl::StaticArray` subscript operator will not grow the array size
+- The return type of the `createAppEventHandler` function has been changed to a unique pointer
 
 ### New Features
-
-- Scene nodes support anchor points and non-uniform scaling
-  - There is a new `apptest_anchor` application that shows all new node features
-- Drawable nodes support custom alpha blending factors
-- [Nuklear](https://github.com/Immediate-Mode-UI/Nuklear) integration for fully skinnable user interfaces
-- You can now embed the whole engine inside a Qt5 widget by choosing the Qt5 desktop backend
-  - If the [Qt Gamepad](https://doc.qt.io/qt-5/qtgamepad-module.html) library is available it will be used for gamepad input events
-- Touch events are supported on desktop through the SDL2 and Qt5 backends
-  - They now also provide information about the touch pressure
-- There is now a `FileSystem` class to help you query and manipulate paths, files, and directories
-  - It comes with a new `apptest_filebrowser` application that shows an ImGui based file browser
-- ImGui and Nuklear integrations support custom fonts loading
-- Added a new unclamped three channels `ColorHdr` class
-- The `IAppEventHandler` class now receives `onSuspend()` and `onResume()` events
+- The engine now supports custom memory allocators
+  - All containers have been updated to allow the specification of an allocator
+  - Unique pointers support custom deleters in a compressed pair
+  - A new `apptest_allocators` application has been added to test the four included allocator types
 
 ### Improvements
-
-- The logging system is initialized earlier and can be used inside `onPreInit()`
-- The Android asset manager is initialized earlier and can be used inside `onPreInit()`
-- Handling of windows resizing events has been fixed
-- Emscripten applications react to window resizing and fullscreen events
-- Emscripten applications can now load and save local files
-- Sprite flipping methods now take a status flag
-- The version of the integrated Tracy has gone from [v0.5](https://bitbucket.org/wolfpld/tracy/src/v0.5/) to [v0.6.3](https://bitbucket.org/wolfpld/tracy/src/v0.6.3/)
-- The version of the integrated ImGui has gone from [v1.73](https://github.com/ocornut/imgui/releases/tag/v1.73) to [v1.75](https://github.com/ocornut/imgui/releases/tag/v1.75)
-- Deletion of children scene nodes upon parent destruction has been made optional
-- The `Matrix4x4<T>` can now translate, rotate and scale in place, avoiding a full matrix multiplication
-  - It can now also be multiplied on the right side of a vector
-- Automatic sprite batching is now available on Emscripten
-  - You can choose the fixed batch size with a variable in the `AppConfiguration` class
-- Added support for [Google ANGLE](http://angleproject.org) libraries on Windows
-- Sorting of render commands is now stable
-  - If two commands have the same material sorting key then a secondary key based on node creation time is used
-- All kind of hashmap and hashset containers can now correctly use `const char *` as key type
-- It is now possible to set the swap interval on all desktop backends with `IGfxDevice::setSwapInterval()`
+- All containers now split the allocation phase from object construction
+  - Creating a container will only reserve memory for the elements
+  - Inserting or removing elements will trigger construction and destruction
 
 ### Fixes
-
-- The Emscripten port compiles with upstream LLVM WebAssembly backend
-- Some minor fixes in the color classes code
-- Culling of drawable nodes works with negative scaling factors
-- Scene nodes are now correctly transformed before children thus eliminating any update delay with nodes chains
-- Caching of `TextNode` boundaries does not introduce a one frame delay on update
-- The Lua stack is now cleaned after a failure in calling a function
-  - Previously the stack would easily overflow if some callbacks were not defined
-- String lenght is now updated if a string is truncated when using a formatting method
-- Fixed OpenGL FBO wrapper class when dealing with reading and drawing buffers

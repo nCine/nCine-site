@@ -5,6 +5,8 @@ subtitle: Some screenshots to show nCine projects, tests and features
 permalink: /gallery/
 ---
 
+Don't miss the [Videos](/videos/) page to see the nCine in action!
+
 ## SpookyGhost
 
 ![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost")
@@ -55,50 +57,3 @@ A [Tracy](https://bitbucket.org/wolfpld/tracy/) capture of `apptest_camera` comp
 
 ![apptest_sinescroller](/img/gallery/apptest_sinescroller.png "apptest_sinescroller")
 `apptest_sinescroller`, a small homage to old-skool demoscene sine scrollers
-
-## Videos
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/PpVLD3ShiCw" frameborder="0" allowfullscreen></iframe>
-</div>
-nCine as a custom Qt5 widget
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/iqxX3VTt39o" frameborder="0" allowfullscreen></iframe>
-</div>
-Creating an animated tree in the wind with SpookyGhost
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/0gfgShTNvSw" frameborder="0" allowfullscreen></iframe>
-</div>
-A video showing the ncJugiMapParallaxScrolling demo
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/JJI9yW46H1A" frameborder="0" allowfullscreen></iframe>
-</div>
-A video showing the ncJugiMapAPIDemo
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/PQRnxeBpo-c" frameborder="0" allowfullscreen></iframe>
-</div>
-Watch the ImGui debug overlay in action
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/RLNI5NMCJ1E" frameborder="0" allowfullscreen></iframe>
-</div>
-A video showing some features of `ncParticleEditor`
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/31k4adykiNA" frameborder="0" allowfullscreen></iframe>
-</div>
-Gameplay video of `ncInvaders`
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/5lSYZtRQhgQ" frameborder="0" allowfullscreen></iframe>
-</div>
-Gameplay video of `ncPong`
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe width="750" height="422" src="https://www.youtube.com/embed/fUNGf3C8SOM" frameborder="0" allowfullscreen></iframe>
-</div>
-A collage video of some of the example tests distributed with the nCine

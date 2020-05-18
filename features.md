@@ -15,6 +15,7 @@ permalink: /features/
 - [GLFW 3](http://www.glfw.org/) or [SDL 2](https://www.libsdl.org/) for window and input on PC
 - [Nuklear](https://github.com/vurtun/nuklear) integration for fully skinnable user interfaces
 - FileSystem API to query or manipulate paths, files, and directories
+- Custom memory allocators ([`develop`](https://github.com/ncine/ncine/tree/develop) branch)
 - Joystick support with hot swap and [gamepad mappings](https://wiki.libsdl.org/CategoryGameController)
 - Android assets support
 - [Google Test](https://github.com/google/googletest) based unit tests with coverage checked with [Gcovr](http://gcovr.com/)
@@ -29,10 +30,10 @@ permalink: /features/
 
 - Add an ECS system and BVH based scene culling
 - Abstract the rendering API and add a Vulkan implementation
-- Add a collision detection and response system
+- Add a collision detection and response system or integrate Box2D
 - Separate game, input and audio update in different threads
 - Refine the thread-pool system and expose it to the user API
 - Implement a Camera node for the scenegraph
 - Custom user shaders and post-processing
 - Add a 2D skeletal animation system
-- Implement insert iterators in order to support more algorithms
+- Create a cross-platform game editor with Dear ImGui

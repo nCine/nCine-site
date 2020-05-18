@@ -16,6 +16,7 @@ navbar-links:
     - Why nCine: "why"
     - Features: "features"
     - Gallery: "gallery"
+    - Videos: "videos"
     - F.A.Q.: "faq"
     - Web Tests: "web-tests"
   Learn:
@@ -37,6 +38,7 @@ navbar-links:
   Download:
     - General Info: "download"
     - Develop Branch: "download-develop"
+    - Release 2020.05: "download-202005"
     - Release 2019.10: "download-201910"
     - Release 2019.05: "download-201905"
   C.I.: "ci"
