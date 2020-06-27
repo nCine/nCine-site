@@ -5,6 +5,7 @@ permalink: /web-tests/
 ---
 
 Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
+- [ncJugiMapSpriteTimelineAnimation](/ncjugimapspritetimelineanimation)
 - [ncJugiMapParallaxScrolling](/ncjugimapparallaxscrolling)
 - [ncJugiMapAPIDemo](/ncjugimapapidemo)
 - [ncParticleEditor](/ncparticleeditor)

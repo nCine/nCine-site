@@ -28,6 +28,11 @@ nCine as a custom Qt5 widget
 Creating an animated tree in the wind with [`SpookyGhost`](https://encelo.itch.io/spookyghost)
 
 <div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/rjMSLY5pl7A" frameborder="0" allowfullscreen></iframe>
+</div>
+A video showing the `ncJugiMapSpriteTimelineAnimation` demo
+
+<div class="embed-responsive embed-responsive-16by9">
   <iframe width="750" height="422" src="https://www.youtube.com/embed/0gfgShTNvSw" frameborder="0" allowfullscreen></iframe>
 </div>
 A video showing the `ncJugiMapParallaxScrolling` demo

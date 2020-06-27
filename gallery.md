@@ -14,6 +14,9 @@ Don't miss the [Videos](/videos/) page to see the nCine in action!
 
 ## JugiMap API Demos
 
+![ncJugiMapSpriteTimelineAnimation](/img/gallery/ncJugiMapSpriteTimelineAnimation.png "ncJugiMapSpriteTimelineAnimation")
+`ncJugiMapSpriteTimelineAnimation`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
+
 ![ncJugiMapParallaxScrolling](/img/gallery/ncJugiMapParallaxScrolling.png "ncJugiMapParallaxScrolling")
 `ncJugiMapParallaxScrolling`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
 
