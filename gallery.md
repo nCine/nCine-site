@@ -7,6 +7,11 @@ permalink: /gallery/
 
 Don't miss the [Videos](/videos/) page to see the nCine in action!
 
+## ncTracer
+
+![ncTracer](/img/gallery/ncTracer.png "ncTracer")
+[`ncTracer`](https://github.com/encelo/ncTracer), an ImGui front-end to the [pmTracer](https://github.com/encelo/pmTracer) library made with the nCine
+
 ## SpookyGhost
 
 ![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost")
