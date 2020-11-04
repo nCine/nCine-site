@@ -12,4 +12,4 @@ _image: text_rendering.png
 - Support AngelCode's [Bitmap Font Generator](http://www.angelcode.com/products/bmfont/)
 - Text alignment (left, center, right)
 - Rendering with kerning pairs support
-- Unicode characters from UTF-8 strings ([`develop`](https://github.com/ncine/ncine/tree/develop) branch)
+- Unicode characters from UTF-8 strings

@@ -26,8 +26,8 @@ navbar-links:
     - Samples: "samples"
     - Documentation (release): "docs/index.html"
     - Lua API (release): "lua_api.html"
-    - Documentation (develop): "docs_dev/index.html"
-    - Lua API (develop): "lua_api_dev.html"
+    - Documentation (master): "docs_master/index.html"
+    - Lua API (master): "lua_api_master.html"
   Build:
     - Samples: "build-samples"
     - Linux: "build-linux"
@@ -39,7 +39,7 @@ navbar-links:
     - CMake options: "cmake-options"
   Download:
     - General Info: "download"
-    - Develop Branch: "download-develop"
+    - Master Branch: "download-master"
     - Release 2020.05: "download-202005"
     - Release 2019.10: "download-201910"
     - Release 2019.05: "download-201905"

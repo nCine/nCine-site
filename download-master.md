@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Develop Branch
-permalink: /download-develop/
+title: Master Branch
+permalink: /download-master/
 ---
 
-The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the base for a future release.
+The [master](https://github.com/nCine/nCine/tree/master) branch will be the base for a future release.
 
 ## Changelog
 
@@ -15,18 +15,21 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - The `setWidth()` and `setHeight()` methods of the `BaseSprite` class have been removed
 - The `errorToString()` function of the `LuaDebug` namespace has been renamed to correct a typo
 - The parameters order of `LuaStateManager::runFromMemory()` has changed
+- The default line height of a `TextNode` object is now its font line height instead of the base
 
 ### New Features
 - The engine now supports custom memory allocators
   - All containers have been updated to allow the specification of an allocator
   - Unique pointers support custom deleters in a compressed pair
   - A new `apptest_allocators` application has been added to test the four included allocator types
+  - You can set a name for an allocator and it will be used in [Tracy](https://github.com/wolfpld/tracy/releases/tag/v0.7.3) too
 - The FileSystem API now supports Android asset FileSystem
 - It is now possible to load textures, sounds and fonts from memory buffers
+- Data used for textures, sounds and fonts can be validated before creating the corresponding resources
 
 ### Improvements
-- The version of the integrated Tracy has been updated to [v0.7.2](https://github.com/wolfpld/tracy/releases/tag/v0.7.2)
-- The version of the integrated ImGui has been updated to [v1.78](https://github.com/ocornut/imgui/releases/tag/v1.78)
+- The version of the integrated Tracy has been updated to [v0.7.3](https://github.com/wolfpld/tracy/releases/tag/v0.7.3)
+- The version of the integrated ImGui has been updated to [v1.79](https://github.com/ocornut/imgui/releases/tag/v1.79)
 - All containers now split the allocation phase from object construction
   - Creating a container will only reserve memory for the elements
   - Inserting or removing elements will trigger construction and destruction
@@ -35,7 +38,10 @@ The [develop](https://github.com/nCine/nCine/tree/develop) branch will be the ba
 - It is now possible to set the RGB components of a color with a hexadecimal code
 - The `nctl::String` class can now decode [Unicode](http://unicode.org) code points from UTF-8 strings
 - The `Font` class now supports Unicode characters exported in the Fnt descriptor file
+- The Android software keyboard visibility can be toggled on and off
+- It is now possible to set a custom line height for a `TextNode` object
 
 ### Fixes
 - GCC hardening compiler flags have been fixed with the explicit addition of PIE flags
 - The root node of the scenegraph now honors its own transformations
+- The buffer of an `AudioBufferPlayer` class was not detached from the OpenAL source when it finished playing

@@ -13,9 +13,13 @@ How to download the engine with ncline ([transcript](/video-transcript-1))
 This video teaches you the basics of [ncline](https://github.com/nCine/ncline), the nCine command line tool.
 It shows how to download the engine and compile one of the side projects: [ncInvaders](https://github.com/nCine/ncInvaders).
 
+**Update**: There is no more a `develop` branch for the engine, just avoid setting any specific branch while following the video to automatically checkout the `master` branch: it contains the most recent code.
+
 ### nCine Video Tutorial #2
 
 <div style="text-align:center"><iframe width="750" height="422" src="https://www.youtube.com/embed/N_y7IT8nyJA" frameborder="0" allowfullscreen></iframe></div>
 How to create your game project by starting from the template one ([transcript](/video-transcript-2))
 
 This video shows you how to download the [ncTemplate](https://github.com/nCine/ncTemplate) project with ncline and how to modify it in order to suit the needs of your game.
+
+**Update**: There is no more a `develop` branch for the engine, just avoid setting any specific branch while following the video to automatically checkout the `master` branch: it contains the most recent code.

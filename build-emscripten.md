@@ -11,7 +11,7 @@ Just be sure to follow the [instructions](https://emscripten.org/docs/getting_st
 
 In order to build the nCine library using Emscripten you need to have CMake installed and clone or download the following repositories:
 
-- **[nCine](https://github.com/nCine/nCine/tree/develop)** `develop` branch, this is the main project
+- **[nCine](https://github.com/nCine/nCine)**, this is the main project
 - **[nCine-libraries](https://github.com/nCine/nCine-libraries)**, this project contains CMake scripts to build dependency libraries (optional)
 - **[nCine-data](https://github.com/nCine/nCine-data)**, the data files for the nCine tests (optional but recommended)
 - **[ncPong](https://github.com/nCine/ncPong)**, a Pong game built with the nCine that is useful as an example project (optional)

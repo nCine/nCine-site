@@ -24,12 +24,6 @@ You can then clone and build additional projects if you want:
 - [ncParticleEditor](https://github.com/nCine/ncParticleEditor) (and [ncParticleEditor-data](https://github.com/nCine/ncParticleEditor-data))
 - [ncTemplate](https://github.com/nCine/ncTemplate) (and [ncTemplate-data](https://github.com/nCine/ncTemplate-data))
 
-#### Develop Branch
-
-If you want to stay on the very bleeding edge of nCine development you can checkout the [develop](/download-develop) branch instead of `master`.
-
-Please note that if you build the `develop` branch of the nCine you should then checkout the same branch for additional projects too (if it exists), or you might incur in compilation errors.
-
 ### Binaries
 
 If you prefer to skip the building phase and just download binaries you can follow two different ways.
@@ -40,6 +34,8 @@ The first one is through GitHub [releases](https://github.com/nCine/nCine/releas
 
 The project follows a [calendar versioning](https://calver.org/) scheme (`YYYY.0M.MICRO`):
 
+- [master](/download-master), the `master` branch is the base for the next release
+- [2020.05](/download-202005), from May 2020
 - [2019.10](/download-201910), from October 2019
 - [2019.05](/download-201905), from May 2019
 
@@ -58,5 +54,5 @@ The same thing is true for the [dependency libraries](https://github.com/nCine/n
 
 |Branch|Linux|macOS|Windows|MinGW|Emscripten|
 |-----:|-----|-----|-------|-----|----------|
+|`2020.05`|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-linux-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-linux-clang)|[AppleClang](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-darwin-appleclang)|[VS2019](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-windows-vs2019) [VS2017](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-windows-vs2017)|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-mingw64-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-mingw64-clang)|[emcc](https://github.com/nCine/nCine-artifacts/tree/nCine-2020.05-emscripten-emcc)|
 |`master`|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-master-linux-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-master-linux-clang)|[AppleClang](https://github.com/nCine/nCine-artifacts/tree/nCine-master-darwin-appleclang)|[VS2019](https://github.com/nCine/nCine-artifacts/tree/nCine-master-windows-vs2019) [VS2017](https://github.com/nCine/nCine-artifacts/tree/nCine-master-windows-vs2017)|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-master-mingw64-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-master-mingw64-clang)|[emcc](https://github.com/nCine/nCine-artifacts/tree/nCine-master-emscripten-emcc)|
-|`develop`|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-linux-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-linux-clang)|[AppleClang](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-darwin-appleclang)|[VS2019](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-windows-vs2019) [VS2017](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-windows-vs2017)|[GCC](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-mingw64-gcc) [Clang](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-mingw64-clang)|[emcc](https://github.com/nCine/nCine-artifacts/tree/nCine-develop-emscripten-emcc)|
