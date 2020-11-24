@@ -17,16 +17,19 @@ Don't miss the [Videos](/videos/) page to see the nCine in action!
 ![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost")
 [`SpookyGhost`](https://encelo.itch.io/spookyghost), a procedural sprite animation tool made with the nCine
 
-## JugiMap API Demos
+## JugiMap Framework Demos
+
+![ncJugiMapGuiDemo](/img/gallery/ncJugiMapGuiDemo.png "ncJugiMapGuiDemo")
+`ncJugiMapGuiDemo`, a demo test for [JugiMap](http://jugimap.com/) integration [framework](https://github.com/Jugilus/JugiMapFramework/)
 
 ![ncJugiMapSpriteTimelineAnimation](/img/gallery/ncJugiMapSpriteTimelineAnimation.png "ncJugiMapSpriteTimelineAnimation")
-`ncJugiMapSpriteTimelineAnimation`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
+`ncJugiMapSpriteTimelineAnimation`, a demo test for [JugiMap](http://jugimap.com/) integration [framework](https://github.com/Jugilus/JugiMapFramework/)
 
 ![ncJugiMapParallaxScrolling](/img/gallery/ncJugiMapParallaxScrolling.png "ncJugiMapParallaxScrolling")
-`ncJugiMapParallaxScrolling`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
+`ncJugiMapParallaxScrolling`, a demo test for [JugiMap](http://jugimap.com/) integration [framework](https://github.com/Jugilus/JugiMapFramework/)
 
-![ncJugiMapAPIDemo](/img/gallery/ncJugiMapAPIDemo.png "ncJugiMapAPIDemo")
-`ncJugiMapAPIDemo`, a demo test for [JugiMap](http://jugimap.com/) integration [API](https://github.com/Jugilus/JugiMapAPI/)
+![ncJugiMapFrameworkDemo](/img/gallery/ncJugiMapFrameworkDemo.png "ncJugiMapFrameworkDemo")
+`ncJugiMapFrameworkDemo`, a demo test for [JugiMap](http://jugimap.com/) integration [framework](https://github.com/Jugilus/JugiMapFramework/)
 
 ## ncParticleEditor
 

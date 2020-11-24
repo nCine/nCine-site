@@ -22,6 +22,9 @@ With your donations I can bring my commitment to a whole new level and push even
 #### Ko-Fi
 <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'R6R3167R8');kofiwidget2.draw();</script>
 
+#### Buy Me a Coffee
+<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="encelo" data-color="#79D6B5" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
+
 #### LiberaPay
 <script src="https://liberapay.com/encelo/widgets/button.js"></script>
 <noscript><a href="https://liberapay.com/encelo/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>

@@ -91,17 +91,17 @@ The [nCine](https://github.com/nCine/nCine) is [built](https://github.com/nCine/
 [![Android](https://github.com/nCine/ncParticleEditor/workflows/Android/badge.svg)](https://github.com/nCine/ncParticleEditor/actions?workflow=Android)
 [![CodeQL](https://github.com/nCine/ncParticleEditor/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncParticleEditor/actions?workflow=CodeQL)
 
-## ncJugiMapAPIDemo
+## ncJugiMapFrameworkDemo
 
-[ncJugiMapAPIDemo](https://github.com/nCine/ncJugiMapAPIDemo) is [built](https://github.com/nCine/ncJugiMapAPIDemo/actions) and pushed over to [ncJugiMapAPIDemo-artifacts](https://github.com/nCine/ncJugiMapAPIDemo-artifacts).
+[ncJugiMapFrameworkDemo](https://github.com/nCine/ncJugiMapFrameworkDemo) is [built](https://github.com/nCine/ncJugiMapFrameworkDemo/actions) and pushed over to [ncJugiMapFrameworkDemo-artifacts](https://github.com/nCine/ncJugiMapFrameworkDemo-artifacts).
 
-[![Linux](https://github.com/nCine/ncJugiMapAPIDemo/workflows/Linux/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=Linux)
-[![macOS](https://github.com/nCine/ncJugiMapAPIDemo/workflows/macOS/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=macOS)
-[![Windows](https://github.com/nCine/ncJugiMapAPIDemo/workflows/Windows/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=Windows)
-[![MinGW](https://github.com/nCine/ncJugiMapAPIDemo/workflows/MinGW/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=MinGW)
-[![Emscripten](https://github.com/nCine/ncJugiMapAPIDemo/workflows/Emscripten/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=Emscripten)
-[![Android](https://github.com/nCine/ncJugiMapAPIDemo/workflows/Android/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=Android)
-[![CodeQL](https://github.com/nCine/ncJugiMapAPIDemo/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncJugiMapAPIDemo/actions?workflow=CodeQL)
+[![Linux](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/Linux/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=Linux)
+[![macOS](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/macOS/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=macOS)
+[![Windows](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/Windows/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=Windows)
+[![MinGW](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/MinGW/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=MinGW)
+[![Emscripten](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/Emscripten/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=Emscripten)
+[![Android](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/Android/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=Android)
+[![CodeQL](https://github.com/nCine/ncJugiMapFrameworkDemo/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncJugiMapFrameworkDemo/actions?workflow=CodeQL)
 
 ## ncJugiMapParallaxScrolling
 
@@ -126,4 +126,16 @@ The [nCine](https://github.com/nCine/nCine) is [built](https://github.com/nCine/
 [![Emscripten](https://github.com/nCine/ncJugiMapSpriteTimelineAnimation/workflows/Emscripten/badge.svg)](https://github.com/nCine/ncJugiMapSpriteTimelineAnimation/actions?workflow=Emscripten)
 [![Android](https://github.com/nCine/ncJugiMapSpriteTimelineAnimation/workflows/Android/badge.svg)](https://github.com/nCine/ncJugiMapSpriteTimelineAnimation/actions?workflow=Android)
 [![CodeQL](https://github.com/nCine/ncJugiMapSpriteTimelineAnimation/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncJugiMapSpriteTimelineAnimation/actions?workflow=CodeQL)
+
+## ncJugiMapGuiDemo
+
+[ncJugiMapGuiDemo](https://github.com/nCine/ncJugiMapGuiDemo) is [built](https://github.com/nCine/ncJugiMapGuiDemo/actions) and pushed over to [ncJugiMapGuiDemo-artifacts](https://github.com/nCine/ncJugiMapGuiDemo-artifacts).
+
+[![Linux](https://github.com/nCine/ncJugiMapGuiDemo/workflows/Linux/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=Linux)
+[![macOS](https://github.com/nCine/ncJugiMapGuiDemo/workflows/macOS/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=macOS)
+[![Windows](https://github.com/nCine/ncJugiMapGuiDemo/workflows/Windows/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=Windows)
+[![MinGW](https://github.com/nCine/ncJugiMapGuiDemo/workflows/MinGW/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=MinGW)
+[![Emscripten](https://github.com/nCine/ncJugiMapGuiDemo/workflows/Emscripten/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=Emscripten)
+[![Android](https://github.com/nCine/ncJugiMapGuiDemo/workflows/Android/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=Android)
+[![CodeQL](https://github.com/nCine/ncJugiMapGuiDemo/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=CodeQL)
 

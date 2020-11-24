@@ -25,21 +25,28 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
   - You can set a name for an allocator and it will be used in [Tracy](https://github.com/wolfpld/tracy/releases/tag/v0.7.3) too
 - The FileSystem API now supports Android asset FileSystem
 - It is now possible to load textures, sounds and fonts from memory buffers
-- Data used for textures, sounds and fonts can be validated before creating the corresponding resources
+- There is a new loading API for resources as textures, sounds, and fonts
+  - The user can create empty resources and load data at a later time
+  - Data can be loaded inside a resource multiple times
+  - Failed loads will never result in a fatal assert nor modify a resource
+  - A texture can be loaded from uncompressed texels and audio from PCM samples
+  - A new `apptest_loading` application has been added to test the enhanced loading capabilities
 
 ### Improvements
-- The version of the integrated Tracy has been updated to [v0.7.3](https://github.com/wolfpld/tracy/releases/tag/v0.7.3)
+- The version of the integrated Tracy has been updated to [v0.7.4](https://github.com/wolfpld/tracy/releases/tag/v0.7.4)
 - The version of the integrated ImGui has been updated to [v1.79](https://github.com/ocornut/imgui/releases/tag/v1.79)
 - All containers now split the allocation phase from object construction
   - Creating a container will only reserve memory for the elements
   - Inserting or removing elements will trigger construction and destruction
 - On Android unfound libraries will not be linked anymore to the game library
   - The Java activity will not load the nCine or OpenAL libraries if unneeded
-- It is now possible to set the RGB components of a color with a hexadecimal code
+- It is now possible to set the ARGB components of a color with a hexadecimal code
 - The `nctl::String` class can now decode [Unicode](http://unicode.org) code points from UTF-8 strings
 - The `Font` class now supports Unicode characters exported in the Fnt descriptor file
 - The Android software keyboard visibility can be toggled on and off
+- The seek position of an audio buffer can be queried and modified
 - It is now possible to set a custom line height for a `TextNode` object
+- When loading a RGB texture it is possible to treat a color as transparent
 
 ### Fixes
 - GCC hardening compiler flags have been fixed with the explicit addition of PIE flags
