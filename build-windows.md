@@ -117,6 +117,6 @@ If you are not using the `Ninja` generator then you can, since CMake 3.12, pass 
 ## C.I. Scripts
 
 For reference you can have a look at the continuous integration scripts:
-- [nCine-libraries](https://github.com/nCine/nCine-libraries/blob/master/azure-pipelines.yml) (`Windows` job)
-- [nCine](https://github.com/nCine/nCine/blob/master/azure-pipelines.yml) (`Windows_MinGW` job)
-- [ncPong](https://github.com/nCine/ncPong/blob/master/azure-pipelines.yml) (`Windows_MinGW` job)
+- [nCine-libraries](https://github.com/nCine/nCine-libraries/blob/master/.github/workflows/windows.yml)
+- [nCine](https://github.com/nCine/nCine/blob/master/.github/workflows/windows.yml)
+- [ncPong](https://github.com/nCine/ncPong/blob/master/.github/workflows/windows.yml)

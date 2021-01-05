@@ -61,6 +61,6 @@ If you are not using the `Ninja` generator then you can, since CMake 3.12, pass 
 ### C.I. Scripts
 
 For reference you can have a look at the continuous integration scripts:
-- [nCine-libraries](https://github.com/nCine/nCine-libraries/blob/master/azure-pipelines.yml) (`Non_Windows` job)
-- [nCine](https://github.com/nCine/nCine/blob/master/azure-pipelines.yml) (`Emscripten` job)
-- [ncPong](https://github.com/nCine/ncPong/blob/master/azure-pipelines.yml) (`Emscripten` job)
+- [nCine-libraries](https://github.com/nCine/nCine-libraries/blob/master/.github/workflows/emscripten.yml)
+- [nCine](https://github.com/nCine/nCine/blob/master/.github/workflows/emscripten.yml)
+- [ncPong](https://github.com/nCine/ncPong/blob/master/.github/workflows/emscripten.yml)
