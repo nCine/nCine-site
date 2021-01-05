@@ -74,6 +74,6 @@ In order to build the Android version of ncPong you need to switch on the `NCPON
 ### C.I. Scripts
 
 For reference you can have a look at the continuous integration scripts:
-- [nCine-android-libraries](https://github.com/nCine/nCine-android-libraries/blob/master/azure-pipelines.yml)
-- [nCine](https://github.com/nCine/nCine/blob/master/azure-pipelines.yml) (`Linux_macOS` job)
-- [ncPong](https://github.com/nCine/ncPong/blob/master/azure-pipelines.yml) (`Android` job)
+- [nCine-android-libraries](https://github.com/nCine/nCine-android-libraries/blob/master/.github/workflows/android.yml)
+- [nCine](https://github.com/nCine/nCine/blob/master/.github/workflows/linux.yml)
+- [ncPong](https://github.com/nCine/ncPong/blob/master/.github/workflows/android.yml)
