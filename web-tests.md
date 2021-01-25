@@ -9,6 +9,7 @@ Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
 - [ncJugiMapSpriteTimelineAnimation](/ncjugimap_spritetimelineanimation)
 - [ncJugiMapParallaxScrolling](/ncjugimap_parallaxscrolling)
 - [ncJugiMapFrameworkDemo](/ncjugimap_frameworkdemo)
+- [ncTiledViewer](/nctiledviewer)
 - [ncParticleEditor](/ncparticleeditor)
 - [ncPong](/ncpong)
 - [ncInvaders](/ncinvaders)

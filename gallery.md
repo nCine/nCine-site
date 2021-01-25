@@ -7,6 +7,11 @@ permalink: /gallery/
 
 Don't miss the [Videos](/videos/) page to see the nCine in action!
 
+## ncTiledViewer
+
+![ncTiledViewer](/img/gallery/ncTiledViewer.png "ncTiledViewer")
+[`ncTiledViewer`](https://github.com/ncine/ncTiledViewer), a [Tiled](https://www.mapeditor.org/) maps viewer made with the nCine
+
 ## ncTracer
 
 ![ncTracer](/img/gallery/ncTracer.png "ncTracer")

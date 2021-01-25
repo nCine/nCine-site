@@ -139,3 +139,15 @@ The [nCine](https://github.com/nCine/nCine) is [built](https://github.com/nCine/
 [![Android](https://github.com/nCine/ncJugiMapGuiDemo/workflows/Android/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=Android)
 [![CodeQL](https://github.com/nCine/ncJugiMapGuiDemo/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncJugiMapGuiDemo/actions?workflow=CodeQL)
 
+## ncTiledViewer
+
+[ncTiledViewer](https://github.com/nCine/ncTiledViewer) is [built](https://github.com/nCine/ncTiledViewer/actions) and pushed over to [ncTiledViewer-artifacts](https://github.com/nCine/ncTiledViewer-artifacts).
+
+[![Linux](https://github.com/nCine/ncTiledViewer/workflows/Linux/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=Linux)
+[![macOS](https://github.com/nCine/ncTiledViewer/workflows/macOS/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=macOS)
+[![Windows](https://github.com/nCine/ncTiledViewer/workflows/Windows/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=Windows)
+[![MinGW](https://github.com/nCine/ncTiledViewer/workflows/MinGW/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=MinGW)
+[![Emscripten](https://github.com/nCine/ncTiledViewer/workflows/Emscripten/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=Emscripten)
+[![Android](https://github.com/nCine/ncTiledViewer/workflows/Android/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=Android)
+[![CodeQL](https://github.com/nCine/ncTiledViewer/workflows/CodeQL/badge.svg)](https://github.com/nCine/ncTiledViewer/actions?workflow=CodeQL)
+
