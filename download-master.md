@@ -17,6 +17,8 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - The parameters order of `LuaStateManager::runFromMemory()` has changed
 - The default line height of a `TextNode` object is now its font line height instead of the base
 - The `AnimatedSprite` class now stores `RectAnimation` objects instead of smart pointers
+- The type alias declarations for hash containers with string keys have been removed
+- The `run()` method of the `LuaStateManager` class has been renamed to `runFromFile()`
 
 ### New Features
 - The engine now supports custom memory allocators
@@ -40,8 +42,8 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - A new `onTextInput` event has been added to receive UTF-8 characters
 
 ### Improvements
-- The version of the integrated Tracy has been updated to [v0.7.5](https://github.com/wolfpld/tracy/releases/tag/v0.7.5)
-- The version of the integrated ImGui has been updated to [v1.80](https://github.com/ocornut/imgui/releases/tag/v1.80)
+- The version of the integrated Tracy has been updated to [v0.7.6](https://github.com/wolfpld/tracy/releases/tag/v0.7.6)
+- The version of the integrated ImGui has been updated to [v1.82](https://github.com/ocornut/imgui/releases/tag/v1.82)
 - All containers now split the allocation phase from object construction
   - Creating a container will only reserve memory for the elements
   - Inserting or removing elements will trigger construction and destruction
@@ -54,6 +56,12 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - The seek position of an audio buffer can be queried and modified
 - It is now possible to set a custom line height for a `TextNode` object
 - When loading a RGB texture it is possible to treat a color as transparent
+- You can now use `nctl::String` and `const char *` as keys for hash containers without specifing an hash function
+- There is a new `removeAllChildrenNodes()` method in the `SceneNode` class
+- You can retrieve the current `RectAnimation` of an `AnimatedSprite` with the `currentAnimation()` method
+- Errors in Lua scripts will not cause the engine to assert and exit
+  - It is now possible to load a Lua script without running it
+  - More information will be provided when a script fails to load or to run
 
 ### Fixes
 - GCC hardening compiler flags have been fixed with the explicit addition of PIE flags

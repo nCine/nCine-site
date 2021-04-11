@@ -5,6 +5,7 @@ permalink: /web-tests/
 ---
 
 Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
+- [ncJump](https://www.antoniocaggiano.eu/ncJump-artifacts)
 - [ncJugiMapGuiDemo](/ncjugimap_guidemo)
 - [ncJugiMapSpriteTimelineAnimation](/ncjugimap_spritetimelineanimation)
 - [ncJugiMapParallaxScrolling](/ncjugimap_parallaxscrolling)
