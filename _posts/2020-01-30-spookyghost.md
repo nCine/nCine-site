@@ -9,4 +9,4 @@ An initial demo of [SpookyGhost](https://encelo.itch.io/spookyghost) has been pu
 
 SpookyGhost is a procedural sprite animation tool made with the nCine.
 
-![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost"){: .center-block :}
+![SpookyGhost prototype](/img/posts/SpookyGhost_prototype.png "SpookyGhost prototype"){: .center-block :}
