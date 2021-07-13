@@ -11,7 +11,7 @@ nCine can be built with preset options to make a developer distribution. This ty
 For this to work there are some additional requirements:
 
 - [Git](https://git-scm.com/): to retrieve the package version using the `HEAD` commit
-- [Doxygen](http://www.doxygen.org/): to build the documentation
+- [Doxygen](http://www.doxygen.org/): to build the documentation (optional)
 - [NSIS](http://nsis.sourceforge.net/): to create the installer on Windows
 
 In order to build the nCine developer distribution you need to have CMake installed and clone the following repositories:

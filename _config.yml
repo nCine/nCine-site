@@ -29,7 +29,6 @@ navbar-links:
     - Documentation (2020.05): "docs/2020.05"
     - Lua API (2020.05): "docs/lua_api_2020.05.html"
   Build:
-    - Samples: "build-samples"
     - Linux: "build-linux"
     - Windows: "build-windows"
     - macOS: "build-macos"

@@ -60,14 +60,14 @@ There is an additional CMake option that would carry on this step automatically,
 
 ### Build the samples
 
-If you have nCine installed somewhere and built with Android support enabled you can invoke Gradle as follows and avoid copying the Android directory in a writeable path.
+If you have nCine built somewhere with Android support enabled you can invoke Gradle as follows.
 
-    gradle build -PcmakeCommand=<path/to/cmake> -PndkDir=<path/to/NDK> -p <path/to/installed/android/dir> -PbuildDir=<builddir> --project-cache-dir=<builddir>/.gradle
+    gradle build -PcmakeCommand=<path/to/cmake> -PndkDir=<path/to/NDK> -p <path/to/built/android/dir> -PbuildDir=<builddir> --project-cache-dir=<builddir>/.gradle
 
 ### Build the ncPong example
-In order to build the Android version of ncPong you need to switch on the `NCPONG_PREPARE_ANDROID` CMake variable and then run Gradle to build the APK.
+In order to build the Android version of ncPong you need to switch on the `NCPROJECT_BUILD_ANDROID` CMake variable and then run Gradle to build the APK.
 
-    cmake -S ncPong -B ncPong-build -D PACKAGE_BUILD_ANDROID=ON
+    cmake -S ncPong -B ncPong-build -D NCPROJECT_BUILD_ANDROID=ON
     cd ncPong-build/android
     gradle build -PcmakeCommand=<path/to/cmake> -PndkDir=<path/to/NDK>
 

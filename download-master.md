@@ -19,6 +19,9 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - The `AnimatedSprite` class now stores `RectAnimation` objects instead of smart pointers
 - The type alias declarations for hash containers with string keys have been removed
 - The `run()` method of the `LuaStateManager` class has been renamed to `runFromFile()`
+- The `onFrameEnd()` callback is now invoked before the OpenGL buffers swap
+- The `assign()` method of `nctl::String` will now always truncate the destination
+  - The new `replace()` method wil behave like the old `assign()` method
 
 ### New Features
 - The engine now supports custom memory allocators
@@ -40,10 +43,19 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - It is now possible to move construct or move assign resource and node classes
 - A `clone()` method has been added to node classes to perform an object copy
 - A new `onTextInput` event has been added to receive UTF-8 characters
+- It is now possible to query and set the window position on all desktop backends
+- There is now an `onPostUpdate()` callback that you can use to access the node transform for the current frame
+  - It is also possible to change it inside the callback by using `SceneNode::setWorldMatrix()`
+- The `nctl::String` class will now automatically reallocate memory to expand its capacity and never truncate by default
+  - The old behavior is still available by specifying the `nctl::StringMode::FIXED_CAPACITY` option
+- The template project files are now part of the engine
+  - You only need a simple `CMakeLists.txt` file for your project
 
 ### Improvements
-- The version of the integrated Tracy has been updated to [v0.7.6](https://github.com/wolfpld/tracy/releases/tag/v0.7.6)
-- The version of the integrated ImGui has been updated to [v1.82](https://github.com/ocornut/imgui/releases/tag/v1.82)
+- The version of the integrated Tracy has been updated to [v0.7.8](https://github.com/wolfpld/tracy/releases/tag/v0.7.8)
+- The version of the integrated ImGui has been updated to [v1.83](https://github.com/ocornut/imgui/releases/tag/v1.83)
+- The version of the integrated Google Test has been updated to [v1.11.0](https://github.com/google/googletest/releases/tag/release-1.11.0)
+- The version of the integrated Google Benchmark has been updated to [v1.5.5](https://github.com/google/benchmark/releases/tag/v1.5.5)
 - All containers now split the allocation phase from object construction
   - Creating a container will only reserve memory for the elements
   - Inserting or removing elements will trigger construction and destruction
@@ -62,9 +74,14 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - Errors in Lua scripts will not cause the engine to assert and exit
   - It is now possible to load a Lua script without running it
   - More information will be provided when a script fails to load or to run
+- The engine project is now shipping with an [.editorconfig](https://editorconfig.org/) configuration file
+- The OpenGL class that keeps track of the blending state can now use separate functions for RRB and alpha
+- The file extension comparison method is now case-insensitive
+- The `FileSystem` class returns constant strings to prevent move assignemnt and any modification to the capacity of destination ones
 
 ### Fixes
 - GCC hardening compiler flags have been fixed with the explicit addition of PIE flags
 - The root node of the scenegraph now honors its own transformations
 - The buffer of an `AudioBufferPlayer` class was not detached from the OpenAL source when it finished playing
 - The `setSize()` method of `nctl::Array` will now create objects when extending an array size
+- The ImGui and Nuklear drawing commands were previously appended to the render queue with one frame delay

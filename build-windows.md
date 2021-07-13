@@ -74,6 +74,7 @@ In order to build the nCine library the following libraries need to be installed
 - `mingw-w64-x86_64-libvorbis`
 - `mingw-w64-x86_64-libwebp`
 - `mingw-w64-x86_64-openal`
+- `mingw-w64-x86_64-lua`
 
 ### Build the dependency libraries
 In case you don't want the libraries installed system-wide or if you need a debug version, you can use the CMake scripts as per the other platforms:
