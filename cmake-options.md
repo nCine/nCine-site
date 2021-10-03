@@ -21,10 +21,18 @@ You can tweak the generation of nCine project files with the following CMake opt
   You can set this option to enable or disable the compilation of unit tests.
   When enabled CMake will first download and compile [Google Test](https://github.com/google/googletest), then the unit tests.
 
+  - `GTEST_VERSION_TAG`
+
+    Use this variable to specify a particular commit, tag or branch for Google Test.
+
 - `NCINE_BUILD_BENCHMARKS`
 
   You can set this option to enable or disable the compilation of the micro benchmarks.
   When enabled CMake will first download and compile [Google Benchmark](https://github.com/google/benchmark), then the micro benchmarks.
+
+  - `GBENCHMARK_VERSION_TAG`
+
+    Use this variable to specify a particular commit, tag or branch for Google Benchmark.
 
 - `NCINE_INSTALL_DEV_SUPPORT`
 
@@ -138,13 +146,25 @@ You can tweak the generation of nCine project files with the following CMake opt
 
   When this option is enabled the engine will feature an integration with the [Dear ImGui](https://github.com/ocornut/imgui) user interface toolkit.
 
+  - `IMGUI_VERSION_TAG`
+
+    Use this variable to specify a particular commit, tag or branch for Dear ImGui.
+
 - `NCINE_WITH_NUKLEAR`
 
   When this option is enabled the engine will feature an integration with the [Nuklear](https://github.com/vurtun/nuklear) user interface toolkit.
 
+  - `NUKLEAR_VERSION_TAG`
+
+    Use this variable to specify a particular commit, tag or branch for Nuklear.
+
 - `NCINE_WITH_TRACY`
 
   When this option is enabled the engine will feature an integration with the [Tracy](https://bitbucket.org/wolfpld/tracy) frame profiler.
+
+  - `TRACY_VERSION_TAG`
+
+    Use this variable to specify a particular commit, tag or branch for Tracy.
 
 - `NCINE_WITH_RENDERDOC`
 

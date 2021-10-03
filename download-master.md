@@ -50,10 +50,12 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
   - The old behavior is still available by specifying the `nctl::StringMode::FIXED_CAPACITY` option
 - The template project files are now part of the engine
   - You only need a simple `CMakeLists.txt` file for your project
+- You can save a texture from video memory to RAM and then from RAM to disk as a PNG or WebP image
+- On desktop platforms the `IGfxDevice` provides a `flashWindow()` method to make the taskbar flash
 
 ### Improvements
 - The version of the integrated Tracy has been updated to [v0.7.8](https://github.com/wolfpld/tracy/releases/tag/v0.7.8)
-- The version of the integrated ImGui has been updated to [v1.83](https://github.com/ocornut/imgui/releases/tag/v1.83)
+- The version of the integrated ImGui has been updated to [v1.84.2](https://github.com/ocornut/imgui/releases/tag/v1.84.2)
 - The version of the integrated Google Test has been updated to [v1.11.0](https://github.com/google/googletest/releases/tag/release-1.11.0)
 - The version of the integrated Google Benchmark has been updated to [v1.5.5](https://github.com/google/benchmark/releases/tag/v1.5.5)
 - All containers now split the allocation phase from object construction
@@ -78,6 +80,7 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - The OpenGL class that keeps track of the blending state can now use separate functions for RRB and alpha
 - The file extension comparison method is now case-insensitive
 - The `FileSystem` class returns constant strings to prevent move assignemnt and any modification to the capacity of destination ones
+- There is now a `fixExtension()` function in the `FileSystem` class to assure that a file has the intended extension
 
 ### Fixes
 - GCC hardening compiler flags have been fixed with the explicit addition of PIE flags
