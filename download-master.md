@@ -55,7 +55,7 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 
 ### Improvements
 - The version of the integrated Tracy has been updated to [v0.7.8](https://github.com/wolfpld/tracy/releases/tag/v0.7.8)
-- The version of the integrated ImGui has been updated to [v1.84.2](https://github.com/ocornut/imgui/releases/tag/v1.84.2)
+- The version of the integrated ImGui has been updated to [v1.85](https://github.com/ocornut/imgui/releases/tag/v1.85)
 - The version of the integrated Google Test has been updated to [v1.11.0](https://github.com/google/googletest/releases/tag/release-1.11.0)
 - The version of the integrated Google Benchmark has been updated to [v1.5.5](https://github.com/google/benchmark/releases/tag/v1.5.5)
 - All containers now split the allocation phase from object construction
