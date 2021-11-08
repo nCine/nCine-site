@@ -119,7 +119,11 @@ You can tweak the generation of nCine project files with the following CMake opt
 
 - `NCINE_WITH_LUA`
 
-  This option enables the scripting API and the integration with the Lua library.
+  This option enables the integration with the Lua library.
+
+  - `NCINE_WITH_SCRIPTING_API`
+
+    This option enables the Lua scripting API.
 
 - `NCINE_WITH_ALLOCATORS`
 

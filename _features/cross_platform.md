@@ -10,6 +10,7 @@ _image: android.png
 ![{{page.title}}](/img/features/{{page._image}})
 
 - Multiple platforms support: Linux, Windows, macOS, Android and [Emscripten](https://emscripten.org/)
+  - Tested on the [Raspberry Pi 4B](https://www.raspberrypi.com/)
   - Tested on both [Android TV](https://www.android.com/tv/) and [Android Wear](https://www.android.com/wear/)
   - Tested on Chrome and Firefox
 - Multiple compilers support: GCC, Clang, Apple Clang, MSVC, MinGW-w64 GCC and Clang, Emscripten

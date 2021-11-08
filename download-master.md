@@ -52,12 +52,15 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
   - You only need a simple `CMakeLists.txt` file for your project
 - You can save a texture from video memory to RAM and then from RAM to disk as a PNG or WebP image
 - On desktop platforms the `IGfxDevice` provides a `flashWindow()` method to make the taskbar flash
+- nCine can now run on a [Raspberry Pi](https://www.raspberrypi.com/)
+  - Various fixes to better support OpenGL ES features and older CMake versions
+- It is now possible to disable the scripting API while retaining the Lua integration
 
 ### Improvements
 - The version of the integrated Tracy has been updated to [v0.7.8](https://github.com/wolfpld/tracy/releases/tag/v0.7.8)
 - The version of the integrated ImGui has been updated to [v1.85](https://github.com/ocornut/imgui/releases/tag/v1.85)
 - The version of the integrated Google Test has been updated to [v1.11.0](https://github.com/google/googletest/releases/tag/release-1.11.0)
-- The version of the integrated Google Benchmark has been updated to [v1.5.5](https://github.com/google/benchmark/releases/tag/v1.5.5)
+- The version of the integrated Google Benchmark has been updated to [v1.6.0](https://github.com/google/benchmark/releases/tag/v1.6.0)
 - All containers now split the allocation phase from object construction
   - Creating a container will only reserve memory for the elements
   - Inserting or removing elements will trigger construction and destruction
