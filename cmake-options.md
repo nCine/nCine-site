@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CMake options
+title: CMake Options
 permalink: /cmake-options/
 ---
 

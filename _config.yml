@@ -14,36 +14,36 @@ author: Angelo Theodorou
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Info:
-    - Why nCine: "why"
-    - Features: "features"
+  News: "news"
+  Features: "features"
+  Showcase:
     - Gallery: "gallery"
     - Videos: "videos"
-    - F.A.Q.: "faq"
     - Web Tests: "web-tests"
-  Learn:
+  Documentation:
+    - Why nCine?: "why"
+    - F.A.Q.: "faq"
     - Video Tutorials: "video-tutorials"
     - Samples: "samples"
     - Documentation (master): "docs/master"
     - Lua API (master): "docs/lua_api_master.html"
     - Documentation (2020.05): "docs/2020.05"
     - Lua API (2020.05): "docs/lua_api_2020.05.html"
-  Build:
-    - Linux: "build-linux"
-    - Windows: "build-windows"
-    - macOS: "build-macos"
-    - Android: "build-android"
-    - Emscripten: "build-emscripten"
-    - Dev Dist: "build-dev-dist"
-    - CMake options: "cmake-options"
+  Community:
+    - Discord: "https://discord.gg/495ab6Y"
+    - Discussions: "https://github.com/nCine/nCine/discussions"
+    - Donate: "donate"
+  Development:
+    - GitHub: "https://github.com/nCine/nCine"
+    - Issues: "https://github.com/nCine/nCine/issues"
+    - How to Build: "build"
+    - Continuous Integration: "ci"
   Download:
     - General Info: "download"
     - Master Branch: "download-master"
     - Release 2020.05: "download-202005"
     - Release 2019.10: "download-201910"
     - Release 2019.05: "download-201905"
-  C.I.: "ci"
-  Donate: "donate"
 
 # --- Logo --- #
 
@@ -149,8 +149,8 @@ footer-hover-col: "#0085A1"
 mobile-theme-col: "#96D43D"
 
 # For any extra visual customization, you can include additional CSS files in every page on your site. List any custom CSS files here
-#site-css:
-#  - "/assets/css/custom-styles.css"
+site-css:
+  - "/assets/css/custom-styles.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
 #site-js:

@@ -13,7 +13,7 @@ layout: base
 
 <div class="container-md" role="main">
   <div class="row">
-    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+    <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1">
       <div id="container">
         {% assign sorted_features = site.features | sort: '_order' %}
         {% for feature in sorted_features %}
@@ -21,7 +21,7 @@ layout: base
           {% if mod == 0 %}<div id="row">{% endif %}
           <div id="cell">
             <figure>
-              <a href="{{ feature.permalink }}"><img src="/img/features/{{ feature._image }}" style="width:400px;"/></a> <br />
+              <a href="{{ feature.permalink }}"><img src="/img/features/{{ feature._image }}" width=400 height=170 /></a> <br />
               <figcaption id="caption">
                 {{ feature.caption }}<br />
                 <a href="{{ feature.permalink }}">[Read More]</a>

@@ -6,8 +6,6 @@ permalink: /samples/
 
 Probably the easiest way to start understading how to use the nCine API is through the sample sources installed alongside the project.
 
-Please refer to the [Build the samples](/build-samples) page for instructions on how to build them on your platform.
-
 The samples are all prefixed with `apptest_`, they open a window, use input and events and they are all linked to a common `ncine_main` static library that implements a `main()` function to set things up.
 
 ## List of samples
