@@ -23,27 +23,23 @@ navbar-links:
   Documentation:
     - Why nCine?: "why"
     - F.A.Q.: "faq"
-    - Video Tutorials: "video-tutorials"
-    - Samples: "samples"
+    - Wiki: https://github.com/nCine/nCine/wiki
     - Documentation (master): "docs/master"
     - Lua API (master): "docs/lua_api_master.html"
     - Documentation (2020.05): "docs/2020.05"
     - Lua API (2020.05): "docs/lua_api_2020.05.html"
   Community:
+    - Forum: "https://github.com/nCine/nCine/discussions"
     - Discord: "https://discord.gg/495ab6Y"
-    - Discussions: "https://github.com/nCine/nCine/discussions"
-    - Donate: "donate"
-  Development:
     - GitHub: "https://github.com/nCine/nCine"
-    - Issues: "https://github.com/nCine/nCine/issues"
-    - How to Build: "build"
-    - Continuous Integration: "ci"
+    - Donate: "donate"
   Download:
     - General Info: "download"
     - Master Branch: "download-master"
     - Release 2020.05: "download-202005"
     - Release 2019.10: "download-201910"
     - Release 2019.05: "download-201905"
+  C.I.: "ci"
 
 # --- Logo --- #
 
