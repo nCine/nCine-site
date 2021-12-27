@@ -41,7 +41,7 @@ The project follows a [calendar versioning](https://calver.org/) scheme (`YYYY.0
 
 #### Artifacts
 
-The second way of obtaining nCine binaries is through [continuous integration](/ci/) artifacts.
+The second way of obtaining nCine binaries is through continuous integration [artifacts](/artifacts).
 Every project has a specific repository where the C.I. deposits its artifacts and they are all accessible on GitHub.
 
 You can, for example, go to the [nCine-artifacts](https://github.com/nCine/nCine-artifacts/) repository and then to the [all branches](https://github.com/nCine/nCine-artifacts/branches/all) page to have a list of all the supported combinations of OSes, compilers and branches.

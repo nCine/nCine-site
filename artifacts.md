@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Continuous Integration
-permalink: /ci/
+title: Artifacts
+permalink: /artifacts/
 ---
 
 The dependency libraries, the engine and the accompanying projects are continuously integrated with [GitHub Actions](https://github.com/features/actions).
