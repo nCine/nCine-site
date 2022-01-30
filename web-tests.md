@@ -20,6 +20,7 @@ Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
 - [apptest_animsprites](/apptests/apptest_animsprites.html)
 - [apptest_audio](/apptests/apptest_audio.html)
 - [apptest_camera](/apptests/apptest_camera.html)
+- [apptest_clones](/apptests/apptest_clones.html)
 - [apptest_filebrowser](/apptests/apptest_filebrowser.html)
 - [apptest_font](/apptests/apptest_font.html)
 - [apptest_joystick](/apptests/apptest_joystick.html)
@@ -34,4 +35,5 @@ Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
 - [apptest_simdbench](/apptests/apptest_simdbench.html)
 - [apptest_sinescroller](/apptests/apptest_sinescroller.html)
 - [apptest_texformats](/apptests/apptest_texformats.html)
+- [apptest_viewports](/apptests/apptest_viewports.html)
 - [glapptest_fbo_cube](/apptests/glapptest_fbo_cube.html)

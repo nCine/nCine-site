@@ -13,6 +13,7 @@ _image: render_batcher.png
 - Support OpenGL buffer updating both with or without [mapping](https://www.khronos.org/opengl/wiki/Buffer_Object#Mapping)
 - Support for indexed and instanced drawing
 - Automatic batching for sprites and text nodes
+- Multiple viewports for offscreen rendering or split screen
 - Custom meshes for sprites
 - [In-application](https://renderdoc.org/docs/in_application_api.html) integration with [RenderDoc](https://renderdoc.org/)
 - Support for Google [ANGLE](http://angleproject.org) libraries on Windows

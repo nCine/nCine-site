@@ -6,7 +6,27 @@ permalink: /download-master/
 
 The [master](https://github.com/nCine/nCine/tree/master) branch will be the base for a future release.
 
-## Changelog
+## January 2022
+
+### Breaking Changes
+- The public `x` and `y` fields of a `SceneNode` have been made protected for consistency
+- The `IGfxDevice` interface cannot set the OpenGL viewport and clear color, use viewports instead
+- The ImGui and Nuklear layer settings are part of the GUI settings structure in the `Application` class
+
+### New Features
+- Multiple viewports to support offscreen rendering or split screen
+- A camera system to move around without transforming a parent node (slow on the CPU)
+- The viewport and camera systems can also be used via the Lua API
+- A new `apptest_viewports` application has been added to test the viewport and camera systems
+
+### Improvements
+- Dirty bits to update shader uniforms only when they change
+- Dirty bits to transform a node or update its AABB only when needed
+- There is now a centralized pool of render commands that serves multiple classes
+- There are now OpenGL state classes to track the viewport and the clear color
+- The `Rect` class has some new useful manipulation methods (also in the Lua API)
+
+## Next Release Changelog
 
 ### Breaking Changes
 - The `nctl::Array` and `nctl::StaticArray` subscript operator will not grow the array size
@@ -22,6 +42,10 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - The `onFrameEnd()` callback is now invoked before the OpenGL buffers swap
 - The `assign()` method of `nctl::String` will now always truncate the destination
   - The new `replace()` method wil behave like the old `assign()` method
+- Pushing an element beyond the capacity of an array will now cause a fatal assert
+- Popping an element from an empty array will now cause a fatal assert
+- Retrieving a front or a back element from an empty array will now cause a fatal assert
+- Retrieving a front or a back element from an empty list will now cause a fatal assert
 
 ### New Features
 - The engine now supports custom memory allocators
@@ -58,9 +82,9 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 
 ### Improvements
 - The version of the integrated Tracy has been updated to [v0.7.8](https://github.com/wolfpld/tracy/releases/tag/v0.7.8)
-- The version of the integrated ImGui has been updated to [v1.85](https://github.com/ocornut/imgui/releases/tag/v1.85)
+- The version of the integrated ImGui has been updated to [v1.86](https://github.com/ocornut/imgui/releases/tag/v1.86)
 - The version of the integrated Google Test has been updated to [v1.11.0](https://github.com/google/googletest/releases/tag/release-1.11.0)
-- The version of the integrated Google Benchmark has been updated to [v1.6.0](https://github.com/google/benchmark/releases/tag/v1.6.0)
+- The version of the integrated Google Benchmark has been updated to [v1.6.1](https://github.com/google/benchmark/releases/tag/v1.6.1)
 - All containers now split the allocation phase from object construction
   - Creating a container will only reserve memory for the elements
   - Inserting or removing elements will trigger construction and destruction
@@ -91,3 +115,4 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - The buffer of an `AudioBufferPlayer` class was not detached from the OpenAL source when it finished playing
 - The `setSize()` method of `nctl::Array` will now create objects when extending an array size
 - The ImGui and Nuklear drawing commands were previously appended to the render queue with one frame delay
+- Fix `ncine.sprite.set_flipped_x()` and `set_flipped_y()` functions in the Lua API

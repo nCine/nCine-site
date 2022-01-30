@@ -33,7 +33,6 @@ permalink: /features/
 - Add a collision detection and response system or integrate Box2D
 - Separate game, input and audio update in different threads
 - Refine the thread-pool system and expose it to the user API
-- Implement a Camera node for the scenegraph
 - Support custom user shaders and post-processing (needs off-screen render targets)
 - Add a 2D skeletal animation system
 - Create a cross-platform game editor with Dear ImGui
