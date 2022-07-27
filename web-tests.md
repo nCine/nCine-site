@@ -32,6 +32,7 @@ Demos from the [Emscripten](https://emscripten.org/) port of the nCine:
 - [apptest_particles](/apptests/apptest_particles.html)
 - [apptest_rotozoom](/apptests/apptest_rotozoom.html)
 - [apptest_scene](/apptests/apptest_scene.html)
+- [apptest_shaders](/apptests/apptest_shaders.html)
 - [apptest_simdbench](/apptests/apptest_simdbench.html)
 - [apptest_sinescroller](/apptests/apptest_sinescroller.html)
 - [apptest_texformats](/apptests/apptest_texformats.html)

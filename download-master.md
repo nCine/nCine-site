@@ -6,6 +6,118 @@ permalink: /download-master/
 
 The [master](https://github.com/nCine/nCine/tree/master) branch will be the base for a future release.
 
+## July 2022
+
+### Breaking Changes
+- The viewport chain is now an array accessible with the static `Viewport::chain()` method
+- The `Application::rootViewport()` method has been renamed to `screenViewport()`
+- The `GLShaderAttributes` class have been deleted and its functionalities transferred to `GLShaderProgram`
+- Added the `get_` prefix to some Lua getters of the `MeshSprite` class
+- The Android sources are now an independant module inside the `app` directory
+
+### New Features
+- New `Shader` and `ShaderState` classes to support custom user shaders (Lua API too)
+  - Mesh sprites now support custom vertex format, if the appropriate shader is provided
+  - The `script.lua` example has been updated to show post-processing using viewports and shaders
+- Added support for multi-texturing and multiple render targets
+- A new `apptest_shaders` application has been added to test custom shaders with batching
+  - It shows post-processing blur, normal mapping, and bloom
+
+### Improvements
+- The version of the integrated Tracy has been updated to [v0.8.2](https://github.com/wolfpld/tracy/releases/tag/v0.8.2)
+- The render batcher is now able to deal with custom shaders, providing the user writes a batched shader
+- Improved and simplified API for viewports (also ported to Lua)
+- Added methods to set OpenGL debugging labels for shaders, textures, and viewport's FBOs
+- There is now an `onDrawViewport()` callback that you can use to set shader uniforms when drawing a particular viewport
+- There is also an `onResizeWindow()` callback that can be useful to recreate post-processing viewport textures
+- Added missing getters and more methods to the Lua API of the `MeshSprite` class
+- Updated support for Gradle plugin 7.2.0, build tools 33.0.0, and NDK r25 on Android
+- Added support for the `Vector4` class in the Lua API
+
+### Fixes
+- Added the missing SceneNode::lastFrameUpdated() method to the Lua API
+- You will never see again errors about reserved OpenGL uniforms or attributes not being found (like `gl_VertexID`)
+- Non-compiling shaders will not fatal assert like they did before
+- Fixes to the methods dealing with vertices and indices of the Lua API of the `MeshSprite` class
+
+## June 2022
+
+### Breaking Changes
+- Added the `get_` prefix to some Lua getters of the `Application` and `IAudioDevice` classes
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.88](https://github.com/ocornut/imgui/releases/tag/v1.88)
+- No more crashes when dereferencing Lua light user data pointers of the wrong type
+  - The tracking of pointers to C++ objects created in Lua has improved a lot
+
+### Fixes
+- Trying to play a sound when there are no available audio players will not crash the application
+- Fixed the parameters retrieving of Lua joystick state functions
+
+## May 2022
+
+### Breaking Changes
+- Added the `get_` prefix to the Lua getters of the `Font` class
+
+### Improvements
+- The version of the integrated Tracy has been updated to [v0.8.1](https://github.com/wolfpld/tracy/releases/tag/v0.8.1)
+- Added a static method to the `TextNode` class to calculate the boundaries for arbitrary text and font
+- The `Font` class can now be constructed using an existent `Texture` object
+  - This allows for texture sharing (like an atlas) or textures constructed from texels
+
+## April 2022
+
+### Breaking Changes
+- The `DrawableNode::LayerBase` enumeration has been deleted
+  - This also means that `TextNode` will not be on a higher layer by default
+- The `SceneNode::draw()` method now returns a boolean to indicate if it has been rendered
+
+### New Features
+- You can set the layer of a `SceneNode` and it will carry this value over to its children
+  - A child node with a layer different than 0 will not inherit it from its parent
+- Added a scenegraph visit order when sorting the rendering commands
+
+### Improvements
+- The `apptest_anchor` application can now show and modify all the different order and layer values
+
+### Fixes
+- The `apptest_scene` and `apptest_viewports` applications now work correctly on Qt5
+
+## March 2022
+
+### Breaking Changes
+- The `Object::name()` method now returns an array of characters
+- Inverted position and rotation view values for the `Camera`. It will now behave as an object that you move around the scene.
+
+### Improvements
+- The version of the integrated Tracy has been updated to [v0.8](https://github.com/wolfpld/tracy/releases/tag/v0.8)
+- Allow a relative path from executables to data on Linux
+
+### Fixes
+- Fixed an issue with ImGui and Nuklear uploading VBOs before setting a vertex format (and consequently a VAO)
+- Map and set containers can now perform a rehash when their values or keys are non-copyable classes
+- Updating node transformation before committing uniform blocks
+
+## February 2022
+
+### New Features
+- There is now a new `nctl::StaticString` class that stores its characters on the stack
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.87](https://github.com/ocornut/imgui/releases/tag/v1.87)
+- Using the new event-based ImGui input API on all backends
+- Math classes like vectors, matrices, and quaternions will now initialize their members in the default constructor
+- Disabling the cursor will now enable a relative mouse motion if supported (SDL and GLFW)
+- The Qt5 widget exposes a flag to disable per-frame updates
+- It is now possible to retrieve last frame AABB of a `DrawableNode`
+- More information will be presented when the OpenGL debug context is enabled (marker annotations)
+
+### Fixes
+- The fixed capacity property is now correctly initialized when copy constructing, move constructing, and move assign a `String`
+- A `Sprite` or a `MeshSprite` without a texture would make the application crash when a texture was assigned
+- A `TextNode` without a font would make the application crash when a font was assigned
+- A scene node with a negative scale factor will invert its rotation sign
+
 ## January 2022
 
 ### Breaking Changes
