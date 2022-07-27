@@ -7,6 +7,20 @@ permalink: /videos/
 
 Don't miss the [Gallery](/gallery) page for additional screenshots!
 
+## Jazz² Resurrection
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/kiZKZnbqo6I" frameborder="0" allowfullscreen></iframe>
+</div>
+The [C++ version](https://github.com/deathkiller/jazz2-native) of the original reimplementation made with a custom version of the nCine
+
+## ncJump
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/ZKdDtJiIUdo" frameborder="0" allowfullscreen></iframe>
+</div>
+[`ncJump`](https://github.com/Fahien/ncJump), the platform game made with the nCine by [Fahien](https://github.com/Fahien), running on the Steam Deck
+
 ## SpookyGhost
 
 <div class="embed-responsive embed-responsive-16by9">

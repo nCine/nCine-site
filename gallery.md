@@ -7,6 +7,11 @@ permalink: /gallery/
 
 Don't miss the [Videos](/videos/) page to see the nCine in action!
 
+## Jazz² Resurrection
+
+![Jazz² Resurrection](/img/gallery/jazz2.png "Jazz² Resurrection")
+[`Jazz² Resurrection`](https://github.com/deathkiller/jazz2-native), the C++ version of the Jazz Jackrabbit 2 reimplementation project by [DeathKiller](https://github.com/deathkiller)
+
 ## ncJump
 
 ![ncJump](/img/gallery/ncJump.png "ncJump")
