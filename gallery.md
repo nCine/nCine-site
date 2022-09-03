@@ -75,11 +75,11 @@ A [RenderDoc](https://renderdoc.org/) capture of `apptest_sinescroller` that sho
 ![Tracy capture](/img/gallery/Tracy_capture.png "Tracy capture")
 A [Tracy](https://bitbucket.org/wolfpld/tracy/) capture of `apptest_camera` compared to a different version of the same test
 
-![apptest_camera](/img/gallery/apptest_camera.png "apptest_camera")
+![apptest_camera](/img/apptests/apptest_camera.png "apptest_camera")
 `apptest_camera`, a high count sprite example to test batching and culling
 
-![apptest_simdbench](/img/gallery/apptest_simdbench.png "apptest_simdbench")
+![apptest_simdbench](/img/apptests/apptest_simdbench.png "apptest_simdbench")
 `apptest_simdbench`, a tool to benchmark SIMD performance that loads and saves results through Lua tables
 
-![apptest_sinescroller](/img/gallery/apptest_sinescroller.png "apptest_sinescroller")
+![apptest_sinescroller](/img/apptests/apptest_sinescroller.png "apptest_sinescroller")
 `apptest_sinescroller`, a small homage to old-skool demoscene sine scrollers
