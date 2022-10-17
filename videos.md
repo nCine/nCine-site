@@ -70,6 +70,11 @@ Gameplay video of `ncPong`
 ## nCine features
 
 <div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/T1XRrK77u6M" frameborder="0" allowfullscreen></iframe>
+</div>
+nCine Custom Shaders Test
+
+<div class="embed-responsive embed-responsive-16by9">
   <iframe width="750" height="422" src="https://www.youtube.com/embed/lPMd8fI99gI" frameborder="0" allowfullscreen></iframe>
 </div>
 Node inspector in the debug overlay interface
@@ -78,6 +83,11 @@ Node inspector in the debug overlay interface
   <iframe width="750" height="422" src="https://www.youtube.com/embed/5g30K6ktEc8" frameborder="0" allowfullscreen></iframe>
 </div>
 `apptest_anchor`, an example about advanced sprite features
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/2kAoyVvgLyo" frameborder="0" allowfullscreen></iframe>
+</div>
+nCine Custom Memory Allocators Test
 
 <div class="embed-responsive embed-responsive-16by9">
   <iframe width="750" height="422" src="https://www.youtube.com/embed/PpVLD3ShiCw" frameborder="0" allowfullscreen></iframe>

@@ -6,6 +6,48 @@ permalink: /download-master/
 
 The [master](https://github.com/nCine/nCine/tree/master) branch will be the base for a future release.
 
+## October 2022
+
+### Breaking Changes
+- The `IGfxDevice::setResolution()` method has been removed. Depending on the full screen state, use `setWindowSize()` or `setVideoMode()`
+- The `inFullscreen` and `isResizable` flags of the `AppConfiguration` class have been renamed to `fullScreen` and `resizable`
+- To query the supported video modes, you have to query the list of connected monitors with `IGfxDevice::numMonitors()` and `IGfxDevice::monitor()`
+
+### New Features
+- It is now possible to enumerate connected monitors on all desktop backends
+  - You can now query window scaling and drawable resolution to better support HiDPI monitors
+  - The Lua API has been extended to support the new methods of the `IGfxDevice` class
+  - There is a new `apptest_scaling` application that shows automatic window size scaling
+
+### Improvements
+- Failing to load a file will now never exit the application
+
+### Fixes
+- Various fixes about window size, window position, and full screen
+
+## September 2022
+
+### New Features
+- There is a new `onFilesDropped()` input callback to support drag'n'drop from the system to the application window
+
+### Improvements
+- The JNI helper classes have been refactored to use global references and be more stable and secure
+- Shader programs now detach shaders before deleting them, so they are really deleted and memory is freed
+- The new `NCINE_UNDEFINED_SANITIZER` CMake options adds support for the UBSan of GCC and Clang
+
+### Fixes
+- The Android manifest has been updated to allow compilation on latest Android versions
+
+## August 2022
+
+### Improvements
+- Improvements to `ParticleSystem` and to particle affector classes
+  - It is now possible to add affector steps out of order
+  - A new getter method in `ParticleSystem` allows the manipulation of affectors
+  - Affector steps can be manipulated via a new Lua API
+- A new `AudioStreamPlayer` getter returns the sample offset relative to the whole stream
+- The audio, font, and particles apptests have brand new ImGui interfaces
+
 ## July 2022
 
 ### Breaking Changes
@@ -39,6 +81,7 @@ The [master](https://github.com/nCine/nCine/tree/master) branch will be the base
 - You will never see again errors about reserved OpenGL uniforms or attributes not being found (like `gl_VertexID`)
 - Non-compiling shaders will not fatal assert like they did before
 - Fixes to the methods dealing with vertices and indices of the Lua API of the `MeshSprite` class
+- The `minBatchSize`/`maxBatchSize` rendering settings have been fixed and will not cause flickering when batching
 
 ## June 2022
 

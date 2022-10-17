@@ -220,11 +220,14 @@ This test is not interactive and only stresses the object cloning system to high
 
 ![apptest_filebrowser](/img/apptests/apptest_filebrowser.png "apptest_filebrowser"){: .center-block :}
 
-A basic but working file browser based on ImGui, with custom coloring, permissions support, multiple sorting types, file types, and extension filters.<br />
+A basic but working file browser based on ImGui, with a list of pinned directories, custom coloring, permissions support, multiple sorting types, file types, and extension filters.<br />
 The same code is used in [SpookyGhost](https://encelo.itch.io/spookyghost/devlog/132134/new-file-dialog-window) with the addition of icons.
 
-**Controls**: Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the ImGui interface and navigate the filesystem.
-Pressing `Escape` on the keyboard will quit the application.
+**Controls**:
+- Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the ImGui interface and navigate the filesystem.
+- Drag and dropping directories to the pinned list on the left by will add them to the list.
+- Drag and dropping a directory/file to the browser on the right will go to that/the containing directory.
+- Pressing `Escape` on the keyboard will quit the application.
 
 ### apptest_font ([web version](/apptests/apptest_font.html))
 
@@ -347,6 +350,20 @@ A very simple test showing a bunch of sprites rotating, zooming, and moving arou
 - Pressing the right bumper on the gamepad, or the right mouse button, or tapping the screen with two fingers will pause the square sprites formation
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause both the sprite rotation and the square formation
 - Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
+
+### apptest_scaling ([web version](/apptests/apptest_scaling.html))
+
+![apptest_scaling](/img/apptests/apptest_scaling.png "apptest_scaling"){: .center-block :}
+
+A test showing nCine support for the window scale factor of a monitor.
+You can drag around the window on a monitor with a different scale factor to see it automatically resized.
+
+**Controls**:
+- Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the interfaces
+- Pressing `1`, `2`, `3`, or `4` will center the window on the first, second, third or fourth monitor
+- Pressing `5`, `6`, `7`, or `8` will go full screen on the first, second, third or fourth monitor
+- Pressing `CTRL + H` on the keyboard will show or hide the ImGui interfaces
+- Pressing `Escape` on the keyboard will quit the application
 
 ### apptest_scene ([web version](/apptests/apptest_scene.html))
 
