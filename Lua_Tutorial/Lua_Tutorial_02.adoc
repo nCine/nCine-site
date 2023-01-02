@@ -1,0 +1,83 @@
+== Tutorial #02 - Text
+
+=== Bitmap fonts
+
+With the latest tutorial you learnt how to load a texture and create a sprite from it.
+In this one you will see how to load a font and display some text on screen.
+
+nCine uses bitmap fonts: they are special textures that contains all the characters.
+The information about how to render a text from those textures is contained in a FNT file. It is a text file that tells where every character is located inside the texture.
+
+To create a font texture and the corresponding FNT description file you can use the https://www.angelcode.com/products/bmfont/[Bitmap Font Generator] or other tools that support AngelCode's format.
+
+=== Font and text node objects
+
+To create a new font object you can use the `font.new()` function. As usual, remember to call `font.delete()` when you are done with it.
+
+The parameters for this function are the path to a FNT file and the path to a texture file (be careful, it is **not** a texture object).
+
+To display some text on screen you also need a text node. Just like a sprite, it has to be a child of the root node or have an ancestor that is a child of the root node.
+
+You also need to associate it with the font to use: `textnode.new(rootnode, font, 256)`.
+
+The last parameter is the maximum length allowed for the text to be displayed. You can tune this value around the use you want to do of your text node, to optimize performance and memory usage.
+
+[source,lua]
+----
+nc = ncine
+
+function nc.on_init()
+	local rootnode = nc.application.get_rootnode()
+
+	font_ = nc.font.new(nc.fs.get_data_path().."fonts/DroidSans32_256.fnt",
+	                    nc.fs.get_data_path().."fonts/DroidSans32_256.png")
+
+	local resolution = nc.application.get_resolution()
+	textnode_ = nc.textnode.new(rootnode, font_, 256)
+	nc.textnode.set_position(textnode_, resolution.x * 0.5, resolution.y * 0.5)
+end
+
+function nc.on_frame_start()
+	nc.textnode.set_string(textnode_, string.format("FPS: %.2f", 1.0 / nc.application.get_interval()))
+end
+
+function nc.on_shutdown()
+	nc.textnode.delete(textnode_)
+	nc.font.delete(font_)
+end
+----
+
+=== Additional text node functions
+
+==== Dynamic size and position
+
+We can make this example even better by positioning the text in one of the screen's corners.
+
+To do that we need to know how tall and how wide is the text that we are rendering.
+We can do exactly that with the `get_width()` and the `get_height()` functions.
+
+If we are changing the string each frame, like in this example, we need to reposition the text each frame to take into account the changes in size.
+
+==== Color
+
+Changing the color of a text node is simple: you just have to call the `set_color()` function with the four color channel values (red, green, blue, and alpha).
+
+For example, `nc.textnode.set_color(textnode_, 1, 1, 0, 1)` will make the text yellow.
+
+==== Alignment
+
+When the string to render has at least one `\n` character the text will span multiple lines.
+
+In this case you can choose how to align them (left, right, or center) with the `set_alignment()` function.
+
+For example, `nc.textnode.set_alignment(textnode_, nc.text_alignment.CENTER)` will align multiple lines at the center.
+
+To set the alignment, we have used again a special constant value. There are three values: `nc.text_alignment.LEFT`, `nc.text_alignment.RIGHT`, and `nc.text_alignment.CENTER`.
+
+=== Putting it all together
+
+.Complete example #02
+[source,lua]
+----
+include::src/script_02.lua[]
+----

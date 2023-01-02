@@ -29,6 +29,7 @@ navbar-links:
   Documentation:
     - Why nCine?: "why"
     - F.A.Q.: "faq"
+    - Lua Tutorial: "Lua_Tutorial.html"
     - Wiki: https://github.com/nCine/nCine/wiki
     - Documentation (master): "docs/master"
     - Lua API (master): "docs/lua_api_master.html"
@@ -305,6 +306,7 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+  - Lua_Tutorial/
 
 collections:
   features:

@@ -1,0 +1,157 @@
+== Tutorial #05 - Keyboard and gamepad
+
+=== Keyboard input
+
+In this tutorial we are going to learn more about user inputs.
+
+The are two ways of looking at inputs: you can query their current state or you can listen for events (a change in state).
+
+The keyboard inputs work just the same. You can query for their state (which keys are pressed in this frame) or you can react to events (the user pressing or releasing a key).
+
+Let's build an example using the animated sprite from last tutorial.
+
+[source,lua]
+----
+nc = ncine
+
+function nc.on_frame_start()
+	local pos = nc.animated_sprite.get_position(anim_sprite_)
+	local step = 100 * nc.application.get_interval()
+	local moved = false
+
+	local key_state = nc.input.key_state()
+	if nc.input.key_down(key_state, nc.keysym.UP) or nc.input.key_down(key_state, nc.keysym.W) then
+		pos.y = pos.y + step
+		nc.animated_sprite.set_rotation(anim_sprite_, 180)
+		moved = true
+	elseif nc.input.key_down(key_state, nc.keysym.DOWN) or nc.input.key_down(key_state, nc.keysym.S) then
+		pos.y = pos.y - step
+		nc.animated_sprite.set_rotation(anim_sprite_, 0)
+		moved = true
+	elseif nc.input.key_down(key_state, nc.keysym.LEFT) or nc.input.key_down(key_state, nc.keysym.A) then
+		pos.x = pos.x - step
+		nc.animated_sprite.set_rotation(anim_sprite_, 270)
+		moved = true
+	elseif nc.input.key_down(key_state, nc.keysym.RIGHT) or nc.input.key_down(key_state, nc.keysym.D) then
+		pos.x = pos.x + step
+		nc.animated_sprite.set_rotation(anim_sprite_, 90)
+		moved = true
+	end
+
+	nc.animated_sprite.set_paused(anim_sprite_, not moved)
+	if moved then
+		nc.animated_sprite.set_position(anim_sprite_, pos)
+	else
+		nc.animated_sprite.set_frame(anim_sprite_, 0)
+	end
+end
+
+function nc.on_key_released(event)
+	if event.sym == nc.keysym.ESCAPE then
+		nc.application.quit()
+	end
+end
+----
+
+In this example we are using the keyboard state to move the animated sprite.
+
+We first get the current position on screen and calculate a movement based on the last frame time, then we check which key is pressed this frame.
+
+The current keyboard state is retrieved using `input.key_state()`. We then use `input.key_down()` on the state object to query if a specific key is pressed.
+We check both arrows and `WASD` keys to offer the user two ways of moving our animated sprite.
+
+If the user pressed one of these keys we update the position vector and change the sprite rotation with `set_rotation()`.
+
+We also set the value of the `moved` flag that will later be used to play/pause the animation, set the sprite position, and reset the animation frame.
+
+The snippet also shows the use of the `on_key_released()` event callback. The `event` table received by the function contains a `sym` key, its value can be checked against the `keysym` table just like we did before with the keyboard state.
+
+As you might expect, there is also a mirror `on_key_pressed()` event callback that is called when the user press a key.
+
+=== Gamepad input
+
+==== Mapping
+
+The gamepad input works in a similar way: you can query its state or listen for events.
+
+You need to know that there are two different "modes" when it comes to the gamepad: the raw state adn events and the mapped ones.
+
+When you connect a gamepad, the system will assign a number id to its axes and buttons, but you will not know which button is the "Start" button, for example.
+
+You can, of course, ask the user to assign known values by telling him or her to press a button or move an axis when you are ready to detect a specific button or axis.
+
+This work is called mapping, and fortunately it has already been done for a long list of devices. The nCine uses the https://github.com/libsdl-org/SDL/blob/main/src/joystick/SDL_gamepad_db.h[SDL mapping database].
+
+The mapping uses the XBox gamepad as a model and assigns each axis and button to this layout.
+
+==== Mapped events
+
+If your gamepad is found in the mapping database, you can use the mapped state and events.
+
+[source,lua]
+----
+function nc.on_joymapped_axis_moved(event)
+	local pos = nc.animated_sprite.get_position(anim_sprite_)
+	local step = 100 * nc.application.get_interval()
+	local moved = false
+
+	if event.axis == nc.joy_axis.LY then
+		pos.y = pos.y + step * event.value
+		if event.value > 0 then
+			nc.animated_sprite.set_rotation(anim_sprite_, 180)
+			moved = true
+		elseif event.value < 0 then
+			nc.animated_sprite.set_rotation(anim_sprite_, 0)
+			mnvoed = true
+		end
+	elseif event.axis == nc.joy_axis.LX then
+		pos.x = pos.x + step * event.value
+		if event.value > 0 then
+			nc.animated_sprite.set_rotation(anim_sprite_, 270)
+			moved = true
+		elseif event.value < 0 then
+			nc.animated_sprite.set_rotation(anim_sprite_, 90)
+			moved = true
+		end
+	end
+
+	nc.animated_sprite.set_paused(anim_sprite_, not moved)
+	if moved then
+		nc.animated_sprite.set_position(anim_sprite_, pos)
+	else
+		nc.animated_sprite.set_frame(anim_sprite_, 0)
+	end
+end
+
+function nc.on_joymapped_button_released(event)
+	if event.button == nc.joy_button.GUIDE then
+		nc.application.quit()
+	end
+end
+----
+
+The code is similar to the one we used to handle keyboard input, but we are using events this time.
+
+The `on_joymapped_axis_moved()` callback receives an `event` table that has an `axis` and a `value` key, by querying them you will now which axis has been moved and its new position.
+
+The `LY` and `LX` axes are the vertical and horizontal direction of the left stick. But you can also use `RY` and `RX` if you want to use the right stick.
+The two remaining axes in the mapping model are `LTRIGGER` and `RTRIGGER` for the two analog triggers (also called _LT_ or _L2_, and _RT_ and _R2_).
+
+Just as we did with the keyboard, we are also listening to the `on_joymapped_button_released()` event to quit the application when the user preses the `GUIDE` button.
+There is, of course, also a `on_joymapped_button_pressed()` callback, as well as a list of buttons you can react to.
+
+The available mapped buttons are:
+
+- `A`, `B`, `X`, `Y`
+- `BACK`, `GUIDE`, `START`
+- `LSTICK`, `RSTICK`
+- `LBUMPER`, `RBUMPER`
+- `DPAD_UP`, `DPAD_DOWN`, `DPAD_LEFT`, `DPAD_RIGHT`,
+
+=== Putting it all together
+
+.Complete example #05
+[source,lua]
+----
+include::src/script_05.lua[]
+----
