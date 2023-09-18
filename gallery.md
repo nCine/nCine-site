@@ -7,6 +7,11 @@ permalink: /gallery/
 
 Don't miss the [Videos](/videos/) page to see the nCine in action!
 
+## Fireman
+
+![Fireman](/img/gallery/Fireman.png "Fireman")
+[`Fireman`](https://ana30.itch.io/fireman), a GMTK Game Jam 2023 entry made by [Ana30](https://ana30.itch.io)
+
 ## Jazz² Resurrection
 
 ![Jazz² Resurrection](/img/gallery/jazz2.png "Jazz² Resurrection")
