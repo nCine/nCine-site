@@ -160,6 +160,7 @@ It has evolved to show other advanced features like blending and layer ordering 
 One of the oldest and simplest tests, it shows how to make a sprite walk using a spritesheet and an `AnimatedSprite` class.
 
 **Controls**: Use the mouse, the joystick, or the touchscreen to move the sprite around.<br />
+Pressing `F` on the keyboard will toggle full screen.<br />
 Pressing `Escape` on the keyboard will quit the application.
 
 ### apptest_audio ([web version](/apptests/apptest_audio.html))
@@ -188,6 +189,23 @@ Change the pitch, gain, and horizontal position of the sound with the numeric ke
 - Pressing `CTRL + H` on the keyboard will show or hide the ImGui interface
 - Pressing `Escape` on the keyboard will quit the application
 
+### apptest_bunnymark ([web version](/apptests/apptest_bunnymark.html))
+
+![apptest_bunnymark](/img/apptests/apptest_bunnymark.png "apptest_bunnymark"){: .center-block :}
+
+The nCine version of the classic BunnyMark demo.
+If the nCine has been compiled with ImGui you can tweak some options with an interface.
+
+**Controls**:
+- Pressing the left mouse button, tapping the right half of the screen, pressing `Space` on the keyboard or `A` on the gamepad will add some bunnies
+- Pressing the right mouse button, tapping the left half of the screen, pressing `R` on the keyboard or `B` on the gamepad will reset the number of bunnies
+- Pressing `V` on the keyboard or `X` on the gamepad will toggle the V-Sync
+- Pressing `B` on the keyboard or `Y` on the gamepad will toggle batching
+- Pressing `F` on the keyboard will toggle full screen
+- Pressing `P` on the keyboard or `Start` on the gamepad will pause the application
+- Pressing `CTRL + H` on the keyboard or `Back` on the gamepad will show or hide the ImGui interface
+- Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
+
 ### apptest_camera ([web version](/apptests/apptest_camera.html))
 
 ![apptest_camera](/img/apptests/apptest_camera.png "apptest_camera"){: .center-block :}
@@ -205,6 +223,7 @@ It shows some sprites randomly moving while you can move the camera around. The 
 - Pressing `R` on the keyboard, `Y` on the gamepad, or double-clicking/double-tapping will reset the camera position, rotation, and scale
 - Pressing `B` on the keyboard or `A` on the gamepad will toggle batching
 - Pressing `C` on the keyboard or `B` on the gamepad will toggle culling
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause the application
 - Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
 
@@ -265,10 +284,14 @@ A test for the loading system of all types of resources: textures, sounds, fonts
 ![apptest_lua](/img/apptests/apptest_lua.png "apptest_lua"){: .center-block :}
 
 By default, this test will load the example `script.lua` but you can supply another script as the first parameter when launching it on the command line.
+When running on a platform with writable files, the loaded script can be edited, reloaded, and executed again with the changes.
 
 **Controls**:
 - Press the left or the right mouse buttons to set the positions of the sprites
 - Press `V` to toggle the screen blur using viewports and custom shaders
+- Pressing `F` on the keyboard will toggle full screen
+- Pressing `F5` or `5` on the keyboard will reload the same script
+- Pressing `CTRL + H` on the keyboard will show or hide the ImGui interface
 - Pressing `Escape` on the keyboard will quit the application
 
 ### apptest_luareload ([web version](/apptests/apptest_luareload.html))
@@ -280,7 +303,7 @@ It also shows how to hot-reload a script to update the parameters of your progra
 
 **Controls**:
 - Pressing the left button and dragging the mouse around will move the particle system
-- Pressing `5` on the keyboard will reload the same script with a different parameter that will result in different particle colors
+- Pressing `F5` or `5` on the keyboard will reload the same script with a different parameter that will result in different particle colors
 - Pressing `Escape` on the keyboard will quit the application
 
 ### apptest_meshdeform ([web version](/apptests/apptest_meshdeform.html))
@@ -313,6 +336,7 @@ The test shows the same scene using regular `Sprite` objects with blending, or w
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause the application
 - Pressing `1`, `2`, `3`, `4`, or `8` will progressively animate fewer sprites
 - Pressing `R` on the keyboard or `Y` on the gamepad, or double-clicking or double-tapping will reset the camera zoom
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
 
 ### apptest_multitouch
@@ -334,7 +358,7 @@ If the nCine has been compiled with ImGui some options can be tweaked with an in
 - Pressing `W`/`A`/`S`/`D`, dragging while pressing the left mouse button, touching with one finger, or moving the left gamepad stick will move the particle emitter
 - Pressing the arrow keys, dragging while pressing the right mouse button, touching with two fingers, or moving the right gamepad stick will move the emission direction
 - Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the ImGui interface
-- Pressing `CTRL + H` on the keyboard will show or hide the ImGui interface
+- Pressing `CTRL + H` on the keyboard or `Back` on the gamepad will show or hide the ImGui interface
 - Pressing `Escape` on the keyboard will quit the application
 
 ### apptest_rotozoom ([web version](/apptests/apptest_rotozoom.html))
@@ -348,6 +372,7 @@ A very simple test showing a bunch of sprites rotating, zooming, and moving arou
 - Pressing `C` on the keyboard or `B` on the gamepad will toggle culling
 - Pressing the left bumper on the gamepad, or the left mouse button, or tapping the screen with one finger will pause sprites rotation
 - Pressing the right bumper on the gamepad, or the right mouse button, or tapping the screen with two fingers will pause the square sprites formation
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause both the sprite rotation and the square formation
 - Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
 
@@ -359,10 +384,11 @@ A test showing nCine support for the window scale factor of a monitor.
 You can drag around the window on a monitor with a different scale factor to see it automatically resized.
 
 **Controls**:
-- Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the interfaces
+- Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the ImGui interface
 - Pressing `1`, `2`, `3`, or `4` will center the window on the first, second, third or fourth monitor
 - Pressing `5`, `6`, `7`, or `8` will go full screen on the first, second, third or fourth monitor
 - Pressing `CTRL + H` on the keyboard will show or hide the ImGui interfaces
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `Escape` on the keyboard will quit the application
 
 ### apptest_scene ([web version](/apptests/apptest_scene.html))
@@ -400,6 +426,7 @@ The ImGui interface will allow you to tweak the lighting parameters for normal m
 - Pressing the right bumper on the gamepad will cycle between no post-processing, blur, and bloom
 - Pressing `1`, `2`, or `3` will change the number of blur passes in post-processing
 - Pressing `CTRL + H` on the keyboard will show or hide the ImGui interface
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause the application
 - Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
 
@@ -423,6 +450,7 @@ A small homage to old-skool demoscene sine scrollers, with letters forming a mes
 **Controls**:
 - Pressing `B` on the keyboard or `A` on the gamepad will toggle batching
 - Pressing `I` on the keyboard or `X` on the gamepad will toggle batching with indices
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause the application
 - Pressing `Escape` on the keyboard will quit the application
 
@@ -453,9 +481,10 @@ You can tweak both the viewport and the camera parameters with an ImGui interfac
 - Pressing `R` or double-clicking will reset the camera position, rotation, and scale
 - Pressing `B` on the keyboard will toggle batching
 - Pressing `C` on the keyboard will toggle culling
-- Pressing `P` will pause the application
 - Pressing `I` on the keyboard will enable or disable the mouse input
 - Pressing `CTRL + H` on the keyboard will show or hide the ImGui interface
+- Pressing `F` on the keyboard will toggle full screen
+- Pressing `P` will pause the application
 - Pressing `Escape` on the keyboard will quit the application
 
 ### glapptest_fbo_cube ([web version](/apptests/glapptest_fbo_cube.html))
@@ -467,5 +496,6 @@ This test is only available when the nCine is built as a static library and it u
 **Controls**:
 - Pressing the left bumper on the gamepad, or the left mouse button, or tapping the screen with one finger will pause the triangle animation
 - Pressing the right bumper on the gamepad, or the right mouse button, or tapping the screen with two fingers will pause the cube animation
+- Pressing `F` on the keyboard will toggle full screen
 - Pressing `P` on the keyboard or `Start` on the gamepad will pause both the triangle and the cube animations
 - Pressing `Escape` on the keyboard or `Guide` on the gamepad will quit the application
