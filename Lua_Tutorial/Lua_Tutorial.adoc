@@ -21,4 +21,6 @@ include::Lua_Tutorial_05.adoc[]
 
 include::Lua_Tutorial_06.adoc[]
 
-// TODO: mesh sprite, particles, viewport, shader, filesystem, timestamp, Android and touch
+include::Lua_Tutorial_07.adoc[]
+
+// TODO: particles, viewport, shader, filesystem, timestamp, Android and touch

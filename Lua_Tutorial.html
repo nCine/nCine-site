@@ -633,6 +633,15 @@ pre.rouge .gs {
 <li><a href="#_putting_it_all_together_6">Putting it all together</a></li>
 </ul>
 </li>
+<li><a href="#_tutorial_07_mesh_sprites">Tutorial #07 - Mesh sprites</a>
+<ul class="sectlevel2">
+<li><a href="#_uses_of_a_mesh_sprite">Uses of a mesh sprite</a></li>
+<li><a href="#_creating_a_mesh_sprite">Creating a mesh sprite</a></li>
+<li><a href="#_defining_a_list_of_vertices">Defining a list of vertices</a></li>
+<li><a href="#_animating_the_vertices">Animating the vertices</a></li>
+<li><a href="#_putting_it_all_together_7">Putting it all together</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1795,6 +1804,270 @@ It is a lot easier to model those two movements independently instead of thinkin
 			<span class="n">nc</span><span class="p">.</span><span class="n">sprite</span><span class="p">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">earth_sprite_</span><span class="p">,</span> <span class="n">moon_sprite_</span><span class="p">)</span>
 		<span class="k">end</span>
 	<span class="k">end</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tutorial_07_mesh_sprites">Tutorial #07 - Mesh sprites</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_uses_of_a_mesh_sprite">Uses of a mesh sprite</h3>
+<div class="paragraph">
+<p>We have already discussed regular and animated sprites, but we left out mesh ones.</p>
+</div>
+<div class="paragraph">
+<p>While regular and animated sprites are rendered as a rectangle made of two triangles, mesh sprites are based on an arbitrary mesh defined by the user.</p>
+</div>
+<div class="paragraph">
+<p>You can define your own set of positions and UV coordinates and thus the shape of the sprite. While a regular rectangular sprite can still display any shape on screen by employing transparency, having a mesh define this shape can have <a href="https://developer.arm.com/documentation/102524/0100/Sprite-Geometry">better performance</a> on some platforms.</p>
+</div>
+<div class="paragraph">
+<p>For example, instead a regular sprite with transparency, you can use two mesh sprites. One will cover the non-transparent part of your original sprite, while the second one will only cover the transparent part you might have along the border. This way, you can completely disable transparency while rendering the first one by using <code>set_blending_enabled(false)</code> and possibly achieve some performance gain.</p>
+</div>
+<div class="paragraph">
+<p>There is also another, maybe more interesting, use for mesh sprites: animating the position of its vertices.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_creating_a_mesh_sprite">Creating a mesh sprite</h3>
+<div class="paragraph">
+<p>In the following snippet, we create a simple sprite with a rectangular mesh. There are various ways to define the vertices, but to keep things simple we use <code>create_vertices_from_texels()</code>.</p>
+</div>
+<div class="paragraph">
+<p>This function gets a list of coordinates in texture space (i.e. between 0 and the dimension of the texture in pixels) and creates a mesh sprite with the correct positions and UV coordinates.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua"><span class="n">nc</span> <span class="o">=</span> <span class="n">ncine</span>
+
+<span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_init</span><span class="p">()</span>
+	<span class="n">texture_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">get_data_path</span><span class="p">()</span><span class="o">..</span><span class="s2">"textures/texture2.png"</span><span class="p">)</span>
+
+	<span class="kd">local</span> <span class="n">resolution</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_resolution</span><span class="p">()</span>
+	<span class="n">mesh_sprite_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_rootnode</span><span class="p">(),</span> <span class="n">texture_</span><span class="p">,</span> <span class="n">resolution</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">resolution</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">create_vertices_from_texels</span><span class="p">(</span>
+		<span class="n">mesh_sprite_</span><span class="p">,</span> <span class="p">{{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">},</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">}},</span> <span class="n">nc</span><span class="p">.</span><span class="n">texture_cut_mode</span><span class="p">.</span><span class="n">RESIZE</span>
+	<span class="p">)</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should also provide a cut mode (either <code>nc.texture_cut_mode.RESIZE</code> or <code>nc.texture_cut_mode.CROP</code>) to select how the algorithm will cut the texture with the edges you define.</p>
+</div>
+<div class="paragraph">
+<p>In this case, we are just encompassing the whole texture (whose dimensions are 128x128) with a rectangle by specifying four vectors that span the entire surface.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_defining_a_list_of_vertices">Defining a list of vertices</h3>
+<div class="paragraph">
+<p>Let&#8217;s now see a different way of defining our vertices, that will later help animate them.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua">	<span class="kd">local</span> <span class="n">vertices</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">},</span>
+	<span class="p">}</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">copy_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">,</span> <span class="n">vertices</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We are defining a list of vertices by specifying the positions and UV coordinates (both going from 0 to 1 to span the whole texture space) and using the <code>copy_vertices()</code> function. Just keep in mind that the <code>v</code> coordinate goes in the opposite direction, so if <code>y = 0.0</code> then <code>v = 1.0</code> and vice versa.</p>
+</div>
+<div class="paragraph">
+<p>As you can notice, the list defines four triangles but repeats the last vertex. The repeated one is called a <em>degenerate vertex</em> and is needed to achieve our topology: a rectangle with a shared center vertex.</p>
+</div>
+<div class="paragraph">
+<p>Mesh sprites use <code>GL_TRIANGLE_STRIP</code> primitives, where each new triangle is defined by a vertex and the two preceding it. In this case, it would have come in handy to have <code>GL_TRIANGLE_FAN</code> primitives but there is currently no way to change this.</p>
+</div>
+<div class="paragraph">
+<p>We could have also equivalently used the <code>create_vertices_from_texels()</code> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua">	<span class="kd">local</span> <span class="n">texels</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>  <span class="n">y</span> <span class="o">=</span> <span class="mi">64</span> <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>   <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">},</span>
+
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>  <span class="n">y</span> <span class="o">=</span> <span class="mi">64</span> <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span>
+
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">64</span> <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span>
+
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">64</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">64</span> <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">128</span><span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">},</span>
+		<span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">},</span>
+	<span class="p">}</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">create_vertices_from_texels</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">,</span> <span class="n">texels</span><span class="p">,</span> <span class="n">nc</span><span class="p">.</span><span class="n">texture_cut_mode</span><span class="p">.</span><span class="n">RESIZE</span><span class="p">)</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_animating_the_vertices">Animating the vertices</h3>
+<div class="paragraph">
+<p>And now for the fun part: animating the vertices!</p>
+</div>
+<div class="paragraph">
+<p>But first let&#8217;s define the vertices in yet another way, the fastest one.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua">	<span class="n">vertices_</span> <span class="o">=</span> <span class="p">{</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+	<span class="p">}</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">emplace_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">,</span> <span class="n">vertices_</span><span class="p">)</span>
+
+	<span class="n">sprite_vertices_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">get_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By using <code>emplace_vertices()</code> we spare an internal copy. Besides, the list is now a table of numbers instead of a table of tables, making its parsing even faster.</p>
+</div>
+<div class="paragraph">
+<p>We have also moved the center of the rectangle to the origin by subtracting 0.5 to both its <code>x</code> and <code>y</code> coordinates.</p>
+</div>
+<div class="paragraph">
+<p>You can notice the non-<code>local</code> <code>vertices_</code> and <code>sprite_vertices_</code> variables, they will both be used in the <code>on_frame_start()</code> function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua"><span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="o">#</span><span class="n">sprite_vertices_</span> <span class="k">do</span>
+		<span class="kd">local</span> <span class="n">mod</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span>
+		<span class="k">if</span> <span class="n">mod</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span>
+			<span class="n">sprite_vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">25</span> <span class="o">+</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">75</span><span class="p">)</span>
+		<span class="k">elseif</span> <span class="n">mod</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span>
+			<span class="n">sprite_vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">25</span> <span class="o">+</span> <span class="nb">math.cos</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="nb">math.cos</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">75</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">emplace_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">,</span> <span class="n">sprite_vertices_</span><span class="p">)</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We are using again an <code>angle_</code> parameter to animate with trigonometric functions.</p>
+</div>
+<div class="paragraph">
+<p>The <code>for</code> loop iterates over all <code>sprite_vertices_</code> (skipping the first one) and alters them by applying a function to the original <code>vertices_</code> list. In this case, only the <code>x</code> and <code>y</code> coordinates will be modified, thanks to a modulo division that selects the right components.</p>
+</div>
+<div class="paragraph">
+<p>We then use the <code>emplace_vertices()</code> function to update their values.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_putting_it_all_together_7">Putting it all together</h3>
+<div class="listingblock">
+<div class="title">Complete example #07</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="lua"><span class="n">nc</span> <span class="o">=</span> <span class="n">ncine</span>
+
+<span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_init</span><span class="p">()</span>
+	<span class="n">texture_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">get_data_path</span><span class="p">()</span><span class="o">..</span><span class="s2">"textures/texture2.png"</span><span class="p">)</span>
+
+	<span class="kd">local</span> <span class="n">resolution</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_resolution</span><span class="p">()</span>
+	<span class="n">mesh_sprite_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_rootnode</span><span class="p">(),</span> <span class="n">texture_</span><span class="p">,</span> <span class="n">resolution</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="n">resolution</span><span class="p">.</span><span class="n">y</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+
+	<span class="n">vertices_</span> <span class="o">=</span> <span class="p">{</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+
+		 <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>  <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+		<span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">,</span>
+	<span class="p">}</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">emplace_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">,</span> <span class="n">vertices_</span><span class="p">)</span>
+
+	<span class="n">sprite_vertices_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">get_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">)</span>
+
+	<span class="n">angle_</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+
+	<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="o">#</span><span class="n">sprite_vertices_</span> <span class="k">do</span>
+		<span class="kd">local</span> <span class="n">mod</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span>
+		<span class="k">if</span> <span class="n">mod</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span>
+			<span class="n">sprite_vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">25</span> <span class="o">+</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">75</span><span class="p">)</span>
+		<span class="k">elseif</span> <span class="n">mod</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span>
+			<span class="n">sprite_vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">vertices_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">25</span> <span class="o">+</span> <span class="nb">math.cos</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="nb">math.cos</span><span class="p">(</span><span class="n">angle_</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">75</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">emplace_vertices</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">,</span> <span class="n">sprite_vertices_</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_shutdown</span><span class="p">()</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">mesh_sprite</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">mesh_sprite_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">texture</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">texture_</span><span class="p">)</span>
 <span class="k">end</span></code></pre>
 </div>
 </div>

@@ -1,0 +1,178 @@
+== Tutorial #07 - Mesh sprites
+
+=== Uses of a mesh sprite
+
+We have already discussed regular and animated sprites, but we left out mesh ones.
+
+While regular and animated sprites are rendered as a rectangle made of two triangles, mesh sprites are based on an arbitrary mesh defined by the user.
+
+You can define your own set of positions and UV coordinates and thus the shape of the sprite. While a regular rectangular sprite can still display any shape on screen by employing transparency, having a mesh define this shape can have https://developer.arm.com/documentation/102524/0100/Sprite-Geometry[better performance] on some platforms.
+
+For example, instead a regular sprite with transparency, you can use two mesh sprites. One will cover the non-transparent part of your original sprite, while the second one will only cover the transparent part you might have along the border. This way, you can completely disable transparency while rendering the first one by using `set_blending_enabled(false)` and possibly achieve some performance gain.
+
+There is also another, maybe more interesting, use for mesh sprites: animating the position of its vertices.
+
+=== Creating a mesh sprite
+
+In the following snippet, we create a simple sprite with a rectangular mesh. There are various ways to define the vertices, but to keep things simple we use `create_vertices_from_texels()`.
+
+This function gets a list of coordinates in texture space (i.e. between 0 and the dimension of the texture in pixels) and creates a mesh sprite with the correct positions and UV coordinates.
+
+[source,lua]
+----
+nc = ncine
+
+function nc.on_init()
+	texture_ = nc.texture.new(nc.fs.get_data_path().."textures/texture2.png")
+
+	local resolution = nc.application.get_resolution()
+	mesh_sprite_ = nc.mesh_sprite.new(nc.application.get_rootnode(), texture_, resolution.x * 0.5, resolution.y * 0.5)
+
+	nc.mesh_sprite.create_vertices_from_texels(
+		mesh_sprite_, {{x = 0, y = 0}, {x = 128, y = 0}, {x = 0, y = 128}, {x = 128, y = 128}}, nc.texture_cut_mode.RESIZE
+	)
+end
+----
+
+You should also provide a cut mode (either `nc.texture_cut_mode.RESIZE` or `nc.texture_cut_mode.CROP`) to select how the algorithm will cut the texture with the edges you define.
+
+In this case, we are just encompassing the whole texture (whose dimensions are 128x128) with a rectangle by specifying four vectors that span the entire surface.
+
+=== Defining a list of vertices
+
+Let's now see a different way of defining our vertices, that will later help animate them.
+
+[source,lua]
+----
+	local vertices = {
+		{x = 0.5, y = 0.5, u = 0.5, v = 0.5},
+		{x = 0.0, y = 0.0, u = 0.0, v = 1.0},
+		{x = 1.0, y = 0.0, u = 1.0, v = 1.0},
+		{x = 1.0, y = 0.0, u = 1.0, v = 1.0},
+
+		{x = 0.5, y = 0.5, u = 0.5, v = 0.5},
+		{x = 1.0, y = 0.0, u = 1.0, v = 1.0},
+		{x = 1.0, y = 1.0, u = 1.0, v = 0.0},
+		{x = 1.0, y = 1.0, u = 1.0, v = 0.0},
+
+		{x = 0.5, y = 0.5, u = 0.5, v = 0.5},
+		{x = 1.0, y = 1.0, u = 1.0, v = 0.0},
+		{x = 0.0, y = 1.0, u = 0.0, v = 0.0},
+		{x = 0.0, y = 1.0, u = 0.0, v = 0.0},
+
+		{x = 0.5, y = 0.5, u = 0.5, v = 0.5},
+		{x = 0.0, y = 1.0, u = 0.0, v = 0.0},
+		{x = 0.0, y = 0.0, u = 0.0, v = 1.0},
+		{x = 0.0, y = 0.0, u = 0.0, v = 1.0},
+	}
+
+	nc.mesh_sprite.copy_vertices(mesh_sprite_, vertices)
+----
+
+We are defining a list of vertices by specifying the positions and UV coordinates (both going from 0 to 1 to span the whole texture space) and using the `copy_vertices()` function. Just keep in mind that the `v` coordinate goes in the opposite direction, so if `y = 0.0` then `v = 1.0` and vice versa.
+
+As you can notice, the list defines four triangles but repeats the last vertex. The repeated one is called a _degenerate vertex_ and is needed to achieve our topology: a rectangle with a shared center vertex.
+
+Mesh sprites use `GL_TRIANGLE_STRIP` primitives, where each new triangle is defined by a vertex and the two preceding it. In this case, it would have come in handy to have `GL_TRIANGLE_FAN` primitives but there is currently no way to change this.
+
+We could have also equivalently used the `create_vertices_from_texels()` function.
+
+[source,lua]
+----
+	local texels = {
+		{x = 64,  y = 64 },
+		{x = 0,   y = 0  },
+		{x = 128, y = 0  },
+		{x = 128, y = 0  },
+
+		{x = 64,  y = 64 },
+		{x = 128, y = 0  },
+		{x = 128, y = 128},
+		{x = 128, y = 128},
+
+		{x = 64 , y = 64 },
+		{x = 128, y = 128},
+		{x = 0  , y = 128},
+		{x = 0  , y = 128},
+
+		{x = 64 , y = 64 },
+		{x = 0  , y = 128},
+		{x = 0  , y = 0  },
+		{x = 0  , y = 0 },
+	}
+
+	nc.mesh_sprite.create_vertices_from_texels(mesh_sprite_, texels, nc.texture_cut_mode.RESIZE)
+----
+
+=== Animating the vertices
+
+And now for the fun part: animating the vertices!
+
+But first let's define the vertices in yet another way, the fastest one.
+
+[source,lua]
+----
+	vertices_ = {
+		 0.0, 0.0, 0.5, 0.5,
+		-0.5, -0.5, 0.0, 1.0,
+		 0.5, -0.5, 1.0, 1.0,
+		 0.5, -0.5, 1.0, 1.0,
+
+		 0.0,  0.0, 0.5, 0.5,
+		 0.5, -0.5, 1.0, 1.0,
+		 0.5,  0.5, 1.0, 0.0,
+		 0.5,  0.5, 1.0, 0.0,
+
+		 0.0, 0.0, 0.5, 0.5,
+		 0.5, 0.5, 1.0, 0.0,
+		-0.5, 0.5, 0.0, 0.0,
+		-0.5, 0.5, 0.0, 0.0,
+
+		 0.0,  0.0, 0.5, 0.5,
+		-0.5,  0.5, 0.0, 0.0,
+		-0.5, -0.5, 0.0, 1.0,
+		-0.5, -0.5, 0.0, 1.0,
+	}
+
+	nc.mesh_sprite.emplace_vertices(mesh_sprite_, vertices_)
+
+	sprite_vertices_ = nc.mesh_sprite.get_vertices(mesh_sprite_)
+----
+
+By using `emplace_vertices()` we spare an internal copy. Besides, the list is now a table of numbers instead of a table of tables, making its parsing even faster.
+
+We have also moved the center of the rectangle to the origin by subtracting 0.5 to both its `x` and `y` coordinates.
+
+You can notice the non-`local` `vertices_` and `sprite_vertices_` variables, they will both be used in the `on_frame_start()` function.
+
+[source,lua]
+----
+function nc.on_frame_start()
+	angle_ = angle_ + nc.application.get_interval()
+
+	for i = 5, #sprite_vertices_ do
+		local mod = (i - 1) % 4
+		if mod == 0 then
+			sprite_vertices_[i] = vertices_[i] * (0.25 + math.sin(angle_) * math.sin(angle_) * 0.75)
+		elseif mod == 1 then
+			sprite_vertices_[i] = vertices_[i] * (0.25 + math.cos(angle_) * math.cos(angle_) * 0.75)
+		end
+	end
+
+	nc.mesh_sprite.emplace_vertices(mesh_sprite_, sprite_vertices_)
+end
+----
+
+We are using again an `angle_` parameter to animate with trigonometric functions.
+
+The `for` loop iterates over all `sprite_vertices_` (skipping the first one) and alters them by applying a function to the original `vertices_` list. In this case, only the `x` and `y` coordinates will be modified, thanks to a modulo division that selects the right components.
+
+We then use the `emplace_vertices()` function to update their values.
+
+=== Putting it all together
+
+.Complete example #07
+[source,lua]
+----
+include::src/script_07.lua[]
+----
