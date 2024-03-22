@@ -6,6 +6,131 @@ permalink: /download-master/
 
 The [master](https://github.com/nCine/nCine/tree/master) branch will be the base for a future release.
 
+## February 2024
+
+### Improvements
+- Added support for custom memory allocators and window position hints of GLFW 3.4
+- Some minor changes to the `IAllocator` methods that handle debug allocation entries
+- The version of the integrated ImGui has been updated to [v1.90.4](https://github.com/ocornut/imgui/releases/tag/v1.90.4)
+
+## January 2024
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.90.1](https://github.com/ocornut/imgui/releases/tag/v1.90.1)
+
+### Fixes
+- Fixed compilation when enabling the custom memory allocators
+- Moved `Particle.h` to public headers to fix compilation warnings
+  - The header should not be directly included by users
+
+## November 2023
+
+### New Features
+- There is now an option to use binary shaders: they will be compiled on the first run and then cached on disk
+  - Default shaders will use this feature as well, if enabled in the configuration
+  - Batched shaders can be compiled twice to query the max number of batches for the UBO size
+
+### Improvements
+- A new class has been added to calculate a 64-bit hash from strings or from file information (also in the Lua API)
+- Emscripten stack size has been increased from the default 64 Kb to 128 Kb
+- The version of the integrated ImGui has been updated to [v1.90](https://github.com/ocornut/imgui/releases/tag/v1.90)
+
+## October 2023
+
+### Breaking Changes
+- The `Timer::sleep()` method now needs an integer number of milliseconds instead of a float number of seconds.
+- The `join()` and `exit()` methods of the `Thread` class do not support custom return values anymore
+
+### Improvements
+- The version of the integrated Tracy has been updated to [v0.10](https://github.com/wolfpld/tracy/releases/tag/v0.10)
+
+### Fixes
+- The `Thread` class can be be move constructed or move assigned without causing random crashes
+
+## September 2023
+
+### Improvements
+- Updated support for Gradle plugin 8.1.0 and build tools 33.0.1 on Android
+- The version of the integrated ImGui has been updated to [v1.89.9](https://github.com/ocornut/imgui/releases/tag/v1.89.9)
+- The version of the integrated Google Test has been updated to [v1.14.0](https://github.com/google/googletest/releases/tag/v1.14.0)
+- The version of the integrated Google Benchmark has been updated to [v1.8.3](https://github.com/google/benchmark/releases/tag/v1.8.3)
+
+## July 2023
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.89.7](https://github.com/ocornut/imgui/releases/tag/v1.89.7)
+
+## June 2023
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.89.6](https://github.com/ocornut/imgui/releases/tag/v1.89.6)
+
+## May 2023
+
+### New Features
+- Add a new `apptest_bunnymark`, an nCine port of the famous BunyMark benchmark
+
+### Improvements
+- Added an interface class to tweak the frame timer options
+  - A second timer has been added to the frame timer to calculate averages
+
+## April 2023
+
+### Breaking Changes
+- The `homeDir()` method of the `FileSystem` class have been renamed to `homePath()`
+- The `get_home_dir()` function of the Lua filesystem table has been renamed to `get_home_path()`
+- The `get_datapath()` and `get_savepath()` functions of the Lua filesystem table have been renamed to `get_data_path()` and `get_save_path()`
+
+### New Features
+- The `apptest_lua` has a new ImGui interface and can now automatically reload a modified Lua script
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.89.5](https://github.com/ocornut/imgui/releases/tag/v1.89.5)
+- The version of the integrated Google Test has been updated to [v1.13.0](https://github.com/google/googletest/releases/tag/v1.13.0)
+- There is now a new method in the `FileSystem` class to return the path to store cached files
+
+## March 2023
+
+### Improvements
+- The version of the integrated Tracy has been updated to [v0.9.1](https://github.com/wolfpld/tracy/releases/tag/v0.9.1)
+- The version of the integrated ImGui has been updated to [v1.89.4](https://github.com/ocornut/imgui/releases/tag/v1.89.4)
+
+## February 2023
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.89.3](https://github.com/ocornut/imgui/releases/tag/v1.89.3)
+
+## January 2023
+- The version of the integrated ImGui has been updated to [v1.89.2](https://github.com/ocornut/imgui/releases/tag/v1.89.2)
+
+## December 2022
+
+### Breaking Changes
+- The `animation_index()` and `frame()` functions of the Lua animated sprite have been renamed to `get_animation_index()` and `get_frame()`
+
+### Improvements
+- The Lua API for the `Application` class has now a function to get the `AppConfiguration` table
+- Scale down the size of the error messages in `apptest_lua` if does not fit the screen
+- Added a method to `RectAnimation` to automatically add multiple rectangles from a spritesheet
+- Added functions to the Lua API to retrieve the array of children of a node
+
+### Fixes
+- The minimum and maximum values of a joystick axis are now queried on Android
+- When calling `Sprite::setTexture()` with the same texture the rectangle gets reset
+- Create or destroy the Windows console if changing the console log level with the setter
+
+## November 2022
+
+### Improvements
+- The version of the integrated Tracy has been updated to [v0.9](https://github.com/wolfpld/tracy/releases/tag/v0.9)
+- The version of the integrated ImGui has been updated to [v1.89.1](https://github.com/ocornut/imgui/releases/tag/v1.89.1)
+- It is now possible to choose the render mode used by a `TextNode`
+  - There is a new render mode for colored fonts that uses the sprite shader
+- On Android there is now always a fallback joystick mapping based on the default system configuration
+
+### Fixes
+- The joystick GUID calculation on Android has been updated to be again compatible with the SDL2 controller database
+
 ## October 2022
 
 ### Breaking Changes

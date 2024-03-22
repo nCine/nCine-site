@@ -10,7 +10,7 @@ permalink: /faq/
 
 2. **Why the name?**
 
-   The name is a combination of "*engine*" and "*Encelo*", my nickname on the internet. :)
+   The name is a combination of "*engine*" and "*Encelo*", my nickname on the internet. :smile:
 
 3. **What does the logo represent?**
 

@@ -13,6 +13,7 @@ _image: render_batcher.png
 - Custom shaders support for post-processing or bespoke rendering
 - Automatic batching for all kinds of sprites and text nodes
 - Sprite meshes for geometric deformations or tight enclosure
+- Support for [binary shaders](Ghttps://registry.khronos.org/OpenGL/extensions/ARB/ARB_get_program_binary.txt) to cache compiled shader programs
 - Support for [VAO](https://www.khronos.org/opengl/wiki/Vertex_Specification#Vertex_Array_Object) and [immutable textures](https://www.khronos.org/opengl/wiki/Texture_Storage#Immutable_storage)
 - Support OpenGL buffer updating both with or without [mapping](https://www.khronos.org/opengl/wiki/Buffer_Object#Mapping)
 - Support for indexed and instanced drawing
