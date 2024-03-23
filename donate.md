@@ -5,12 +5,12 @@ subtitle: Support and sponsor development
 permalink: /donate/
 ---
 
-I'm a former engine programmer from the AAA game industry that has been pursuing a dream since 2011: to write my own engine and witness what people can create with it!
+I'm an engine and graphics programmer from the AAA game industry that has been pursuing a dream since 2011: to write my own engine and witness what people can create with it!
 
-nCine is a cross-platform 2D game engine written in C++ with an emphasis on performance that is also scriptable in Lua for more flexibility.
-You can use it to create your games and tools or to learn and experiment with its source code.
+nCine is a cross-platform 2D game engine written in C++ with an emphasis on performance. It is also scriptable in Lua for more flexibility.
+You can use it to create your games and tools, or to learn and experiment with its source code.
 
-With your donations I can bring my commitment to a whole new level and push even harder in important aspects like performance, usability and extensibility.
+With your donations I can bring my commitment to a whole new level and push even harder in important aspects like performance, usability, and extensibility.
 
 #### GitHub Sponsors
 <a class="github-button" href="https://github.com/sponsors/encelo" data-icon="octicon-heart" data-size="large" aria-label="Sponsor @encelo on GitHub">Sponsor</a>
