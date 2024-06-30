@@ -168,7 +168,7 @@ Pressing `Escape` on the keyboard will quit the application.
 ![apptest_audio](/img/apptests/apptest_audio.png "apptest_audio"){: .center-block :}
 
 This test shows how to play sound effects with an `AudioBufferPlayer`, and how to play music using an `AudioStreamPlayer`.
-It also allows you to play and pause the music or the sound and to change some properties.
+It also allows you to change some player properties and apply effects and filters.
 If the nCine has been compiled with ImGui some of those properties can be tweaked with an interface.
 
 **Controls**:
@@ -176,6 +176,7 @@ If the nCine has been compiled with ImGui some of those properties can be tweake
 - Pressing `Space` on the keyboard or `B` on the gamepad will play or pause the sound
 - Pressing `A`/`S`/`D` will play/stop/pause the sound
 - Pressing `L` will toggle sound looping
+- Pressing `T` will start or stop the stress test for audio sources
 
 Change the pitch, gain, and horizontal position of the sound with the numeric keypad or the gamepad:
 - Pressing `KP7`/`KP8`/`KP9` will decrease/reset/increase the pitch (use the right trigger on the gamepad)
@@ -185,6 +186,7 @@ Change the pitch, gain, and horizontal position of the sound with the numeric ke
 
 - Pressing the left/right arrow keys or D-pad directions, or the left bumper will change the music file
 - Pressing the up/down arrow keys or D-pad directions, or the right bumper will change the sound file
+- Pressing the `Start` on the gamepad will start or stop the stress test for audio sources
 - Use the mouse, the keyboard, the gamepad, or the touch screen to interact with the ImGui interface.
 - Pressing `CTRL + H` on the keyboard will show or hide the ImGui interface
 - Pressing `Escape` on the keyboard will quit the application

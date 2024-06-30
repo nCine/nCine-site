@@ -11,4 +11,5 @@ _image: sound.png
 
 - Play memory sound buffers or stream music from disk
 - [WAVE](https://en.wikipedia.org/wiki/WAV) and [Ogg Vorbis](http://www.vorbis.com/) support with looping
-- Modify volume, pitch and panning with [OpenAL Soft](http://kcat.strangesoft.net/openal.html)
+- Modify gain, pitch, panning, and many more properties with [OpenAL Soft](http://kcat.strangesoft.net/openal.html)
+- Apply OpenAL EFX effects and filters such as reverb, chorus, echo, flanger, and a lot more

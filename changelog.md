@@ -4,6 +4,38 @@ title: Changelog
 permalink: /changelog/
 ---
 
+## June 2024
+
+### Breaking Changes
+
+### New Features
+- Added many new OpenAL source properties to the audio players
+- Add support for some useful OpenAL extensions
+  - `pause_device`, `deferred_updates`, `source_spatialize`
+- Added optional support for EFX effects and filters, also in the Lua API
+
+### Improvements
+- The sound sources are now arranged in a pool for the players to pick, fixing some issues with playing
+- Handling the `OV_HOLE` vorbisfile error code by continue decoding instead of fatal asserting
+- Added a stress test mode to `apptest_audio`
+- Add support for joystick axes mapped as buttons
+- The version of the integrated ImGui has been updated to [v1.90.8](https://github.com/ocornut/imgui/releases/tag/v1.90.8)
+- The version of the integrated Google Benchmark has been updated to [v1.8.4](https://github.com/google/benchmark/releases/tag/v1.8.4)
+
+### Fixes
+- Fixed a couple of alignment faults with Emscripten and some apptests
+
+## April 2024
+
+### Breaking Changes
+- Rename `nc::IAudioDevice::PlayerType::AUDIOSTREAM` to `nc::IAudioDevice::PlayerType::STREAM`
+
+## March 2024
+
+### Breaking Changes
+- The `freezePlayers()`/`unfreezePlayers()` methods of the audio device have been removed
+  - The Lua functions `freeze_players()`/`unfreeze_players()` have been removed too
+
 ## February 2024
 
 ### Improvements

@@ -28,10 +28,11 @@ permalink: /features/
 
 ## Long-term roadmap
 
-- Add an ECS system with space partioning for scene culling
-- Abstract the rendering API and add a Vulkan implementation
+- Create a multi-threaded job system and expose it to the user API
+- Add a data oriented ECS system to parallelize entity updates
+- Create a cross-platform game editor with Dear ImGui
+- Abstract the rendering API and add a Vulkan backend implementation
 - Add a collision detection and response system or integrate Box2D
 - Separate game, input and audio update in different threads
-- Refine the thread-pool system and expose it to the user API
+- Add some sort of space partioning for scene culling
 - Add a 2D skeletal animation system
-- Create a cross-platform game editor with Dear ImGui
