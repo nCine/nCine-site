@@ -75,7 +75,7 @@ social-network-links:
   youtube: "@nCine"
 #  whatsapp: +12345678901
 #  medium: yourname
-#  reddit: yourname
+#  reddit: yourname or r/yoursubreddit
 #  linkedin: yourname
 #  xing: yourname
 #  stackoverflow: "1234567/yourname"
@@ -97,6 +97,7 @@ social-network-links:
 #  hackerrank: yourname
 #  gitlab: yourname
   itchio: encelo
+# untappd: yourname
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
@@ -149,13 +150,13 @@ keywords: "engine,2d,gamedev,programming,game programming,development,game devel
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
 page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
+navbar-col: "#EAEAEA"
+navbar-text-col: "#404040"
+navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
 footer-text-col: "#777777"
 footer-link-col: "#404040"
