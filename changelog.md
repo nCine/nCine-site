@@ -4,9 +4,58 @@ title: Changelog
 permalink: /changelog/
 ---
 
-## June 2024
+## December 2024
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.91.6](https://github.com/ocornut/imgui/releases/tag/v1.91.6)
+- The version of the integrated Google Benchmark has been updated to [v1.9.1](https://github.com/google/benchmark/releases/tag/v1.9.1)
+
+## November 2024
 
 ### Breaking Changes
+- Renamed `permissions()` to `get_permissions()` in the filesystem table of the Lua API
+- Removed the `get_` prefix from `get_num_vertices()`, `get_num_bytes()`, and `get_num_indices()` in the mesh sprite Lua functions
+
+### Improvements
+- Lua statistics are now disabled by default to enable hooking by external debuggers like the [Lua Local Debugger](https://github.com/tomblind/local-lua-debugger-vscode)
+- The version of the integrated ImGui has been updated to [v1.91.5](https://github.com/ocornut/imgui/releases/tag/v1.91.5)
+- Multiple additions, fixes, and expansions to the Doxygen documentation
+- Added some new Lua API functions
+  - Added `input.num_joymappings()` to return the number of available mappings for joysticks
+  - Added `particle_affector.get_base_scale()` to return the base scale factor of a size affector
+  - Added a constructor overload that takes the position as a vector for animated and mesh sprites
+- Many viewport, shader, and shaderstate Lua functions now return a boolean to indicate the result
+- When calling the Lua `particle_system.add_size_affector()` function, you can now use a `vec2` for the scale factors
+
+### Fixes
+- Added missing overload constructors for mesh and animated sprites in the Lua API
+- Added some missing button names for mapped joysticks in the Lua API
+- Minimum CMake version has been raised to 3.10 to avoid a deprecation warning
+- Added the missing `dpi` field to the Lua table returned by `gfx_device.get_monitor()`
+- Fix the Lua `viewport.set_camera()` function to accept `nil` as a camera parameter
+- Add missing joystick buttons to Lua input event tables
+
+## October 2024
+
+### Improvements
+- Add `MemoryFile` class constructors that own a memory buffer
+- The version of the integrated ImGui has been updated to [v1.91.4](https://github.com/ocornut/imgui/releases/tag/v1.91.4)
+- The version of the integrated Google Test has been updated to [v1.15.2](https://github.com/google/googletest/releases/tag/v1.15.2)
+- The version of the integrated Google Benchmark has been updated to [v1.9.0](https://github.com/google/benchmark/releases/tag/v1.9.0)
+
+## September 2024
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.91.2](https://github.com/ocornut/imgui/releases/tag/v1.91.2)
+- The version of the integrated Tracy has been updated to [v0.11.1](https://github.com/wolfpld/tracy/releases/tag/v0.11.1)
+- Swap deprecated `ALooper_pollAll()` function for `ALooper_pollOnce()` on Android
+
+## July 2024
+
+### Improvements
+- The version of the integrated ImGui has been updated to [v1.90.9](https://github.com/ocornut/imgui/releases/tag/v1.90.9)
+
+## June 2024
 
 ### New Features
 - Added many new OpenAL source properties to the audio players

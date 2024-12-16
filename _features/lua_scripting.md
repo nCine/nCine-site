@@ -11,4 +11,6 @@ _image: lua_scripting.png
 
 - Extensive [Lua](http://lua.org/) API [bindings](/lua_api.html)
 - You can write the whole game with only Lua scripts...
-- or use them just for game object behaviours or data loading and saving
+  - or use them just for game object behaviours or to load and save data
+- [LuaCATS](https://github.com/LuaCATS) annotations for the [Lua Language Server](https://github.com/LuaLS/lua-language-server)
+  - For autocomplete, type checking, and full documentation of the entire Lua API in any supported IDE
