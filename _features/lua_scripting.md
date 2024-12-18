@@ -9,7 +9,7 @@ _image: lua_scripting.png
 
 ![{{page.title}}](/img/features/{{page._image}})
 
-- Extensive [Lua](http://lua.org/) API [bindings](/lua_api.html)
+- Extensive [Lua](http://lua.org/) API [bindings](/docs/lua_master)
 - You can write the whole game with only Lua scripts...
   - or use them just for game object behaviours or to load and save data
 - [LuaCATS](https://github.com/LuaCATS) annotations for the [Lua Language Server](https://github.com/LuaLS/lua-language-server)

@@ -38,3 +38,9 @@ To do that open a command prompt and give the path of your script as the first p
 
 For your data files (like textures or sounds), you can use an absolute path or a path relative to the executable directory.
 You can also put them in the data directory and use the default data path value returned by `ncine.fs.get_data_path()`.
+
+=== Additional resources
+
+For a complete Lua API documentation, check the LDoc one at: https://ncine.github.io/docs/lua_master/
+
+The nCine wiki offers further information: https://github.com/nCine/nCine/wiki/Getting-Started-with-Lua[Getting Started with Lua] and https://github.com/nCine/nCine/wiki/Getting-Started-with-Lua-VSCode)[Getting Started with Lua (VSCode)].

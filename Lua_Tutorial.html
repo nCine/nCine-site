@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <title>Lua Tutorial</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -141,7 +141,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -163,6 +163,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -328,7 +329,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -476,6 +477,10 @@ pre.rouge .gi {
   color: #116329;
   background-color: #dafbe1;
 }
+pre.rouge .ges {
+  font-weight: bold;
+  font-style: italic;
+}
 pre.rouge .kc {
   color: #0550ae;
 }
@@ -560,6 +565,7 @@ pre.rouge .gs {
 <li><a href="#_choose_the_right_artifact_branch">Choose the right artifact branch</a></li>
 <li><a href="#_download_the_archive">Download the archive</a></li>
 <li><a href="#_run_the_example_script">Run the example script</a></li>
+<li><a href="#_additional_resources">Additional resources</a></li>
 </ul>
 </li>
 <li><a href="#_tutorial_01_callbacks_and_mouse">Tutorial #01 - Callbacks and mouse</a>
@@ -710,6 +716,15 @@ To do that open a command prompt and give the path of your script as the first p
 <div class="paragraph">
 <p>For your data files (like textures or sounds), you can use an absolute path or a path relative to the executable directory.
 You can also put them in the data directory and use the default data path value returned by <code>ncine.fs.get_data_path()</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_additional_resources">Additional resources</h3>
+<div class="paragraph">
+<p>For a complete Lua API documentation, check the LDoc one at: <a href="https://ncine.github.io/docs/lua_master/" class="bare">https://ncine.github.io/docs/lua_master/</a></p>
+</div>
+<div class="paragraph">
+<p>The nCine wiki offers further information: <a href="https://github.com/nCine/nCine/wiki/Getting-Started-with-Lua">Getting Started with Lua</a> and <a href="https://github.com/nCine/nCine/wiki/Getting-Started-with-Lua-VSCode)">Getting Started with Lua (VSCode)</a>.</p>
 </div>
 </div>
 </div>
@@ -1075,10 +1090,10 @@ We can do exactly that with the <code>get_width()</code> and the <code>get_heigh
 The concept is similar to textures and sprites, or fonts and text nodes.</p>
 </div>
 <div class="paragraph">
-<p>In this case the two objects are <code>audiobuffer</code> and <code>audiobuffer_player</code>.</p>
+<p>In this case the two objects are <code>audio_buffer</code> and <code>audio_buffer_player</code>.</p>
 </div>
 <div class="paragraph">
-<p>The <code>audiobuffer.new()</code> function takes the path to a WAV or OGG Vorbis file, while the <code>audiobuffer_player.new()</code> function takes the audiobuffer object you have just created.</p>
+<p>The <code>audio_buffer.new()</code> function takes the path to a WAV or OGG Vorbis file, while the <code>audio_buffer_player.new()</code> function takes the audio buffer object you have just created.</p>
 </div>
 <div class="paragraph">
 <p>Once the player has been created, you can use the <code>play()</code>, <code>pause()</code>, and <code>stop()</code> functions to control it.</p>
@@ -1088,18 +1103,18 @@ The concept is similar to textures and sprites, or fonts and text nodes.</p>
 <pre class="rouge highlight"><code data-lang="lua"><span class="n">nc</span> <span class="o">=</span> <span class="n">ncine</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_init</span><span class="p">()</span>
-	<span class="n">audiobuffer_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">get_data_path</span><span class="p">()</span><span class="o">..</span><span class="s2">"sounds/coins.ogg"</span><span class="p">)</span>
-	<span class="n">player_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">audiobuffer_</span><span class="p">)</span>
+	<span class="n">audio_buffer_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">get_data_path</span><span class="p">()</span><span class="o">..</span><span class="s2">"sounds/coins.ogg"</span><span class="p">)</span>
+	<span class="n">player_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">audio_buffer_</span><span class="p">)</span>
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_mouse_button_released</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_shutdown</span><span class="p">()</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">audiobuffer_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">audio_buffer_</span><span class="p">)</span>
 <span class="k">end</span></code></pre>
 </div>
 </div>
@@ -1113,10 +1128,10 @@ The concept is similar to textures and sprites, or fonts and text nodes.</p>
 <p>It is preferable to stream it: to load and decode only the small part that is currently being played.</p>
 </div>
 <div class="paragraph">
-<p>You can achieve this by using an <code>audiostream_player</code>. It can be controlled with the same <code>play()</code>, <code>pause()</code>, and <code>stop()</code> functions.</p>
+<p>You can achieve this by using an <code>audio_stream_player</code>. It can be controlled with the same <code>play()</code>, <code>pause()</code>, and <code>stop()</code> functions.</p>
 </div>
 <div class="paragraph">
-<p>To create an <code>audiostream_player</code> you don&#8217;t need an <code>audiobuffer</code>, you just pass the file to load, like this: <code>nc.audiostream_player.new(nc.fs.get_data_path().."sounds/music.ogg")</code>.</p>
+<p>To create an <code>audio_stream_player</code> you don&#8217;t need an <code>audio_buffer</code>, you just pass the file to load, like this: <code>nc.audio_stream_player.new(nc.fs.get_data_path().."sounds/music.ogg")</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1126,9 +1141,9 @@ The concept is similar to textures and sprites, or fonts and text nodes.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="lua">	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">set_gain</span><span class="p">(</span><span class="n">audiobuffer_</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">set_pitch</span><span class="p">(</span><span class="n">audiobuffer_</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiostream_player</span><span class="p">.</span><span class="n">set_looping</span><span class="p">(</span><span class="n">streamplayer_</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span></code></pre>
+<pre class="rouge highlight"><code data-lang="lua">	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">set_gain</span><span class="p">(</span><span class="n">audio_buffer_</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">set_pitch</span><span class="p">(</span><span class="n">audio_buffer_</span><span class="p">,</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_stream_player</span><span class="p">.</span><span class="n">set_looping</span><span class="p">(</span><span class="n">stream_player_</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1146,32 +1161,32 @@ The concept is similar to textures and sprites, or fonts and text nodes.</p>
 <pre class="rouge highlight"><code data-lang="lua"><span class="n">nc</span> <span class="o">=</span> <span class="n">ncine</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_init</span><span class="p">()</span>
-	<span class="n">audiobuffer_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">get_data_path</span><span class="p">()</span><span class="o">..</span><span class="s2">"sounds/coins.ogg"</span><span class="p">)</span>
-	<span class="n">player_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">audiobuffer_</span><span class="p">)</span>
+	<span class="n">audio_buffer_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">nc</span><span class="p">.</span><span class="n">fs</span><span class="p">.</span><span class="n">get_data_path</span><span class="p">()</span><span class="o">..</span><span class="s2">"sounds/coins.ogg"</span><span class="p">)</span>
+	<span class="n">player_</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">new</span><span class="p">(</span><span class="n">audio_buffer_</span><span class="p">)</span>
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_shutdown</span><span class="p">()</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">audiobuffer_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="n">audio_buffer_</span><span class="p">)</span>
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_mouse_button_released</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-	<span class="kd">local</span> <span class="n">looping</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">is_looping</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+	<span class="kd">local</span> <span class="n">looping</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">is_looping</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
 
 	<span class="k">if</span> <span class="n">event</span><span class="p">.</span><span class="n">button</span> <span class="o">==</span> <span class="n">nc</span><span class="p">.</span><span class="n">mouse_button</span><span class="p">.</span><span class="n">LEFT</span> <span class="k">then</span>
 		<span class="k">if</span> <span class="n">looping</span> <span class="o">==</span> <span class="kc">false</span> <span class="k">then</span>
-			<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
-			<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+			<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+			<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
 		<span class="k">else</span>
-			<span class="kd">local</span> <span class="n">playing</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">is_playing</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+			<span class="kd">local</span> <span class="n">playing</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">is_playing</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
 			<span class="k">if</span> <span class="n">playing</span> <span class="k">then</span>
-				<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">pause</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+				<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">pause</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
 			<span class="k">else</span>
-				<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
+				<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">play</span><span class="p">(</span><span class="n">player_</span><span class="p">)</span>
 			<span class="k">end</span>
 		<span class="k">end</span>
 	<span class="k">elseif</span> <span class="n">event</span><span class="p">.</span><span class="n">button</span> <span class="o">==</span> <span class="n">nc</span><span class="p">.</span><span class="n">mouse_button</span><span class="p">.</span><span class="n">RIGHT</span> <span class="k">then</span>
-		<span class="n">nc</span><span class="p">.</span><span class="n">audiobuffer_player</span><span class="p">.</span><span class="n">set_looping</span><span class="p">(</span><span class="n">player_</span><span class="p">,</span> <span class="ow">not</span> <span class="n">looping</span><span class="p">)</span>
+		<span class="n">nc</span><span class="p">.</span><span class="n">audio_buffer_player</span><span class="p">.</span><span class="n">set_looping</span><span class="p">(</span><span class="n">player_</span><span class="p">,</span> <span class="ow">not</span> <span class="n">looping</span><span class="p">)</span>
 	<span class="k">end</span>
 <span class="k">end</span></code></pre>
 </div>

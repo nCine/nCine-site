@@ -5,9 +5,9 @@
 To play sounds and music you have to first load the audio data and then associate it with a player.
 The concept is similar to textures and sprites, or fonts and text nodes.
 
-In this case the two objects are `audiobuffer` and `audiobuffer_player`.
+In this case the two objects are `audio_buffer` and `audio_buffer_player`.
 
-The `audiobuffer.new()` function takes the path to a WAV or OGG Vorbis file, while the `audiobuffer_player.new()` function takes the audiobuffer object you have just created.
+The `audio_buffer.new()` function takes the path to a WAV or OGG Vorbis file, while the `audio_buffer_player.new()` function takes the audio buffer object you have just created.
 
 Once the player has been created, you can use the `play()`, `pause()`, and `stop()` functions to control it.
 
@@ -16,18 +16,18 @@ Once the player has been created, you can use the `play()`, `pause()`, and `stop
 nc = ncine
 
 function nc.on_init()
-	audiobuffer_ = nc.audiobuffer.new(nc.fs.get_data_path().."sounds/coins.ogg")
-	player_ = nc.audiobuffer_player.new(audiobuffer_)
+	audio_buffer_ = nc.audio_buffer.new(nc.fs.get_data_path().."sounds/coins.ogg")
+	player_ = nc.audio_buffer_player.new(audio_buffer_)
 end
 
 function nc.on_mouse_button_released(event)
-	nc.audiobuffer_player.stop(player_)
-	nc.audiobuffer_player.play(player_)
+	nc.audio_buffer_player.stop(player_)
+	nc.audio_buffer_player.play(player_)
 end
 
 function nc.on_shutdown()
-	nc.audiobuffer_player.delete(player_)
-	nc.audiobuffer.delete(audiobuffer_)
+	nc.audio_buffer_player.delete(player_)
+	nc.audio_buffer.delete(audio_buffer_)
 end
 ----
 
@@ -37,9 +37,9 @@ When you have a big music file you don't usually want to load all of it in memor
 
 It is preferable to stream it: to load and decode only the small part that is currently being played.
 
-You can achieve this by using an `audiostream_player`. It can be controlled with the same `play()`, `pause()`, and `stop()` functions.
+You can achieve this by using an `audio_stream_player`. It can be controlled with the same `play()`, `pause()`, and `stop()` functions.
 
-To create an `audiostream_player` you don't need an `audiobuffer`, you just pass the file to load, like this: `nc.audiostream_player.new(nc.fs.get_data_path().."sounds/music.ogg")`.
+To create an `audio_stream_player` you don't need an `audio_buffer`, you just pass the file to load, like this: `nc.audio_stream_player.new(nc.fs.get_data_path().."sounds/music.ogg")`.
 
 === Audio player properties
 
@@ -47,9 +47,9 @@ You can set some properties for both type of players, like the gain (volume), th
 
 [source,lua]
 ----
-	nc.audiobuffer_player.set_gain(audiobuffer_, 1.0)
-	nc.audiobuffer_player.set_pitch(audiobuffer_, 0.5)
-	nc.audiostream_player.set_looping(streamplayer_, true)
+	nc.audio_buffer_player.set_gain(audio_buffer_, 1.0)
+	nc.audio_buffer_player.set_pitch(audio_buffer_, 0.5)
+	nc.audio_stream_player.set_looping(stream_player_, true)
 ----
 
 You can query those properties with `get_gain()`, `get_pitch()`, and `is_looping()`.

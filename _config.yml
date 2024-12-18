@@ -32,7 +32,7 @@ navbar-links:
     - Getting Started: https://github.com/nCine/nCine/wiki/Getting-Started
     - Lua Tutorial: "Lua_Tutorial.html"
     - Documentation (master): "docs/master"
-    - Lua API (master): "docs/lua_api_master.html"
+    - Lua API (master): "docs/lua_master"
   Community:
     - Forum: "https://github.com/nCine/nCine/discussions"
     - Discord: "https://discord.gg/495ab6Y"

@@ -6,6 +6,13 @@ permalink: /changelog/
 
 ## December 2024
 
+### Breaking Changes
+- Renamed `ncine.audiobuffer` to `ncine.audio_buffer` in the Lua API
+- Renamed `ncine.audiobuffer_player` to `ncine.audio_buffer_player` in the Lua API
+  - Renamed `get_audiobuffer()` and `set_audiobuffer()` to `get_audio_buffer()` and `set_audio_buffer()`
+- Renamed `ncine.audiostream_player` to `ncine.audio_stream_player` in the Lua API
+  - Renamed `num_samples_in_streambuffer()` and `streambuffer_size()` to `num_samples_in_stream_buffer()` and `stream_buffer_size()`
+
 ### Improvements
 - The version of the integrated ImGui has been updated to [v1.91.6](https://github.com/ocornut/imgui/releases/tag/v1.91.6)
 - The version of the integrated Google Benchmark has been updated to [v1.9.1](https://github.com/google/benchmark/releases/tag/v1.9.1)
