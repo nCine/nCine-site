@@ -7,6 +7,11 @@ permalink: /gallery/
 
 Don't miss the [Videos](/videos/) page to see the nCine in action!
 
+## Papel Mojado
+
+![Papel Mojado](/img/posts/PapelMojado.png "Papel Mojado")
+[`Papel Mojado`](https://globalgamejam.org/games/2025/papel-mojado-9), a Global Game Jam 2025 entry made by Encelo and [Cominu](https://bsky.app/profile/cominu.bsky.social)
+
 ## Fireman
 
 ![Fireman](/img/gallery/Fireman.png "Fireman")
