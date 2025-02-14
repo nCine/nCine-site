@@ -20,19 +20,19 @@ function nc.on_frame_start()
 	local moved = false
 
 	local key_state = nc.input.key_state()
-	if nc.input.key_down(key_state, nc.keysym.UP) or nc.input.key_down(key_state, nc.keysym.W) then
+	if nc.input.is_key_down(key_state, nc.keysym.UP) or nc.input.is_key_down(key_state, nc.keysym.W) then
 		pos.y = pos.y + step
 		nc.animated_sprite.set_rotation(anim_sprite_, 180)
 		moved = true
-	elseif nc.input.key_down(key_state, nc.keysym.DOWN) or nc.input.key_down(key_state, nc.keysym.S) then
+	elseif nc.input.is_key_down(key_state, nc.keysym.DOWN) or nc.input.is_key_down(key_state, nc.keysym.S) then
 		pos.y = pos.y - step
 		nc.animated_sprite.set_rotation(anim_sprite_, 0)
 		moved = true
-	elseif nc.input.key_down(key_state, nc.keysym.LEFT) or nc.input.key_down(key_state, nc.keysym.A) then
+	elseif nc.input.is_key_down(key_state, nc.keysym.LEFT) or nc.input.is_key_down(key_state, nc.keysym.A) then
 		pos.x = pos.x - step
 		nc.animated_sprite.set_rotation(anim_sprite_, 270)
 		moved = true
-	elseif nc.input.key_down(key_state, nc.keysym.RIGHT) or nc.input.key_down(key_state, nc.keysym.D) then
+	elseif nc.input.is_key_down(key_state, nc.keysym.RIGHT) or nc.input.is_key_down(key_state, nc.keysym.D) then
 		pos.x = pos.x + step
 		nc.animated_sprite.set_rotation(anim_sprite_, 90)
 		moved = true
@@ -57,7 +57,7 @@ In this example we are using the keyboard state to move the animated sprite.
 
 We first get the current position on screen and calculate a movement based on the last frame time, then we check which key is pressed this frame.
 
-The current keyboard state is retrieved using `input.key_state()`. We then use `input.key_down()` on the state object to query if a specific key is pressed.
+The current keyboard state is retrieved using `input.key_state()`. We then use `input.is_key_down()` on the state object to query if a specific key is pressed.
 We check both arrows and `WASD` keys to offer the user two ways of moving our animated sprite.
 
 If the user pressed one of these keys we update the position vector and change the sprite rotation with `set_rotation()`.

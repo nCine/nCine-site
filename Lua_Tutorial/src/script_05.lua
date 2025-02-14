@@ -19,19 +19,19 @@ function nc.on_frame_start()
 	local moved = false
 
 	local key_state = nc.input.key_state()
-	if nc.input.key_down(key_state, nc.keysym.UP) or nc.input.key_down(key_state, nc.keysym.W) then
+	if nc.input.is_key_down(key_state, nc.keysym.UP) or nc.input.is_key_down(key_state, nc.keysym.W) then
 		pos.y = pos.y + step
 		nc.animated_sprite.set_rotation(anim_sprite_, 180)
 		moved = true
-	elseif nc.input.key_down(key_state, nc.keysym.DOWN) or nc.input.key_down(key_state, nc.keysym.S) then
+	elseif nc.input.is_key_down(key_state, nc.keysym.DOWN) or nc.input.is_key_down(key_state, nc.keysym.S) then
 		pos.y = pos.y - step
 		nc.animated_sprite.set_rotation(anim_sprite_, 0)
 		moved = true
-	elseif nc.input.key_down(key_state, nc.keysym.LEFT) or nc.input.key_down(key_state, nc.keysym.A) then
+	elseif nc.input.is_key_down(key_state, nc.keysym.LEFT) or nc.input.is_key_down(key_state, nc.keysym.A) then
 		pos.x = pos.x - step
 		nc.animated_sprite.set_rotation(anim_sprite_, 270)
 		moved = true
-	elseif nc.input.key_down(key_state, nc.keysym.RIGHT) or nc.input.key_down(key_state, nc.keysym.D) then
+	elseif nc.input.is_key_down(key_state, nc.keysym.RIGHT) or nc.input.is_key_down(key_state, nc.keysym.D) then
 		pos.x = pos.x + step
 		nc.animated_sprite.set_rotation(anim_sprite_, 90)
 		moved = true
