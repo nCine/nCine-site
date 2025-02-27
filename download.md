@@ -44,4 +44,4 @@ You can then clone and build additional projects if you want:
 - [ncParticleEditor](https://github.com/nCine/ncParticleEditor) (and [ncParticleEditor-data](https://github.com/nCine/ncParticleEditor-data))
 - [ncTemplate](https://github.com/nCine/ncTemplate) (and [ncTemplate-data](https://github.com/nCine/ncTemplate-data))
 
-Have a look at the build instructions on the project [wiki](https://github.com/nCine/nCine/wiki).
+Have a look at the [build instructions](https://github.com/nCine/nCine/wiki/Build-Instructions) on the project wiki.

@@ -14,3 +14,4 @@ _image: lua_scripting.png
   - or use them just for game object behaviours or to load and save data
 - [LuaCATS](https://github.com/LuaCATS) annotations for the [Lua Language Server](https://github.com/LuaLS/lua-language-server)
   - For autocomplete, type checking, and full documentation of the entire Lua API in any supported IDE
+- Hot-reloading of Lua scripts, both with a complete reset of Lua state and with a fast reload
