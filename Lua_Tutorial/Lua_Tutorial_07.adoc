@@ -148,7 +148,7 @@ You can notice the non-`local` `vertices_` and `sprite_vertices_` variables, the
 [source,lua]
 ----
 function nc.on_frame_start()
-	angle_ = angle_ + nc.application.get_interval()
+	angle_ = angle_ + nc.application.get_frame_time()
 
 	for i = 5, #sprite_vertices_ do
 		local mod = (i - 1) % 4

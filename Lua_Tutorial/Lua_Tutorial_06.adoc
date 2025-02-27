@@ -34,7 +34,7 @@ function nc.on_init()
 end
 
 function nc.on_frame_start()
-	angle_ = angle_ + 50 * nc.application.get_interval()
+	angle_ = angle_ + 50 * nc.application.get_frame_time()
 
 	nc.sprite.set_rotation(sun_sprite_, angle_ * 0.5)
 	nc.sprite.set_rotation(earth_sprite_, angle_)

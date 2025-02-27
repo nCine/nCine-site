@@ -758,7 +758,7 @@ You can also put them in the data directory and use the default data path value 
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 
 	<span class="kd">local</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span>
 	<span class="kd">local</span> <span class="n">newpos</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="n">pos_</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">angle_</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos_</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="nb">math.cos</span><span class="p">(</span><span class="n">angle_</span><span class="p">)}</span>
@@ -807,7 +807,7 @@ You can also put them in the data directory and use the default data path value 
 <p>In this example we move the sprite in a circle path by using some simple trigonometry and the Lua math library.</p>
 </div>
 <div class="paragraph">
-<p>We increment the <code>angle_</code> variable and use it to update the sprite position with the <code>sprite.set_position()</code> function. By using the interval time passed since last frame we keep a stable rotation regardless of the frame time oscillations.</p>
+<p>We increment the <code>angle_</code> variable and use it to update the sprite position with the <code>sprite.set_position()</code> function. By using the time elapsed since last frame, we keep a stable rotation regardless of frame time oscillations.</p>
 </div>
 </div>
 <div class="sect3">
@@ -875,14 +875,14 @@ You can also put them in the data directory and use the default data path value 
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="lua"><span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_mouse_moved</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">state</span><span class="p">.</span><span class="n">left_pressed</span> <span class="k">then</span>
+	<span class="k">if</span> <span class="n">state</span><span class="p">.</span><span class="n">is_left_down</span> <span class="k">then</span>
 		<span class="n">pos_</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">y</span><span class="p">}</span>
 	<span class="k">end</span>
 <span class="k">end</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In this snippet we first check if we are moving the mouse while pressing the left mouse button by checking the value of the <code>left_pressed</code> boolean variable, then we use the <code>x</code> and <code>y</code> variables to update the position.</p>
+<p>In this snippet we first check if we are moving the mouse while pressing the left mouse button by checking the value of the <code>is_left_down</code> boolean variable, then we use the <code>x</code> and <code>y</code> variables to update the position.</p>
 </div>
 </div>
 </div>
@@ -910,7 +910,7 @@ You can also put them in the data directory and use the default data path value 
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 
 	<span class="kd">local</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">2</span>
 	<span class="kd">local</span> <span class="n">newpos</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="n">pos_</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">angle_</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pos_</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">radius</span> <span class="o">*</span> <span class="nb">math.cos</span><span class="p">(</span><span class="n">angle_</span><span class="p">)}</span>
@@ -929,7 +929,7 @@ You can also put them in the data directory and use the default data path value 
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_mouse_moved</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
-	<span class="k">if</span> <span class="n">state</span><span class="p">.</span><span class="n">left_pressed</span> <span class="k">then</span>
+	<span class="k">if</span> <span class="n">state</span><span class="p">.</span><span class="n">is_left_down</span> <span class="k">then</span>
 		<span class="n">pos_</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">state</span><span class="p">.</span><span class="n">y</span><span class="p">}</span>
 	<span class="k">end</span>
 <span class="k">end</span></code></pre>
@@ -988,7 +988,7 @@ The information about how to render a text from those textures is contained in a
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">nc</span><span class="p">.</span><span class="n">textnode</span><span class="p">.</span><span class="n">set_string</span><span class="p">(</span><span class="n">textnode_</span><span class="p">,</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">"FPS: %.2f"</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">/</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()))</span>
+	<span class="n">nc</span><span class="p">.</span><span class="n">textnode</span><span class="p">.</span><span class="n">set_string</span><span class="p">(</span><span class="n">textnode_</span><span class="p">,</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">"FPS: %.2f"</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">/</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()))</span>
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_shutdown</span><span class="p">()</span>
@@ -1064,7 +1064,7 @@ We can do exactly that with the <code>get_width()</code> and the <code>get_heigh
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="kd">local</span> <span class="n">str</span> <span class="o">=</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">"FPS: %.2f\nFrame time: %.2f ms"</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">/</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">(),</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">())</span>
+	<span class="kd">local</span> <span class="n">str</span> <span class="o">=</span> <span class="nb">string.format</span><span class="p">(</span><span class="s2">"FPS: %.2f\nFrame time: %.2f ms"</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="mi">0</span> <span class="o">/</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">(),</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">())</span>
 	<span class="n">nc</span><span class="p">.</span><span class="n">textnode</span><span class="p">.</span><span class="n">set_string</span><span class="p">(</span><span class="n">textnode_</span><span class="p">,</span> <span class="n">str</span><span class="p">)</span>
 
 	<span class="n">nc</span><span class="p">.</span><span class="n">textnode</span><span class="p">.</span><span class="n">set_position</span><span class="p">(</span><span class="n">textnode_</span><span class="p">,</span> <span class="n">nc</span><span class="p">.</span><span class="n">textnode</span><span class="p">.</span><span class="n">get_width</span><span class="p">(</span><span class="n">textnode_</span><span class="p">)</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">,</span>
@@ -1405,7 +1405,7 @@ You can then clear all animations with <code>clear_animations()</code>.</p>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
 	<span class="kd">local</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">animated_sprite</span><span class="p">.</span><span class="n">get_position</span><span class="p">(</span><span class="n">anim_sprite_</span><span class="p">)</span>
-	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 	<span class="kd">local</span> <span class="n">moved</span> <span class="o">=</span> <span class="kc">false</span>
 
 	<span class="kd">local</span> <span class="n">key_state</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">input</span><span class="p">.</span><span class="n">key_state</span><span class="p">()</span>
@@ -1446,14 +1446,14 @@ You can then clear all animations with <code>clear_animations()</code>.</p>
 <p>In this example we are using the keyboard state to move the animated sprite.</p>
 </div>
 <div class="paragraph">
-<p>We first get the current position on screen and calculate a movement based on the last frame time, then we check which key is pressed this frame.</p>
+<p>We first get the current position on screen and calculate a movement based on the last frame time, then we check which key is down this frame.</p>
 </div>
 <div class="paragraph">
-<p>The current keyboard state is retrieved using <code>input.key_state()</code>. We then use <code>input.is_key_down()</code> on the state object to query if a specific key is pressed.
+<p>The current keyboard state is retrieved using <code>input.key_state()</code>. We then use <code>input.is_key_down()</code> on the state object to query if a specific key is down.
 We check both arrows and <code>WASD</code> keys to offer the user two ways of moving our animated sprite.</p>
 </div>
 <div class="paragraph">
-<p>If the user pressed one of these keys we update the position vector and change the sprite rotation with <code>set_rotation()</code>.</p>
+<p>If the user presses one of these keys we update the position vector and change the sprite rotation with <code>set_rotation()</code>.</p>
 </div>
 <div class="paragraph">
 <p>We also set the value of the <code>moved</code> flag that will later be used to play/pause the animation, set the sprite position, and reset the animation frame.</p>
@@ -1497,7 +1497,7 @@ We check both arrows and <code>WASD</code> keys to offer the user two ways of mo
 <div class="content">
 <pre class="rouge highlight"><code data-lang="lua"><span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_joymapped_axis_moved</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 	<span class="kd">local</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">animated_sprite</span><span class="p">.</span><span class="n">get_position</span><span class="p">(</span><span class="n">anim_sprite_</span><span class="p">)</span>
-	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 	<span class="kd">local</span> <span class="n">moved</span> <span class="o">=</span> <span class="kc">false</span>
 
 	<span class="k">if</span> <span class="n">event</span><span class="p">.</span><span class="n">axis</span> <span class="o">==</span> <span class="n">nc</span><span class="p">.</span><span class="n">joy_axis</span><span class="p">.</span><span class="n">LY</span> <span class="k">then</span>
@@ -1595,7 +1595,7 @@ There is, of course, also a <code>on_joymapped_button_pressed()</code> callback,
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
 	<span class="kd">local</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">animated_sprite</span><span class="p">.</span><span class="n">get_position</span><span class="p">(</span><span class="n">anim_sprite_</span><span class="p">)</span>
-	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 	<span class="kd">local</span> <span class="n">moved</span> <span class="o">=</span> <span class="kc">false</span>
 
 	<span class="kd">local</span> <span class="n">key_state</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">input</span><span class="p">.</span><span class="n">key_state</span><span class="p">()</span>
@@ -1638,7 +1638,7 @@ There is, of course, also a <code>on_joymapped_button_pressed()</code> callback,
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_joymapped_axis_moved</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 	<span class="kd">local</span> <span class="n">pos</span> <span class="o">=</span> <span class="n">nc</span><span class="p">.</span><span class="n">animated_sprite</span><span class="p">.</span><span class="n">get_position</span><span class="p">(</span><span class="n">anim_sprite_</span><span class="p">)</span>
-	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="kd">local</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 	<span class="kd">local</span> <span class="n">moved</span> <span class="o">=</span> <span class="kc">false</span>
 
 	<span class="k">if</span> <span class="n">event</span><span class="p">.</span><span class="n">axis</span> <span class="o">==</span> <span class="n">nc</span><span class="p">.</span><span class="n">joy_axis</span><span class="p">.</span><span class="n">LY</span> <span class="k">then</span>
@@ -1721,7 +1721,7 @@ It is a lot easier to model those two movements independently instead of thinkin
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 
 	<span class="n">nc</span><span class="p">.</span><span class="n">sprite</span><span class="p">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="n">sun_sprite_</span><span class="p">,</span> <span class="n">angle_</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
 	<span class="n">nc</span><span class="p">.</span><span class="n">sprite</span><span class="p">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="n">earth_sprite_</span><span class="p">,</span> <span class="n">angle_</span><span class="p">)</span>
@@ -1790,7 +1790,7 @@ It is a lot easier to model those two movements independently instead of thinkin
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">*</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 
 	<span class="n">nc</span><span class="p">.</span><span class="n">sprite</span><span class="p">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="n">sun_sprite_</span><span class="p">,</span> <span class="n">angle_</span> <span class="o">*</span> <span class="mi">0</span><span class="p">.</span><span class="mi">5</span><span class="p">)</span>
 	<span class="n">nc</span><span class="p">.</span><span class="n">sprite</span><span class="p">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="n">earth_sprite_</span><span class="p">,</span> <span class="n">angle_</span><span class="p">)</span>
@@ -1998,7 +1998,7 @@ It is a lot easier to model those two movements independently instead of thinkin
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="lua"><span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 
 	<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="o">#</span><span class="n">sprite_vertices_</span> <span class="k">do</span>
 		<span class="kd">local</span> <span class="n">mod</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span>
@@ -2066,7 +2066,7 @@ It is a lot easier to model those two movements independently instead of thinkin
 <span class="k">end</span>
 
 <span class="k">function</span> <span class="nc">nc</span><span class="p">.</span><span class="nf">on_frame_start</span><span class="p">()</span>
-	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_interval</span><span class="p">()</span>
+	<span class="n">angle_</span> <span class="o">=</span> <span class="n">angle_</span> <span class="o">+</span> <span class="n">nc</span><span class="p">.</span><span class="n">application</span><span class="p">.</span><span class="n">get_frame_time</span><span class="p">()</span>
 
 	<span class="k">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="o">#</span><span class="n">sprite_vertices_</span> <span class="k">do</span>
 		<span class="kd">local</span> <span class="n">mod</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span>

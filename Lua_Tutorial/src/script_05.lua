@@ -15,7 +15,7 @@ end
 
 function nc.on_frame_start()
 	local pos = nc.animated_sprite.get_position(anim_sprite_)
-	local step = 100 * nc.application.get_interval()
+	local step = 100 * nc.application.get_frame_time()
 	local moved = false
 
 	local key_state = nc.input.key_state()
@@ -58,7 +58,7 @@ end
 
 function nc.on_joymapped_axis_moved(event)
 	local pos = nc.animated_sprite.get_position(anim_sprite_)
-	local step = 100 * nc.application.get_interval()
+	local step = 100 * nc.application.get_frame_time()
 	local moved = false
 
 	if event.axis == nc.joy_axis.LY then

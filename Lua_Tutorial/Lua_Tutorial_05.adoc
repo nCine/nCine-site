@@ -16,7 +16,7 @@ nc = ncine
 
 function nc.on_frame_start()
 	local pos = nc.animated_sprite.get_position(anim_sprite_)
-	local step = 100 * nc.application.get_interval()
+	local step = 100 * nc.application.get_frame_time()
 	local moved = false
 
 	local key_state = nc.input.key_state()
@@ -55,12 +55,12 @@ end
 
 In this example we are using the keyboard state to move the animated sprite.
 
-We first get the current position on screen and calculate a movement based on the last frame time, then we check which key is pressed this frame.
+We first get the current position on screen and calculate a movement based on the last frame time, then we check which key is down this frame.
 
-The current keyboard state is retrieved using `input.key_state()`. We then use `input.is_key_down()` on the state object to query if a specific key is pressed.
+The current keyboard state is retrieved using `input.key_state()`. We then use `input.is_key_down()` on the state object to query if a specific key is down.
 We check both arrows and `WASD` keys to offer the user two ways of moving our animated sprite.
 
-If the user pressed one of these keys we update the position vector and change the sprite rotation with `set_rotation()`.
+If the user presses one of these keys we update the position vector and change the sprite rotation with `set_rotation()`.
 
 We also set the value of the `moved` flag that will later be used to play/pause the animation, set the sprite position, and reset the animation frame.
 
@@ -92,7 +92,7 @@ If your gamepad is found in the mapping database, you can use the mapped state a
 ----
 function nc.on_joymapped_axis_moved(event)
 	local pos = nc.animated_sprite.get_position(anim_sprite_)
-	local step = 100 * nc.application.get_interval()
+	local step = 100 * nc.application.get_frame_time()
 	local moved = false
 
 	if event.axis == nc.joy_axis.LY then

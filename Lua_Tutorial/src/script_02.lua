@@ -19,7 +19,7 @@ function nc.on_init()
 end
 
 function nc.on_frame_start()
-	local str = string.format("FPS: %.2f\nFrame time: %.2f ms", 1.0 / nc.application.get_interval(), 1000 * nc.application.get_interval())
+	local str = string.format("FPS: %.2f\nFrame time: %.2f ms", 1.0 / nc.application.get_frame_time(), 1000 * nc.application.get_frame_time())
 	nc.textnode.set_string(textnode_, str)
 
 	nc.textnode.set_position(textnode_, nc.textnode.get_width(textnode_) * 0.5,

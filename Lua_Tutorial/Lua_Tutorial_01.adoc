@@ -23,7 +23,7 @@ function nc.on_init()
 end
 
 function nc.on_frame_start()
-	angle_ = angle_ + 2 * nc.application.get_interval()
+	angle_ = angle_ + 2 * nc.application.get_frame_time()
 
 	local radius = nc.application.get_width() * 0.2
 	local newpos = {x = pos_.x + radius * math.sin(angle_), y = pos_.y + radius * math.cos(angle_)}
@@ -60,7 +60,7 @@ The `on_frame_start()` function is where most of the game logic happens, it is c
 
 In this example we move the sprite in a circle path by using some simple trigonometry and the Lua math library.
 
-We increment the `angle_` variable and use it to update the sprite position with the `sprite.set_position()` function. By using the interval time passed since last frame we keep a stable rotation regardless of the frame time oscillations.
+We increment the `angle_` variable and use it to update the sprite position with the `sprite.set_position()` function. By using the time elapsed since last frame, we keep a stable rotation regardless of frame time oscillations.
 
 ==== on_pre_init()
 
@@ -113,13 +113,13 @@ The `on_mouse_moved()` function is called every time the mouse is moved and rece
 [source,lua]
 ----
 function nc.on_mouse_moved(state)
-	if state.left_pressed then
+	if state.is_left_down then
 		pos_ = {x = state.x, y = state.y}
 	end
 end
 ----
 
-In this snippet we first check if we are moving the mouse while pressing the left mouse button by checking the value of the `left_pressed` boolean variable, then we use the `x` and `y` variables to update the position.
+In this snippet we first check if we are moving the mouse while pressing the left mouse button by checking the value of the `is_left_down` boolean variable, then we use the `x` and `y` variables to update the position.
 
 === Putting it all together
 

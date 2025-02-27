@@ -38,7 +38,7 @@ function nc.on_init()
 end
 
 function nc.on_frame_start()
-	nc.textnode.set_string(textnode_, string.format("FPS: %.2f", 1.0 / nc.application.get_interval()))
+	nc.textnode.set_string(textnode_, string.format("FPS: %.2f", 1.0 / nc.application.get_frame_time()))
 end
 
 function nc.on_shutdown()

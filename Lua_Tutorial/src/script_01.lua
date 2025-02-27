@@ -17,7 +17,7 @@ function nc.on_init()
 end
 
 function nc.on_frame_start()
-	angle_ = angle_ + 2 * nc.application.get_interval()
+	angle_ = angle_ + 2 * nc.application.get_frame_time()
 
 	local radius = nc.application.get_width() * 0.2
 	local newpos = {x = pos_.x + radius * math.sin(angle_), y = pos_.y + radius * math.cos(angle_)}
@@ -36,7 +36,7 @@ function nc.on_mouse_button_released(event)
 end
 
 function nc.on_mouse_moved(state)
-	if state.left_pressed then
+	if state.is_left_down then
 		pos_ = {x = state.x, y = state.y}
 	end
 end
