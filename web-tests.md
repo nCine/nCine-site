@@ -6,6 +6,36 @@ permalink: /web-tests/
 
 This page lists some of the tools, applications, and tests developed with the nCine. Most of them are available on the web using [Emscripten](https://emscripten.org/).
 
+### Wet Paper ([web version](/wet_paper))
+
+![WetPaper](/img/gallery/WetPaper.png "WetPaper"){: .center-block :}
+
+**Wet Paper** is an improved version of the Global Game Jam 2025 game made with the nCine.
+You can read more about it on its [website](https://encelo.itch.io/wet-paper).
+
+**Video**: [Wet Paper – Gameplay Demo (GGJ 2025 / nCine Game)](https://www.youtube.com/watch?v=jvhKzdlgR4Q)<br/>
+**Controls**:
+- Menu Navigation
+  - _​Skip Splashscreen_: `Escape` key or `Start` button on a gamepad
+  - _Move in Menu_: Arrow keys, D-Pad, or left stick on first gamepad
+  - _Select Menu Entry_: `Enter` key or `A` button on first gamepad
+  - _Go Back_: `Escape` key, `B` button, or `Back` button on first gamepad
+- Other
+  - _Pause/Unpause_: `Escape` key or `Start` button on any gamepad during game
+    (This action cannot be remapped)​
+- Player 1 (Keyboard or Gamepad 0)
+  - _Move Left_: `A` key or left stick left
+  - ​_Move Right_: `D` key or left stick right
+  - ​_Jump_: `W` key or `A` button
+​  - _Dash_: `S` key or `B` button
+- Player 2 (Keyboard or Gamepad 1)
+  - _​Move Left_: Left arrow key or left stick left
+​  - _Move Right_: Right arrow key or left stick right
+  - _Jump_: Up arrow key or `A` button
+  - _Dash_: Down arrow key or `B` button​​​
+> You can remap all player actions from the Controls menu in-game.
+
+
 ### SpookyGhost ([web version](/spookyghost))
 
 ![SpookyGhost](/img/gallery/SpookyGhost.png "SpookyGhost"){: .center-block :}

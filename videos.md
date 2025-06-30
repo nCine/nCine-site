@@ -7,6 +7,13 @@ permalink: /videos/
 
 Don't miss the [Gallery](/gallery) page for additional screenshots!
 
+## Wet Paper
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe width="750" height="422" src="https://www.youtube.com/embed/jvhKzdlgR4Q" frameborder="0" allowfullscreen></iframe>
+</div>
+[Wet Paper](https://encelo.itch.io/wet-paper), a substantially improved version of the Global Game Jam 2025 submission
+
 ## Jazz² Resurrection
 
 <div class="embed-responsive embed-responsive-16by9">

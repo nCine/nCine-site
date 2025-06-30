@@ -7,6 +7,11 @@ permalink: /gallery/
 
 Don't miss the [Videos](/videos/) page to see the nCine in action!
 
+## Wet Paper
+
+![Wet Paper](/img/gallery/WetPaper.png "Wet Paper")
+[`Wet Paper`](https://github.com/encelo/WetPaper), a substantially improved version of the Global Game Jam 2025 submission
+
 ## Papel Mojado
 
 ![Papel Mojado](/img/posts/PapelMojado.png "Papel Mojado")
