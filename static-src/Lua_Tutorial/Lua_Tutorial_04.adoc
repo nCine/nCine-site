@@ -1,0 +1,100 @@
+== Tutorial #04 - Animated sprites
+
+=== Spritesheets and rectangles
+
+For this tutorial we are going to learn how to create an animated sprite using a spritesheet with separated walk frames.
+
+First of all we need to load the spritesheet texture. There is nothing special about a texture that contains more than one image, we load it as usual.
+
+The difference is in how the sprite (regular or animated) is going to use only a portion of that texture, by definiing a rectangle.
+
+When an nCine method needs a rectangle, it refers to a table that defines a top-left corner, a width, and a height: `rect = {x = 0, y = 0, w = 128, h = 128}`.
+
+[NOTE]
+====
+The concept of a bigger texture containing more sub-images (being frames of an animation or just different sprites) can also be called a texture atlas.
+====
+
+==== Creating an animated sprite
+
+The following snippet of code loads a textures and assigns it to an animated sprite.
+Then it defines an animation, it adds it to the animated sprite, and make it active.
+The last step is removing the pause to see the sprite animate.
+
+[source,lua]
+----
+nc = ncine
+
+function nc.on_init()
+	spritesheet_ = nc.texture.new(nc.fs.get_data_path().."textures/spritesheet.png")
+
+	local resolution = nc.application.get_resolution()
+	anim_sprite_ = nc.animated_sprite.new(nc.application.get_rootnode(), spritesheet_, resolution.x * 0.5, resolution.y * 0.5)
+
+	local animation = { frame_duration = 0.12, loop_mode = nc.loop_mode.ENABLED, rewind_mode = nc.rewind_mode.FROM_START, rect_size = { x = 48, y = 48 }, source_rect = { x = 0, y = 0, w = 144, h = 96 } }
+	nc.animated_sprite.add_animation(anim_sprite_, animation)
+
+	nc.animated_sprite.set_animation_index(anim_sprite_, 0)
+	nc.animated_sprite.set_paused(anim_sprite_, false)
+end
+
+function nc.on_shutdown()
+	nc.animated_sprite.delete(anim_sprite_)
+	nc.texture.delete(spritesheet_)
+end
+----
+
+But how did we define an animation? We created a table with various keys.
+
+- The `frame_duration` key specifies how many seconds should a frame stay on screen before the next one will be displayed.
+- The `loop_mode` key is used to define if the animation will continue playing after it reaches the last frame.
+  - It can have two values: `nc.loop_mode.ENABLED` or `nc.loop_mode.DISABLED`.
+- The `rewind_mode` key is used to define what happens when a looping animation reaches the last frame. Should it start again from the first one or go backward until the first one before playing again normally?
+  - It can have two values: `nc.rewind_mode.FROM_START` or `nc.rewind_mode.BACKWARD`.
+- The `rect_size` is a two component vector (like the return value of `nc.application.get_resolution()`, for example) that specifies the size of a frame
+- The `source_rect` is a rectangle area inside the texture that will be used to create frames. The frames will all have the size you specified earlier. They will start at the corner defined by the `x` and `y` components, and proceeds from left to right and from top to bottom, within the bounds defined by the `x + w` and `y + h`.
+
+There are also two more optional keys that you can use to achieve more flexibility.
+
+- The `num_rectangles_to_skip` key is a number that specifies how many frames should be skipped before adding rectangles from the `source_rect` area.
+- The `padding` key is a two component vector that defines the horizontal and vertical distance between adjacent rectangles.
+
+==== Defining a list of rectangles
+
+There is an alternative way of defining the rectangles that compose an animation. It can be used when the automatic way shown in the previous paragraph is not flexible enough for your needs.
+
+As before, you will provide a value for the `frame_duration`, `loop_mode`, and `rewind_mode` keys. But after those you can list the rectangles you need for your animation.
+
+[source,lua]
+----
+local animation = {
+	frame_duration = 0.12, loop_mode = nc.loop_mode.ENABLED, rewind_mode = nc.rewind_mode.FROM_START,
+	{x = 0, y = 0, w = 48, h = 48},
+	{x = 48, y = 0, w = 48, h = 48},
+	{x = 96, y = 0, w = 48, h = 48},
+	{x = 144, y = 0, w = 48, h = 48},
+	{x = 0, y = 48, w = 48, h = 48},
+	{x = 48, y = 48, w = 48, h = 48},
+	{x = 96, y = 48, w = 48, h = 48},
+	{x = 144, y = 48, w = 48, h = 48},
+}
+----
+
+==== Additional animated sprite functions
+
+There are some more useful functions that you can use with `animated_sprite` objets.
+
+If you add more than one animation you can query the number with `num_animations` then, as you have seen earlier, you can set the active one with `set_animation_index()`, or query it with `get_animation_index()`.
+You can then clear all animations with `clear_animations()`.
+
+You can play or pause the animation by using `set_paused()` and query its state with `is_paused()`.
+
+You can also handle the animation yourself by changing the frame with `set_frame()`, and querying the active one with `get_frame()`.
+
+=== Putting it all together
+
+.Complete example #04
+[source,lua]
+----
+include::src/script_04.lua[]
+----

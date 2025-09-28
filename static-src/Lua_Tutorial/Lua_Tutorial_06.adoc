@@ -1,0 +1,75 @@
+== Tutorial #06 - The Scenegraph
+
+=== The transformations and the scenegraph
+
+Until now we have always added our sprites to the root node of the scenegraph, without really explaining why or what the scenegraph is.
+
+Each regular sprite, animated sprite, or text node is a scene node that can be added to the scenegraph in order to be rendered on screen.
+
+The scenegraph is a tree that starts at the root node and that can have many branches (or children). Each node can then have children on its own.
+
+Having a node that is a child of another one is useful to carry the parent transformations while transforming it independently.
+
+Think of the Earth and the Moon. The Moon revolves around the Earth, but the Earth revolves around the Sun.
+It is a lot easier to model those two movements independently instead of thinking about how the Moon revolves around the Sun.
+
+[source,lua]
+----
+nc = ncine
+
+function nc.on_init()
+	texture_ = nc.texture.new(nc.fs.get_data_path().."textures/texture4.png")
+
+	local resolution = nc.application.get_resolution()
+	local pos = { x = resolution.x * 0.5, y = resolution.y * 0.5 }
+	sun_sprite_ = nc.sprite.new(nc.application.get_rootnode(), texture_, pos)
+
+	earth_sprite_ = nc.sprite.new(sun_sprite_, texture_, resolution.x * 0.25, 0)
+	nc.sprite.set_scale(earth_sprite_, 0.5)
+
+	moon_sprite_ = nc.sprite.new(earth_sprite_, texture_, resolution.x * 0.1, 0)
+	nc.sprite.set_scale(moon_sprite_, 0.5)
+
+	angle_ = 0.0
+end
+
+function nc.on_frame_start()
+	angle_ = angle_ + 50 * nc.application.get_frame_time()
+
+	nc.sprite.set_rotation(sun_sprite_, angle_ * 0.5)
+	nc.sprite.set_rotation(earth_sprite_, angle_)
+	nc.sprite.set_rotation(moon_sprite_, angle_)
+end
+----
+
+The second parameter of the `sprite.new()` function is the parent node of the sprite we are going to create.
+
+Only the Sun is a child of the root node. Then the Earth is a child of the Sun and the Moon is a child of Earth.
+
+With this setup it's easy to model their revolution by just rotating them.
+
+We have also scaled down the sprites to make their relation clearer. Both the Earth and the Moon have been scaled to half their original sizes, but the Moon inherits its parent transformation and ends up being scaled to a fourth of its original size.
+
+=== Modifying the scenegraph
+
+Assigning a parent when creating a new node is not the only way of changing the relationships inside the scenegraph.
+
+There are many other functions that you can use to query or modify the associations between nodes.
+
+If you want to know how many children does a parent node have you can use `num_children()`. You can then retrieve them by providing an index to `get_child()`.
+
+You can also use the `get_children()` function and retrieve a list of all children in one go.
+
+To retrieve the parent of a node use the `get_parent()` function, or set one with `set_parent()`.
+
+You can use `add_child()` and `remove_child()` to add or remove a specific node object from a parent, or use `remove_child_at()` if you know the index.
+
+If you want to remove all children from a node it is faster to call `remove_all_children()` than to cycle over them.
+
+=== Putting it all together
+
+.Complete example #06
+[source,lua]
+----
+include::src/script_06.lua[]
+----

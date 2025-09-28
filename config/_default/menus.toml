@@ -1,0 +1,172 @@
+[[main]]
+  name = "News"
+  pageRef = "news"
+  weight = 10
+
+[[main]]
+  name = "Features"
+  pageRef = "features"
+  weight = 15
+
+[[main]]
+  name = "Showcase"
+  identifier = "showcase"
+  weight = 20
+
+[[main]]
+  parent = "showcase"
+  name = "Gallery"
+  pageRef = "gallery"
+  weight = 10
+
+[[main]]
+  parent = "showcase"
+  name = "Videos"
+  pageRef = "showcase_tags/video"
+  weight = 15
+
+[[main]]
+  parent = "showcase"
+  name = "Examples"
+  pageRef = "examples"
+  weight = 20
+
+[[main]]
+  name = "Documentation"
+  identifier = "documentation"
+  weight = 25
+
+[[main]]
+  parent = "documentation"
+  name = "About"
+  pageRef = "about"
+  weight = 10
+
+[[main]]
+  parent = "documentation"
+  name = "F.A.Q."
+  pageRef = "faq"
+  weight = 15
+
+[[main]]
+  parent = "documentation"
+  name = "Getting Started"
+  url = "https://github.com/nCine/nCine/wiki/Getting-Started"
+  weight = 20
+
+[[main]]
+  parent = "documentation"
+  name = "Lua Tutorial"
+  url = "https://ncine.github.io/Lua_Tutorial.html"
+  weight = 25
+
+[[main]]
+  parent = "documentation"
+  name = "C++ API"
+  url = "https://ncine.github.io/docs/master"
+  weight = 30
+
+[[main]]
+  parent = "documentation"
+  name = "Lua API"
+  url = "https://ncine.github.io/docs/lua_master"
+  weight = 35
+
+[[main]]
+  name = "Community"
+  identifier = "community"
+  weight = 30
+
+[[main]]
+  parent = "community"
+  name = "GitHub"
+  pre = "github"
+  url = "https://github.com/nCine/nCine"
+  weight = 10
+
+[[main]]
+  parent = "community"
+  name = "Discord"
+  pre = "discord"
+  url = "https://discord.gg/495ab6Y"
+  weight = 15
+
+[[main]]
+  parent = "community"
+  name = "Forum"
+  pre = "comment"
+  url = "https://github.com/nCine/nCine/discussions"
+  weight = 20
+
+[[main]]
+  parent = "community"
+  name = "Donate"
+  pre = "heart"
+  pageRef = "donate"
+  weight = 25
+
+[[main]]
+  name = "Download"
+  pre = "download"
+  identifier = "download"
+  weight = 35
+
+[[main]]
+  parent = "download"
+  name = "Instructions"
+  pageRef = "download"
+  weight = 10
+
+[[main]]
+  parent = "download"
+  name = "Changelog"
+  pageRef = "changelog"
+  weight = 15
+
+[[footer]]
+  identifier = "rss"
+  pre = "rss"
+  url = "/feed.xml"
+  weight = 10
+
+[[footer]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/nCine/nCine"
+  weight = 15
+
+[[footer]]
+  identifier = "twitter"
+  pre = "twitter"
+  url = "https://x.com/nCine2D"
+  weight = 20
+
+[[footer]]
+  identifier = "youtube"
+  pre = "youtube"
+  url = "https://www.youtube.com/@nCine"
+  weight = 25
+
+[[footer]]
+  identifier = "discord"
+  pre = "discord"
+  url = "https://discord.gg/495ab6Y"
+  weight = 30
+
+[[footer]]
+  identifier = "itch-io"
+  pre = "itch-io"
+  url = "https://itch.io/c/1488339/made-with-ncine"
+  weight = 35
+
+[[footer]]
+  identifier = "donate"
+  pre = "heart"
+  url = "/donate"
+  weight = 40
+
+[[footer]]
+  identifier = "credits"
+  pre = "circle-info"
+  url = "/credits"
+  weight = 45

@@ -1,0 +1,104 @@
+colorscheme = "avocado"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+enableSearch = true
+enableCodeCopy = true
+backgroundImageWidth = 4096
+defaultBackgroundImage = "milad-fakurian-rPdxh2xl2-E-unsplash.jpg"
+defaultSocialImage = "author.png"
+smartTOC = true
+
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "logo.svg"
+description = "An open-source 2D game engine"
+copyright = "[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)"
+
+[author]
+  name = "nCine"
+  image = "author.png"
+  headline = "An open-source cross-platform 2D game engine"
+  bio = "2D game engine"
+  links = [
+    { rss = "/feed.xml" },
+    { github = "https://github.com/nCine/nCine" },
+    { twitter = "https://x.com/nCine2D" },
+    { patreon = "https://patreon.com/encelo" },
+    { youtube = "https://www.youtube.com/@nCine" },
+    { mastodon = "https://mastodon.gamedev.place/@encelo" },
+    { bluesky = "https://bsky.app/profile/encelo.github.io" },
+    { itch-io = "https://itch.io/c/1488339/made-with-ncine" }
+  ]
+
+[header]
+  layout = "fixed"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "background"
+  showRecent = false
+  showRecentItems = 6
+  showMoreLink = false
+  showMoreLinkDest = "/news"
+  cardView = true
+  layoutBackgroundBlur = true
+
+[article]
+  showDate = true
+  showViews = false
+  showLikes = false
+  showDateUpdated = false
+  showAuthor = false
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showEdit = false
+  seriesOpened = false
+  showHeadingAnchors = false
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = true
+  showTaxonomies = true
+  showAuthorsBadges = false
+  showWordCount = false
+  showComments = true
+  sharingLinks = [ 'linkedin', 'twitter', 'bluesky', 'mastodon' ]
+  disableHeroImageFilter = true
+
+
+[list]
+  showHero = true
+  heroStyle = "background"
+  showBreadcrumbs = false
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
+  showTableOfContents = false
+  showSummary = true
+  showViews = false
+  showLikes = false
+  showCards = false
+  groupByYear = true
+  cardView = true
+  constrainItemsWidth = true
+
+[sitemap]
+  excludedKinds = []
+
+[taxonomy]
+  showTermCount = true
+  showHero = true
+  heroStyle = "background"
+
+[term]
+  showHero = true
+  heroStyle = "background"

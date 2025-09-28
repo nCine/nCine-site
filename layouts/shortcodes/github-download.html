@@ -1,0 +1,31 @@
+{{- $repo := .Get "repo" -}}
+{{- $branch := .Get "branch" | default "main" -}}
+{{- $prefix := .Get "prefix" | default "" -}}
+{{- $ext := .Get "ext" | default "" -}}
+
+{{- $url := printf "https://api.github.com/repos/%s/contents/?ref=%s" $repo $branch -}}
+{{- $json := resources.GetRemote $url | transform.Unmarshal -}}
+
+{{- $file := dict -}}
+{{- range $json }}
+  {{- if or (and $prefix (strings.HasPrefix .name $prefix)) (not $prefix) -}}
+    {{- if or (and $ext (strings.HasSuffix .name $ext)) (not $ext) -}}
+      {{- $file = . -}}
+      {{- break -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $file.name -}}
+  {{- $downloadURL := $file.download_url -}}
+
+<a
+  class="!rounded-md bg-primary-600 px-3 py-1.5 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700 text-sm inline-flex items-center gap-1"
+  href="{{ $downloadURL }}" role="button">
+  {{ if .Inner }}{{ .Inner }}{{ else }}Download{{ end }}
+</a>
+
+{{- else -}}
+  <p>No matching file found in branch <code>{{ $branch }}</code>.</p>
+{{- end -}}
+

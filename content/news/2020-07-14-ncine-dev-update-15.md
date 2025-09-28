@@ -1,0 +1,15 @@
+---
+date: "2020-07-14"
+title: nCine Dev Update 15
+description: Updates from April to the first half of May 2020
+externalUrl: "https://encelo.github.io/2020-07-14-ncine-dev-update-15/"
+categories: [ Dev Update ]
+showReadingTime: false
+sharingLinks: false
+showComments: false
+build:
+  render: "false"
+  list: "local"
+---
+
+<https://encelo.github.io/2020-07-14-ncine-dev-update-15/>

@@ -1,0 +1,65 @@
+== Tutorial #03 - Audio
+
+=== Audio buffer and player
+
+To play sounds and music you have to first load the audio data and then associate it with a player.
+The concept is similar to textures and sprites, or fonts and text nodes.
+
+In this case the two objects are `audio_buffer` and `audio_buffer_player`.
+
+The `audio_buffer.new()` function takes the path to a WAV or OGG Vorbis file, while the `audio_buffer_player.new()` function takes the audio buffer object you have just created.
+
+Once the player has been created, you can use the `play()`, `pause()`, and `stop()` functions to control it.
+
+[source,lua]
+----
+nc = ncine
+
+function nc.on_init()
+	audio_buffer_ = nc.audio_buffer.new(nc.fs.get_data_path().."sounds/coins.ogg")
+	player_ = nc.audio_buffer_player.new(audio_buffer_)
+end
+
+function nc.on_mouse_button_released(event)
+	nc.audio_buffer_player.stop(player_)
+	nc.audio_buffer_player.play(player_)
+end
+
+function nc.on_shutdown()
+	nc.audio_buffer_player.delete(player_)
+	nc.audio_buffer.delete(audio_buffer_)
+end
+----
+
+=== Music and stream players
+
+When you have a big music file you don't usually want to load all of it in memory.
+
+It is preferable to stream it: to load and decode only the small part that is currently being played.
+
+You can achieve this by using an `audio_stream_player`. It can be controlled with the same `play()`, `pause()`, and `stop()` functions.
+
+To create an `audio_stream_player` you don't need an `audio_buffer`, you just pass the file to load, like this: `nc.audio_stream_player.new(nc.fs.get_data_path().."sounds/music.ogg")`.
+
+=== Audio player properties
+
+You can set some properties for both type of players, like the gain (volume), the pitch, or the looping state.
+
+[source,lua]
+----
+	nc.audio_buffer_player.set_gain(audio_buffer_, 1.0)
+	nc.audio_buffer_player.set_pitch(audio_buffer_, 0.5)
+	nc.audio_stream_player.set_looping(stream_player_, true)
+----
+
+You can query those properties with `get_gain()`, `get_pitch()`, and `is_looping()`.
+
+You can also query the state of the player with functions like `is_playing()`, `is_paused()`, or `is_stopped()`.
+
+=== Putting it all together
+
+.Complete example #03
+[source,lua]
+----
+include::src/script_03.lua[]
+----
