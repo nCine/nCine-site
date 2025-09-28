@@ -1,0 +1,46 @@
+== Tutorial #00 - Installation
+
+The nCine offers an extensive Lua API that covers most of the native C++ API and allows you to create a complete 2D game.
+
+=== Choose the right artifact branch
+
+To run your Lua games you need to download the nCine. The specific Lua version is recommended in this case as it is easier to setup.
+
+You can find all the pre-compiled archives on GitHub, as branches of the same nCine Artifacts repository.
+
+The branch name format is `nCine-branch-platform-compiler`: https://github.com/nCine/nCine-artifacts/branches/all
+
+The Lua edition is called `nCineLua` and you usually want the `master` branch.
+For example, if you are on Windows, you can choose the `nCine-master-windows-vs2022` branch (compiled with the latest Visual Studio 2022) and download the archive or the installer for the nCineLua version.
+
+=== Download the archive
+
+Inside the branch you will find an archive, its format depends on the choosen platform.
+
+You can extract the archive wherever you want and that's the only installation step needed.
+
+[NOTE]
+====
+If you are inside a Windows branch you will also find an installer.
+The nCine does not need to be installed though, you can download the ZIP archive.
+====
+
+=== Run the example script
+
+Inside the extracted directory you will find an binary and a data directory.
+
+Inside the binary directory you will find some libraries and an executable.
+
+When you run the executable it will look for a file named `script.lua`, first in its same directory and then in the data one.
+
+You can put your `script.lua` in either directories or you can execute a different script.
+To do that open a command prompt and give the path of your script as the first parameter.
+
+For your data files (like textures or sounds), you can use an absolute path or a path relative to the executable directory.
+You can also put them in the data directory and use the default data path value returned by `ncine.fs.get_data_path()`.
+
+=== Additional resources
+
+For a complete Lua API documentation, check the LDoc one at: https://ncine.github.io/docs/lua_master/
+
+The nCine wiki offers further information: https://github.com/nCine/nCine/wiki/Getting-Started-with-Lua[Getting Started with Lua] and https://github.com/nCine/nCine/wiki/Getting-Started-with-Lua-VSCode)[Getting Started with Lua (VSCode)].
