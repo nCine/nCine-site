@@ -18,17 +18,17 @@ showcase_tags: [ Game, Emscripten, Video ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncPong-artifacts" branch="ncPong-master-windows-vs2022" prefix="ncPong-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncPong-artifacts" branch="ncPong-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncPong-artifacts" branch="ncPong-master-macos15-appleclang" prefix="ncPong-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/ncPong-artifacts" branch="ncPong-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncPong-artifacts" branch="ncPong-master-linux-gcc" prefix="ncPong-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncPong-artifacts" branch="ncPong-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncPong-artifacts/branches/all?query=ncPong-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

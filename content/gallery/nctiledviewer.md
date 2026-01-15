@@ -18,17 +18,17 @@ showcase_tags: [ Tool, Emscripten ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncTiledViewer-artifacts" branch="ncTiledViewer-master-windows-vs2022" prefix="ncTiledViewer-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncTiledViewer-artifacts" branch="ncTiledViewer-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncTiledViewer-artifacts" branch="ncTiledViewer-master-macos15-appleclang" prefix="ncTiledViewer-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/ncTiledViewer-artifacts" branch="ncTiledViewer-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncTiledViewer-artifacts" branch="ncTiledViewer-master-linux-gcc" prefix="ncTiledViewer-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncTiledViewer-artifacts" branch="ncTiledViewer-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncTiledViewer-artifacts/branches/all?query=ncTiledViewer-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

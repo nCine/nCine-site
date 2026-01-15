@@ -18,17 +18,17 @@ showcase_tags: [ Game, Emscripten, Video ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncInvaders-artifacts" branch="ncInvaders-master-windows-vs2022" prefix="ncInvaders-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncInvaders-artifacts" branch="ncInvaders-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncInvaders-artifacts" branch="ncInvaders-master-macos15-appleclang" prefix="ncInvaders-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/ncInvaders-artifacts" branch="ncInvaders-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncInvaders-artifacts" branch="ncInvaders-master-linux-gcc" prefix="ncInvaders-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncInvaders-artifacts" branch="ncInvaders-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncInvaders-artifacts/branches/all?query=ncInvaders-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

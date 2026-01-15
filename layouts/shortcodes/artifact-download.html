@@ -1,0 +1,24 @@
+{{- $repo := .Get "repo" -}}
+{{- $branch := .Get "branch" -}}
+{{- $variant := .Get "variant" | default "regular" -}}
+{{- $artifact := .Get "artifact" | default "portable" -}}
+
+{{- $manifest := "manifest.json" -}}
+{{- if eq $variant "lua" -}}
+  {{- $manifest = "manifestLua.json" -}}
+{{- end -}}
+
+<a
+  class="artifact-download-btn !rounded-md bg-primary-600 px-3 py-1.5 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700 text-sm inline-flex items-center gap-1"
+  href="https://github.com/{{ $repo }}/tree/{{ $branch }}"
+  data-repo="{{ $repo }}"
+  data-branch="{{ $branch }}"
+  data-manifest="{{ $manifest }}"
+  data-artifact="{{ $artifact }}"
+  role="button"
+>
+  <span class="label">
+    {{ if .Inner }}{{ .Inner }}{{ else }}Download{{ end }}
+  </span>
+</a>
+

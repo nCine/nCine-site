@@ -18,17 +18,17 @@ showcase_tags: [ Community, Game, Video, Emscripten ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="fahien/ncJump-artifacts" branch="ncJump-new_project-windows-vs2022" prefix="ncJump-" ext=".zip" >}}
+{{< artifact-download repo="fahien/ncJump-artifacts" branch="ncJump-new_project-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="fahien/ncJump-artifacts" branch="ncJump-new_project-macos15-appleclang" prefix="ncJump-" ext=".dmg" >}}
+{{< artifact-download repo="fahien/ncJump-artifacts" branch="ncJump-new_project-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="fahien/ncJump-artifacts" branch="ncJump-new_project-linux-gcc" prefix="ncJump-" ext=".gz" >}}
+{{< artifact-download repo="fahien/ncJump-artifacts" branch="ncJump-new_project-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/Fahien/ncJump-artifacts/branches/all?query=new_project" target="_blank" >}}
 {{< icon "link" >}} All Platforms

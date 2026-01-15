@@ -19,17 +19,17 @@ showcase_tags: [ Community, Project, Video, Emscripten ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncJugiMapFrameworkDemo-artifacts" branch="ncJugiMapFrameworkDemo-master-windows-vs2022" prefix="ncJugiMapFrameworkDemo-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncJugiMapFrameworkDemo-artifacts" branch="ncJugiMapFrameworkDemo-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncJugiMapFrameworkDemo-artifacts" branch="ncJugiMapFrameworkDemo-master-macos15-appleclang" prefix="ncJugiMapFrameworkDemo-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/ncJugiMapFrameworkDemo-artifacts" branch="ncJugiMapFrameworkDemo-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncJugiMapFrameworkDemo-artifacts" branch="ncJugiMapFrameworkDemo-master-linux-gcc" prefix="ncJugiMapFrameworkDemo-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncJugiMapFrameworkDemo-artifacts" branch="ncJugiMapFrameworkDemo-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncJugiMapFrameworkDemo-artifacts/branches/all?query=ncJugiMapFrameworkDemo-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

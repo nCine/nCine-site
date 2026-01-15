@@ -18,17 +18,17 @@ showcase_tags: [ Tool, Emscripten, Video ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncParticleEditor-artifacts" branch="ncParticleEditor-master-windows-vs2022" prefix="ncParticleEditor-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncParticleEditor-artifacts" branch="ncParticleEditor-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncParticleEditor-artifacts" branch="ncParticleEditor-master-macos15-appleclang" prefix="ncParticleEditor-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/ncParticleEditor-artifacts" branch="ncParticleEditor-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncParticleEditor-artifacts" branch="ncParticleEditor-master-linux-gcc" prefix="ncParticleEditor-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncParticleEditor-artifacts" branch="ncParticleEditor-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncParticleEditor-artifacts/branches/all?query=ncParticleEditor-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

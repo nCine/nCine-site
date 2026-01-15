@@ -14,17 +14,17 @@ showcase_tags: [ Tool ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncline-artifacts" branch="ncline-master-windows-vs2022" prefix="ncline-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncline-artifacts" branch="ncline-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncline-artifacts" branch="ncline-master-macos15-appleclang" prefix="ncline-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncline-artifacts" branch="ncline-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncline-artifacts" branch="ncline-master-linux-gcc" prefix="ncline-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncline-artifacts" branch="ncline-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncline-artifacts/branches/all?query=ncline-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

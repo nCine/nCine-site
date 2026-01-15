@@ -19,17 +19,17 @@ showcase_tags: [ Community, Project, Video, Emscripten ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncJugiMapParallaxScrolling-artifacts" branch="ncJugiMapParallaxScrolling-master-windows-vs2022" prefix="ncJugiMapParallaxScrolling-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncJugiMapParallaxScrolling-artifacts" branch="ncJugiMapParallaxScrolling-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncJugiMapParallaxScrolling-artifacts" branch="ncJugiMapParallaxScrolling-master-macos15-appleclang" prefix="ncJugiMapParallaxScrolling-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/ncJugiMapParallaxScrolling-artifacts" branch="ncJugiMapParallaxScrolling-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncJugiMapParallaxScrolling-artifacts" branch="ncJugiMapParallaxScrolling-master-linux-gcc" prefix="ncJugiMapParallaxScrolling-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncJugiMapParallaxScrolling-artifacts" branch="ncJugiMapParallaxScrolling-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncJugiMapParallaxScrolling-artifacts/branches/all?query=ncJugiMapParallaxScrolling-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

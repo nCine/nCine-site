@@ -22,17 +22,17 @@ showcase_tags: [ Tool, Video, Emscripten ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="SpookyGhost2D/SpookyGhost-artifacts" branch="SpookyGhost-master-windows-vs2022" prefix="SpookyGhost-" ext=".zip" >}}
+{{< artifact-download repo="SpookyGhost2D/SpookyGhost-artifacts" branch="SpookyGhost-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="SpookyGhost2D/SpookyGhost-artifacts" branch="SpookyGhost-master-macos15-appleclang" prefix="SpookyGhost-" ext=".dmg" >}}
+{{< artifact-download repo="SpookyGhost2D/SpookyGhost-artifacts" branch="SpookyGhost-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="SpookyGhost2D/SpookyGhost-artifacts" branch="SpookyGhost-master-linux-gcc" prefix="SpookyGhost-" ext=".gz" >}}
+{{< artifact-download repo="SpookyGhost2D/SpookyGhost-artifacts" branch="SpookyGhost-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/SpookyGhost2D/SpookyGhost-artifacts/branches/all?query=SpookyGhost-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

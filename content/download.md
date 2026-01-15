@@ -9,17 +9,17 @@ showComments: false
 ---
 
 {{< div-group >}}
-{{< github-download repo="nCine/nCine-artifacts" branch="nCine-master-windows-vs2022" prefix="nCine-" ext=".zip" >}}
+{{< artifact-download repo="nCine/nCine-artifacts" branch="nCine-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/nCine-artifacts" branch="nCine-master-macos15-appleclang" prefix="nCine-" ext=".dmg" >}}
+{{< artifact-download repo="nCine/nCine-artifacts" branch="nCine-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/nCine-artifacts" branch="nCine-master-linux-gcc" prefix="nCine-" ext=".gz" >}}
+{{< artifact-download repo="nCine/nCine-artifacts" branch="nCine-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/nCine-artifacts/branches/all?query=nCine-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms
@@ -35,17 +35,17 @@ Before building or running projects, it may be useful to read the [Getting Start
 ### ncline
 
 {{< div-group >}}
-{{< github-download repo="nCine/ncline-artifacts" branch="ncline-master-windows-vs2022" prefix="ncline-" ext=".zip" >}}
+{{< artifact-download repo="nCine/ncline-artifacts" branch="ncline-master-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncline-artifacts" branch="ncline-master-macos15-appleclang" prefix="ncline-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncline-artifacts" branch="ncline-master-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="nCine/ncline-artifacts" branch="ncline-master-linux-gcc" prefix="ncline-" ext=".gz" >}}
+{{< artifact-download repo="nCine/ncline-artifacts" branch="ncline-master-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/nCine/ncline-artifacts/branches/all?query=ncline-master" target="_blank" >}}
 {{< icon "link" >}} All Platforms

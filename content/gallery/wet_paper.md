@@ -23,17 +23,17 @@ showcase_tags: [ Game, Jam, Video, Emscripten ]
 {{< /button-group >}}
 
 {{< div-group >}}
-{{< github-download repo="encelo/WetPaper-artifacts" branch="WetPaper-main-windows-vs2022" prefix="WetPaper-" ext=".zip" >}}
+{{< artifact-download repo="encelo/WetPaper-artifacts" branch="WetPaper-main-windows-vs2022" >}}
 {{< icon "download" >}} Windows
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="encelo/WetPaper-artifacts" branch="WetPaper-main-macos15-appleclang" prefix="WetPaper-" ext=".dmg" >}}
+{{< artifact-download repo="encelo/WetPaper-artifacts" branch="WetPaper-main-macos15-appleclang" >}}
 {{< icon "download" >}} macOS 15 (AppleSilicon)
-{{< /github-download >}}
+{{< /artifact-download >}}
 
-{{< github-download repo="encelo/WetPaper-artifacts" branch="WetPaper-main-linux-gcc" prefix="WetPaper-" ext=".gz" >}}
+{{< artifact-download repo="encelo/WetPaper-artifacts" branch="WetPaper-main-linux-gcc" >}}
 {{< icon "download" >}} Linux
-{{< /github-download >}}
+{{< /artifact-download >}}
 
 {{< small-button href="https://github.com/encelo/WetPaper-artifacts/branches/all?query=WetPaper-main" target="_blank" >}}
 {{< icon "link" >}} All Platforms
