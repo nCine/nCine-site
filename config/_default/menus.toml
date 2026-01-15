@@ -170,3 +170,9 @@
   pre = "circle-info"
   url = "/credits"
   weight = 45
+
+[[footer]]
+  identifier = "gpgkey"
+  pre = "pgpkey"
+  url = "/gpg"
+  weight = 50
